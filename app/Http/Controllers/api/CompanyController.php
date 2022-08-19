@@ -14,7 +14,7 @@ class CompanyController extends BaseController
 {
     function __construct()
     {
-        $this->middleware('permission:unit_create', ['only' => ['store']]);
+        $this->middleware('permission:company_create', ['only' => ['store']]);
 //        $this->middleware('permission:product-create', ['only' => ['create','store']]);
 //        $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
 //        $this->middleware('permission:product-delete', ['only' => ['destroy']]);
@@ -26,8 +26,8 @@ class CompanyController extends BaseController
      */
     public function index()
     {
-        $products = Company::all();
-        return $this->sendResponse(CompanyResource::collection($products), 'Company retrieved successfully.');
+        $company = Company::all();
+        return $this->sendResponse(CompanyResource::collection($company), 'Company retrieved successfully.');
     }
 
     /**
@@ -46,8 +46,8 @@ class CompanyController extends BaseController
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());
         }
-        $product = Company::create($input);
-        return $this->sendResponse(new CompanyResource($product), 'Company created successfully.');
+        $company = Company::create($input);
+        return $this->sendResponse(new CompanyResource($company), 'Company created successfully.');
     }
 
     /**
@@ -58,11 +58,11 @@ class CompanyController extends BaseController
      */
     public function show($id)
     {
-        $unit = Company::find($id);
-        if (is_null($unit)) {
+        $company = Company::find($id);
+        if (is_null($company)) {
             return $this->sendError('Company not found.');
         }
-        return $this->sendResponse(new CompanyResource($unit), 'Unit retrieved successfully.');
+        return $this->sendResponse(new CompanyResource($company), 'Unit retrieved successfully.');
     }
 
     /**
@@ -83,20 +83,20 @@ class CompanyController extends BaseController
      * @param  int  $id
      * @return JsonResponse
      */
-    public function update(Request $request, Unit $product)
+    public function update(Request $request, Company $company)
     {
         $input = $request->all();
         $validator = Validator::make($input, [
-            'name' => 'required',
-            'detail' => 'required'
+            'company' => 'required',
+            'acronym' => 'required'
         ]);
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());
         }
-        $product->name = $input['name'];
-        $product->detail = $input['detail'];
-        $product->save();
-        return $this->sendResponse(new UnitResource($product), 'Unit updated successfully.');
+        $company->company = $input['company'];
+        $company->acronym = $input['acronym'];
+        $company->save();
+        return $this->sendResponse(new CompanyResource($company), 'Unit updated successfully.');
     }
 
     /**
@@ -105,9 +105,9 @@ class CompanyController extends BaseController
      * @param  int  $id
      * @return JsonResponse
      */
-    public function destroy(Unit $unit)
+    public function destroy(Company $company)
     {
-        $unit->delete();
-        return $this->sendResponse([], 'Unit deletedphp artisan make:migration create_relation_tables.');
+        $company->delete();
+        return $this->sendResponse([], 'Company deleted.');
     }
 }

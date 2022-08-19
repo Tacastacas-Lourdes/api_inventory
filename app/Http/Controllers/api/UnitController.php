@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Resources\CompanyResource;
+use App\Http\Resources\UnitResource;
+use App\Models\Category;
 use App\Models\Unit;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -15,8 +17,7 @@ class UnitController extends BaseController
     {
         $this->middleware('permission:unit_create', ['only' => ['store']]);
 //        $this->middleware('permission:product-create', ['only' => ['create','store']]);
-//        $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
-//        $this->middleware('permission:product-delete', ['only' => ['destroy']]);
+
     }
     /**
      * Display a listing of the resource.
@@ -25,30 +26,40 @@ class UnitController extends BaseController
      */
     public function index()
     {
-        $products = Unit::all();
-        return $this->sendResponse(CompanyResource::collection($products), 'Unit retrieved successfully.');
+        $unit = Unit::all();
+        return $this->sendResponse(CompanyResource::collection($unit), 'Unit retrieved successfully.');
     }
-
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
      * @return JsonResponse
      */
-    public function store(Request $request)
+    public function store(Request $request, Category $cat_id)//param add-ons category id
     {
-        $input = $request->all();
-        $validator = Validator::make($input, [
+//        $input = $request->all();
+        $validator = Validator::make($request->all(), [
 //            'unit_id' => 'required',
             'brand' => 'required',
             'model' => 'required',
             'serial' => 'required',
+            'company_id' => 'required',
+            'category_id' => 'required'
         ]);
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());
         }
-        $product = Unit::create($input);
-        return $this->sendResponse(new CompanyResource($product), 'Unit created successfully.');
+        $unit = Unit::create([
+            'brand' => $request['brand'],
+            'model' => $request['model'],
+            'serial' => $request['serial'],]);
+        if ($unit instanceof Unit){
+            $unit->company()->associate($request->company_id);
+            $unit->category()->associate($request->company_id);
+            $unit->status()->associate($request->status_id);
+        }
+        $unit->save();
+        return $this->sendResponse(new UnitResource($unit), 'Unit created successfully.');
     }
 
     /**
@@ -61,7 +72,7 @@ class UnitController extends BaseController
     {
         $unit = Unit::find($id);
         if (is_null($unit)) {
-            return $this->sendError('Product not found.');
+            return $this->sendError('Unit not found.');
         }
         return $this->sendResponse(new CompanyResource($unit), 'Unit retrieved successfully.');
     }
@@ -84,7 +95,7 @@ class UnitController extends BaseController
      * @param  int  $id
      * @return JsonResponse
      */
-    public function update(Request $request, Unit $product)
+    public function update(Request $request, Unit $unit)
     {
         $input = $request->all();
         $validator = Validator::make($input, [
@@ -94,10 +105,10 @@ class UnitController extends BaseController
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());
         }
-        $product->name = $input['name'];
-        $product->detail = $input['detail'];
-        $product->save();
-        return $this->sendResponse(new CompanyResource($product), 'Unit updated successfully.');
+        $unit->name = $input['name'];
+        $unit->detail = $input['detail'];
+        $unit->save();
+        return $this->sendResponse(new CompanyResource($unit), 'Unit updated successfully.');
     }
 
     /**
@@ -109,6 +120,9 @@ class UnitController extends BaseController
     public function destroy(Unit $unit)
     {
         $unit->delete();
-        return $this->sendResponse([], 'Unit deletedphp artisan make:migration create_relation_tables.');
+        return $this->sendResponse([], 'Unit delete.');
     }
+
+    //another function for assign user to the unit
+
 }

@@ -15,9 +15,8 @@ class UserController extends BaseController
     function __construct()
     {
         $this->middleware('permission:user_approval', ['only' => ['registerAccount']]);
-//        $this->middleware('permission:product-create', ['only' => ['create','store']]);
-//        $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
-//        $this->middleware('permission:product-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:user-user_assign_role', ['only' => ['changeRole']]);
+//        $this->middleware('permission:user_disapprove', ['only' => ['disapprove']]);
     }
     /**
      * Register approved accounts api
@@ -45,7 +44,7 @@ class UserController extends BaseController
     public function disapprove(UserApproval $requests): JsonResponse
     {
         $requests->delete();
-        return $this->sendResponse([], 'Admin disapprove user account.');
+        return $this->sendResponse([], 'Admin disapproved user account.');
     }
 
     public function changeRole(Request $request, User $user): JsonResponse
@@ -59,13 +58,21 @@ class UserController extends BaseController
         }
         DB::table('model_has_roles')->where('model_id', '=', $user->id)->delete();
         $user->assignRole($request->role_id);
-//        $k = DB::table('model_has_roles')
-//            ->where('model_id','=',$user->id)
-//            ->join('roles', 'roles.id', '=', 'model_has_roles.role_id')
-//            ->select('roles.name')
-//            ->first();
-//        $user->removeRole($k);
         $success['attributes'] = $user;
         return $this->sendResponse($success, 'Admin change user role successfully.');
+    }
+    public function adminList($id) {
+        $user = User::all();
+        if (is_null($user)) {
+            return $this->sendError('No Record.');
+        }
+        return $this->sendResponse($user, 'Admin retrieved successfully.');
+    }
+    public function getAdminById($id) {
+        $user = User::find($id);
+        if (is_null($user)) {
+            return $this->sendError('User not found.');
+        }
+        return $this->sendResponse($user, 'Admin details retrieved successfully.');
     }
 }

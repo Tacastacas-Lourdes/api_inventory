@@ -27,7 +27,7 @@ class RegisterController extends BaseController
             'last_name' => 'required',
             'middle_name' => 'required',
             'suffix' => 'required',
-            'role_request' => '',//relation nga validation
+            'role_request' => 'exists:roles,name', //relation nga validation
             'email' => 'required|email',
             'password' => 'required|same:confirmPassword',
         ]);
