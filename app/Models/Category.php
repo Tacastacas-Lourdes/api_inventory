@@ -11,8 +11,8 @@ class Category extends Model
 
     protected  $fillable = ['category'];
 
-    public function unit()
+    public function spec()
     {
-        return $this->hasMany(Unit::class);
+        return $this->belongsToMany(Specification::class)->using(CategorySpecification::class);
     }
 }

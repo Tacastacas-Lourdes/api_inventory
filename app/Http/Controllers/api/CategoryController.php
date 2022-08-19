@@ -5,9 +5,11 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;
+use App\Models\Specification;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use function PHPUnit\Framework\isEmpty;
 
 class CategoryController extends BaseController
 {
@@ -45,7 +47,19 @@ class CategoryController extends BaseController
             return $this->sendError('Validation Error.', $validator->errors());
         }
         $category = Category::create($input);
-        return $this->sendResponse(new CategoryResource($category), 'Category created successfully.');
+        if ($request->spec == NULL){
+            return $this->sendResponse(new CategoryResource($category), 'Category created successfully.');
+        }
+        else{
+            foreach($request->spec as $name){
+                $spec = Specification::create([
+                    'name' => $name,
+                ]);
+                $spec->category()->sync($category);
+                $spec->save();
+            };
+                return $this->sendResponse(new CategoryResource($category), 'Category & Specification created successfully.');
+        }
     }
 
     /**

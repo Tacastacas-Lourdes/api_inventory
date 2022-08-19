@@ -35,16 +35,14 @@ class UnitController extends BaseController
      * @param Request $request
      * @return JsonResponse
      */
-    public function store(Request $request, Category $cat_id)//param add-ons category id
+    public function store(Request $request)
     {
-//        $input = $request->all();
         $validator = Validator::make($request->all(), [
-//            'unit_id' => 'required',
             'brand' => 'required',
             'model' => 'required',
             'serial' => 'required',
-            'company_id' => 'required',
-            'category_id' => 'required'
+//            'company_id' => 'required',
+//            'category_id' => 'required'
         ]);
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());
@@ -58,6 +56,7 @@ class UnitController extends BaseController
             $unit->category()->associate($request->company_id);
             $unit->status()->associate($request->status_id);
         }
+        //Unit::query()->has('status')->toSql()  ---> select all from `statuses` where `units`.`status_id` = `statuses`.`id`
         $unit->save();
         return $this->sendResponse(new UnitResource($unit), 'Unit created successfully.');
     }
