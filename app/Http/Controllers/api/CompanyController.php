@@ -2,112 +2,86 @@
 
 namespace App\Http\Controllers\api;
 
+use App\Http\Controllers\API\BaseController as BaseController;
+use App\Http\Requests\Company\StoreCompanyRequest;
+use App\Http\Requests\Company\UpdateCompanyRequest;
 use App\Http\Resources\CompanyResource;
 use App\Models\Company;
 use Illuminate\Http\JsonResponse;
-use App\Http\Controllers\API\BaseController as BaseController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-
 
 class CompanyController extends BaseController
 {
-    function __construct()
+    public function __construct()
     {
         $this->middleware('permission:company_create', ['only' => ['store']]);
 //        $this->middleware('permission:product-create', ['only' => ['create','store']]);
 //        $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
 //        $this->middleware('permission:product-delete', ['only' => ['destroy']]);
     }
+
     /**
      * Display a listing of the resource.
      *
      * @return JsonResponse
      */
-    public function index()
+    public function index(): JsonResponse
     {
         $company = Company::all();
+
         return $this->sendResponse(CompanyResource::collection($company), 'Company retrieved successfully.');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  StoreCompanyRequest  $request
      * @return JsonResponse
      */
-    public function store(Request $request)
+    public function store(StoreCompanyRequest $request): JsonResponse
     {
-        $input = $request->all();
-        $validator = Validator::make($input, [
-            'company' => 'required',
-            'acronym' => 'required',
-        ]);
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
-        }
-        $company = Company::create($input);
+        $input = $request->validated();
+        $company = Company::query()->create($input);
+
         return $this->sendResponse(new CompanyResource($company), 'Company created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Company  $company
      * @return JsonResponse
      */
-    public function show($id)
+    public function show(Company $company): JsonResponse
     {
-        $company = Company::find($id);
-        if (is_null($company)) {
-            return $this->sendError('Company not found.');
-        }
-        return $this->sendResponse(new CompanyResource($company), 'Unit retrieved successfully.');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return $this->sendResponse(new CompanyResource($company), 'Company retrieved successfully.');
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param  int  $id
+     * @param  UpdateCompanyRequest  $request
+     * @param  Company  $company
      * @return JsonResponse
      */
-    public function update(Request $request, Company $company)
+    public function update(UpdateCompanyRequest $request, Company $company): JsonResponse
     {
-        $input = $request->all();
-        $validator = Validator::make($input, [
-            'company' => 'required',
-            'acronym' => 'required'
-        ]);
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
-        }
-        $company->company = $input['company'];
+        $input = $request->validated();
+        $company->company = $input['name'];
         $company->acronym = $input['acronym'];
-        $company->save();
-        return $this->sendResponse(new CompanyResource($company), 'Unit updated successfully.');
+
+        return $this->sendResponse(new CompanyResource($company), 'Company updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Company  $company
      * @return JsonResponse
      */
-    public function destroy(Company $company)
+    public function destroy(Company $company): JsonResponse
     {
         $company->delete();
-        return $this->sendResponse([], 'Company deleted.');
+
+        return $this->sendResponse($company, 'Company deleted.');
     }
 }

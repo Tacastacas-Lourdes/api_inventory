@@ -1,7 +1,6 @@
 <?php
 
-use App\Models\Category;
-use App\Models\Specification;
+use App\Models\Unit;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,10 +14,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category_specification', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Category::class)->constrained();
-            $table->foreignIdFor(Specification::class)->constrained();
+        Schema::create('remarks', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->date('date');
+            $table->foreignIdFor(Unit::class)->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_specification');
+        Schema::dropIfExists('remarks');
     }
 };

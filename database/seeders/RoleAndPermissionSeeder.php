@@ -59,10 +59,10 @@ class RoleAndPermissionSeeder extends Seeder
             'status_show_details',
             'status_delete',
             'status_update_btn',
-            'activity_log'
+            'activity_log',
         ];
 
-        foreach($permissions as $permission){
+        foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);
         }
 
@@ -77,7 +77,7 @@ class RoleAndPermissionSeeder extends Seeder
             'status_show_details',
             'status_delete',
             'status_update_btn',
-            'activity_log'
+            'activity_log',
         ]);
     }
 }

@@ -24,10 +24,10 @@ return new class extends Migration
             $table->string('model');
             $table->string('serial');
             $table->integer('count')->nullable();
-            $table->foreignIdFor(Category::class)->nullable()->constrained();
-            $table->foreignIdFor(Company::class)->nullable()->constrained();
-            $table->foreignIdFor(Status::class)->nullable()->constrained();
-            $table->foreignIdFor(User::class)->nullable()->constrained();
+            $table->foreignIdFor(Category::class)->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Company::class)->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Status::class)->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(User::class)->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

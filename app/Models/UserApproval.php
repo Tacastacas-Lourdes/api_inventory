@@ -10,5 +10,4 @@ class UserApproval extends Model
     use HasFactory;
 
     protected $fillable = ['employee_id', 'last_name', 'first_name', 'middle_name', 'suffix', 'role_request', 'email', 'password'];
-
 }

@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Status extends Model
 {
     use HasFactory;
-    protected $fillable = ['status'];
+
+    protected $fillable = ['name'];
+
     public function unit()
     {
         return $this->hasOne(unit::class);

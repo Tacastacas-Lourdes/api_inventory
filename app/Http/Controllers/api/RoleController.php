@@ -2,62 +2,76 @@
 
 namespace App\Http\Controllers\api;
 
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Spatie\Permission\Models\Role;
 use App\Http\Controllers\API\BaseController as BaseController;
+use App\Http\Requests\Role\StoreRoleRequest;
+use App\Http\Requests\Role\UpdateRoleRequest;
+use App\Http\Resources\RoleResource;
+use Illuminate\Http\JsonResponse;
+use Spatie\Permission\Models\Role;
 
 class RoleController extends BaseController
 {
-    public function index()
+    public function index(): JsonResponse
     {
         $role = Role::all();
-        if (is_null($role)) {
-            return $this->sendError('No Record.');
-        }
+
         return $this->sendResponse($role, 'Role retrieved successfully.');
     }
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  StoreRoleRequest  $request
      * @return JsonResponse
      */
-    public function store(Request $request)
+    public function store(StoreRoleRequest $request): JsonResponse
     {
-        $input = $request->all();
-        $validator = Validator::make($input, [
-            'name' => 'required|unique:roles',
-            'permissions' => 'nullable|array',
-            'permissions.*' => "integer|exists:permissions,id",
-        ]);
-        if($request->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
-        }
+        $input = $request->validated();
         $role = Role::create($input);
-        $role->permissions()->sync($request->permissions);
+        $role->permissions()->sync($input['permissions']);
         $role->save();
-        return $this->sendResponse($role, 'Role with permissions created successfully.');
+
+        return $this->sendResponse(new RoleResource($role), 'Role with permissions created successfully.');
     }
-    public function update(Request $request, Role $role)
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  Role  $role
+     * @return JsonResponse
+     */
+    public function show(Role $role): JsonResponse
     {
-        $input = $request->all();
-        $validator = Validator::make($input, [
-            'permissions' => 'nullable|array',
-            'permissions.*' => "integer|exists:permissions,id",
-        ]);
-        if($validator->fails()){
-            return $this->sendError('Validation Error.', $validator->errors());
-        }
+        return $this->sendResponse(new RoleResource($role), 'Roles retrieved successfully.');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  UpdateRoleRequest  $request
+     * @param  Role  $role
+     * @return JsonResponse
+     */
+    public function update(UpdateRoleRequest $request, Role $role): JsonResponse
+    {
+        $input = $request->validated();
         $role->update($input);
         $role->permissions()->sync($input['permissions']);
         $role->save();
-        return $this->sendResponse($role, 'Role with permissions updated successfully.');
+
+        return $this->sendResponse(new RoleResource($role), 'Role with permissions updated successfully.');
     }
-    public function destroy(Role $role)
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  Role  $role
+     * @return JsonResponse
+     */
+    public function destroy(Role $role): JsonResponse
     {
         $role->delete();
-        return $this->sendResponse([], 'Role deleted.');
+
+        return $this->sendResponse($role, 'Role deleted.');
     }
 }
