@@ -12,6 +12,10 @@ class Unit extends Model
 {
     use HasFactory;
 
+    protected $appends = [
+        'uniqueId',
+    ];
+
     protected $fillable = ['unit_id', 'brand', 'model', 'serial', 'count', 'company_id', 'category_id', 'status_id',
         'user_id', ];
 
@@ -53,15 +57,17 @@ class Unit extends Model
             ->withTimestamps();
     }
 
+//    public function getUniqueIdAttribute()
+//    {
+//        return implode('-', [$this->company->acronym, $this->category->name, str_pad($this->count, 6, 0, STR_PAD_LEFT)]);
+//    }
     public static function boot()
     {
         parent::boot();
 
         static::creating(function (Model $unit) {
-//            dd($unit);
-            $unit->count = Unit::query()->where('category_id', $unit->category->id)->max('count') + 1;
-            $unit->unit_id = $unit->company->acronym.'-'.$unit->category->name.'-'.str_pad($unit->count, 6, 0, STR_PAD_LEFT);
-//            $unit->unit_id = 'Company-category-count';
+            $count = $unit->category->unit()->count();
+            $unit->unit_id = $unit->company->acronym.'-'.$unit->category->name.'-'.str_pad($count + 1, 6, 0, STR_PAD_LEFT);
         });
     }
 }

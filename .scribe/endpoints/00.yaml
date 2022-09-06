@@ -1,37 +1,12 @@
-name: 'Category Management'
-description: |-
-
-  APIs to manage the category resource.
+name: Authentication
+description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/category
-    metadata:
-      title: 'Display a listing of the resource.'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-      Authorization: 'Bearer {token}'
-    urlParameters: []
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":1,"category":"Laptop","created_at":"02\/09\/2022","updated_at":"02\/09\/2022","specification":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-02T08:19:33.000000Z","updated_at":"2022-09-02T08:19:33.000000Z"},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-02T08:19:33.000000Z","updated_at":"2022-09-02T08:19:33.000000Z"}]},{"id":1,"category":"Laptop","created_at":"02\/09\/2022","updated_at":"02\/09\/2022","specification":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-02T08:19:33.000000Z","updated_at":"2022-09-02T08:19:33.000000Z"},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-02T08:19:33.000000Z","updated_at":"2022-09-02T08:19:33.000000Z"}]}]}'
-        headers: []
-        description: '0'
-    responseFields: []
-  -
-    httpMethods:
       - POST
-    uri: api/category
+    uri: api/register
     metadata:
-      title: 'Store a newly created resource in storage.'
+      title: 'Register api'
       description: ''
       authenticated: false
       custom: []
@@ -41,81 +16,116 @@ endpoints:
     urlParameters: []
     queryParameters: []
     bodyParameters:
-      name:
-        name: name
+      employee_id:
+        name: employee_id
         description: ''
         required: true
-        example: iusto
+        example: ullam
         type: string
         custom: []
-      spec:
-        name: spec
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: ullam
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: ipsa
+        type: string
+        custom: []
+      middle_name:
+        name: middle_name
         description: ''
         required: false
-        example:
-          - aliquid
-        type: 'string[]'
+        example: null
+        type: string
+        custom: []
+      suffix:
+        name: suffix
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      company_id:
+        name: company_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      role_request:
+        name: role_request
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: westley26@example.net
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'The value and <code>confirmPassword</code> must match.'
+        required: true
+        example: a
+        type: string
         custom: []
     responses: []
     responseFields: []
   -
     httpMethods:
-      - GET
-    uri: 'api/category/{id}'
+      - POST
+    uri: api/login
     metadata:
-      title: 'Display the specified resource.'
+      title: 'Login api'
       description: ''
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'Category ID'
-        required: true
-        example: 20
-        type: integer
-        custom: []
+    urlParameters: []
     queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":1,"category":"Laptop","created_at":"02\/09\/2022","updated_at":"02\/09\/2022","specification":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-02T08:19:33.000000Z","updated_at":"2022-09-02T08:19:33.000000Z"},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-02T08:19:33.000000Z","updated_at":"2022-09-02T08:19:33.000000Z"}]}}'
-        headers: []
-        description: '0'
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must not be greater than 191 characters.'
+        required: true
+        example: fijksjacdvyzzfrxzlqhqrqzrxulniahjjylcud
+        type: string
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: nihil
+        type: string
+        custom: []
+    responses: []
     responseFields: []
   -
     httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/category/{id}'
+      - POST
+    uri: api/logout
     metadata:
-      title: 'Update the specified resource in storage.'
+      title: Logout
       description: ''
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the category.'
-        required: true
-        example: 1
-        type: integer
-        custom: []
+    urlParameters: []
     queryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: true
-        example: optio
-        type: string
-        custom: []
+    bodyParameters: []
     responses: []
     responseFields: []

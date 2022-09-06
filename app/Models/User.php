@@ -8,12 +8,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\Activitylog\Traits\CausesActivity;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Models\Activity;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles, CausesActivity;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, LogsActivity;
 
     protected static $logName = 'custom_log_name_for_this_model';
 
@@ -178,5 +180,47 @@ class User extends Authenticatable
         $this->deactivated_at = now();
 
         return $this->save();
+    }
+
+    /**
+     * @param  bool  $bool
+     * @return bool
+     */
+    public function isActivated(bool $bool = true): bool
+    {
+        return isset($this->deactivated_at) == $bool;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDeactivated(): bool
+    {
+        return isset($this->deactivated_at);
+    }
+
+    public function tapActivity(Activity $activity, string $eventName)
+    {
+//        dd('activity',$activity->toArray());
+        $collect = collect($activity->properties)->get('attributes');
+        if (count($collect) == 1) {
+            if (isset($collect['approved_at'])) {
+                $activity->description = 'User has been approved.';
+//            $activity->description = "User has been " . ($collect['approved_at'] ? 'approved': 'disapproved') . ".";
+            } elseif (isset($collect['disapproved_at'])) {
+                $activity->description = 'User has been disapproved.';
+            } elseif (isset($collect['deactivated_at'])) {
+                $activity->description = 'User has been '.($collect['deactivated_at'] ? 'deactivated' : 'activated').'.';
+            }
+        }
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->useLogName('user')
+//            ->setDescriptionForEvent(fn(string $eventName) => "This model has been {$eventName}")
+            ->logOnly(['brand', 'model', 'serial', 'approved_at', 'deactivated_at'])
+            ->logOnlyDirty();
     }
 }

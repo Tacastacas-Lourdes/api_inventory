@@ -9,6 +9,9 @@ use App\Http\Resources\CompanyResource;
 use App\Models\Company;
 use Illuminate\Http\JsonResponse;
 
+/**
+ * @group Company Management
+ */
 class CompanyController extends BaseController
 {
     public function __construct()
@@ -37,13 +40,14 @@ class CompanyController extends BaseController
     /**
      * Store a newly created resource in storage.
      *
+     *
      * @param  StoreCompanyRequest  $request
      * @return JsonResponse
      */
     public function store(StoreCompanyRequest $request): JsonResponse
     {
         $input = $request->validated();
-        $company = Company::create($input);
+        $company = Company::query()->create($input);
 
         return $this->sendResponse(new CompanyResource($company), 'Company created successfully.');
     }
@@ -74,18 +78,5 @@ class CompanyController extends BaseController
         $company->status = $input['status'];
 
         return $this->sendResponse(new CompanyResource($company), 'Company updated successfully.');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  Company  $company
-     * @return JsonResponse
-     */
-    public function destroy(Company $company): JsonResponse
-    {
-        $company->delete();
-
-        return $this->sendResponse($company, 'Company deleted.');
     }
 }

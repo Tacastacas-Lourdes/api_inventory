@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+use Knuckles\Scribe\ScribeServiceProvider;
 
 return [
 
@@ -167,7 +168,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        ScribeServiceProvider::class,
         /*
          * Application Service Providers...
          */

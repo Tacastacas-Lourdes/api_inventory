@@ -26,7 +26,7 @@ return new class extends Migration
             $table->integer('count')->nullable();
             $table->foreignIdFor(Category::class)->nullable()->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Company::class)->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(Status::class)->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Status::class)->default('1')->constrained()->cascadeOnDelete();
             $table->foreignIdFor(User::class)->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

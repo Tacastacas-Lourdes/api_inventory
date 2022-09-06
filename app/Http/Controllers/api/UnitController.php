@@ -43,7 +43,7 @@ class UnitController extends BaseController
     public function store(StoreUnitRequest $request): JsonResponse
     {
         $input = $request->validated();
-        $unit = Unit::query()->create($input);
+        $unit = Unit::query()->make($input);
 
         if ($unit instanceof Unit) {
             $unit->company()->associate($input['company_id']);

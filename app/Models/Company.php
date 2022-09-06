@@ -15,6 +15,8 @@ class Company extends Model
 
     protected $fillable = ['name', 'acronym', 'status'];
 
+    /***** RELATIONSHIP *****/
+
     public function unit(): HasMany
     {
         return $this->hasMany(Unit::class);
@@ -25,9 +27,14 @@ class Company extends Model
         return $this->belongsToMany(User::class)->using(CompanyUser::class);
     }
 
+    /***** OTHER FUNCTIONS *****/
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-                ->logOnly(['name', 'acronym']);
+            ->useLogName('company')
+            ->setDescriptionForEvent(fn (string $eventName) => "This model has been {$eventName}")
+            ->logOnly(['name', 'acronym'])
+            ->logOnlyDirty();
     }
 }

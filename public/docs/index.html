@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var baseUrl = "http://localhost";
+        var baseUrl = "https://d6df-49-146-46-12.ngrok.io";
         var useCsrf = Boolean(1);
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -70,6 +70,22 @@
                                                 </ul>
                     
                     <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authentication">
+                    <a href="#authentication">Authentication</a>
+                </li>
+                                    <ul id="tocify-subheader-authentication" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="authentication-POSTapi-register">
+                        <a href="#authentication-POSTapi-register">Register api</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="authentication-POSTapi-login">
+                        <a href="#authentication-POSTapi-login">Login api</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="authentication-POSTapi-logout">
+                        <a href="#authentication-POSTapi-logout">Logout</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-3" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="category-management">
                     <a href="#category-management">Category Management</a>
                 </li>
@@ -88,18 +104,31 @@
                     </li>
                                                     </ul>
                             </ul>
-                    <ul id="tocify-header-3" class="tocify-header">
+                    <ul id="tocify-header-4" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="company-management">
+                    <a href="#company-management">Company Management</a>
+                </li>
+                                    <ul id="tocify-subheader-company-management" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="company-management-GETapi-company">
+                        <a href="#company-management-GETapi-company">Display a listing of the resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="company-management-POSTapi-company">
+                        <a href="#company-management-POSTapi-company">Store a newly created resource in storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="company-management-GETapi-company--id-">
+                        <a href="#company-management-GETapi-company--id-">Display the specified resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="company-management-PUTapi-company--id-">
+                        <a href="#company-management-PUTapi-company--id-">Update the specified resource in storage.</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-5" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="endpoints">
                     <a href="#endpoints">Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-register">
-                        <a href="#endpoints-POSTapi-register">Register api</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-login">
-                        <a href="#endpoints-POSTapi-login">Login api</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-role">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-role">
                         <a href="#endpoints-GETapi-role">GET api/role</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-POSTapi-role">
@@ -117,21 +146,6 @@
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-user-deactivated_account">
                         <a href="#endpoints-GETapi-user-deactivated_account">GET api/user/deactivated_account</a>
                     </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-company">
-                        <a href="#endpoints-GETapi-company">Display a listing of the resource.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-company">
-                        <a href="#endpoints-POSTapi-company">Store a newly created resource in storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-company--id-">
-                        <a href="#endpoints-GETapi-company--id-">Display the specified resource.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-PUTapi-company--id-">
-                        <a href="#endpoints-PUTapi-company--id-">Update the specified resource in storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-company--id-">
-                        <a href="#endpoints-DELETEapi-company--id-">Remove the specified resource from storage.</a>
-                    </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-POSTapi-user--requestor_id--approve">
                         <a href="#endpoints-POSTapi-user--requestor_id--approve">Register approved accounts api</a>
                     </li>
@@ -140,9 +154,6 @@
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-user-disapproved_account">
                         <a href="#endpoints-GETapi-user-disapproved_account">GET api/user/disapproved_account</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-logout">
-                        <a href="#endpoints-POSTapi-logout">POST api/logout</a>
                     </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-PUTapi-user--user_id--change_role">
                         <a href="#endpoints-PUTapi-user--user_id--change_role">PUT api/user/{user_id}/change_role</a>
@@ -183,18 +194,6 @@
                                     <li class="tocify-item level-2" data-unique="endpoints-PUTapi-status--id-">
                         <a href="#endpoints-PUTapi-status--id-">Update the specified resource in storage.</a>
                     </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-spec">
-                        <a href="#endpoints-GETapi-spec">Display a listing of the resource.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-spec">
-                        <a href="#endpoints-POSTapi-spec">Store a newly created resource in storage.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-spec--id-">
-                        <a href="#endpoints-GETapi-spec--id-">Display the specified resource.</a>
-                    </li>
-                                    <li class="tocify-item level-2" data-unique="endpoints-PUTapi-spec--id-">
-                        <a href="#endpoints-PUTapi-spec--id-">Update the specified resource in storage.</a>
-                    </li>
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-remark">
                         <a href="#endpoints-GETapi-remark">Display a listing of the resource.</a>
                     </li>
@@ -210,6 +209,28 @@
                                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-user-employee_list">
                         <a href="#endpoints-GETapi-user-employee_list">GET api/user/employee_list</a>
                     </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-activity_logs">
+                        <a href="#endpoints-GETapi-activity_logs">GET api/activity_logs</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-6" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="specification-management">
+                    <a href="#specification-management">Specification Management</a>
+                </li>
+                                    <ul id="tocify-subheader-specification-management" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="specification-management-GETapi-spec">
+                        <a href="#specification-management-GETapi-spec">Display a listing of the resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="specification-management-POSTapi-spec">
+                        <a href="#specification-management-POSTapi-spec">Store a newly created resource in storage.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="specification-management-GETapi-spec--id-">
+                        <a href="#specification-management-GETapi-spec--id-">Display the specified resource.</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="specification-management-PUTapi-spec--id-">
+                        <a href="#specification-management-PUTapi-spec--id-">Update the specified resource in storage.</a>
+                    </li>
                                                     </ul>
                             </ul>
         
@@ -222,7 +243,7 @@
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
         <ul class="toc-footer" id="last-updated">
-        <li>Last updated: September 5 2022</li>
+        <li>Last updated: September 6 2022</li>
     </ul>
 </div>
 
@@ -236,12 +257,390 @@ You can switch the language used with the tabs at the top right (or from the nav
 <blockquote>
 <p>Base URL</p>
 </blockquote>
-<pre><code class="language-yaml">http://localhost</code></pre>
+<pre><code class="language-yaml">https://d6df-49-146-46-12.ngrok.io</code></pre>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
+
+        <h1 id="authentication">Authentication</h1>
+
+    
+
+            <h2 id="authentication-POSTapi-register">Register api</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://d6df-49-146-46-12.ngrok.io/api/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"employee_id\": \"ullam\",
+    \"first_name\": \"ullam\",
+    \"last_name\": \"ipsa\",
+    \"email\": \"westley26@example.net\",
+    \"password\": \"a\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "employee_id": "ullam",
+    "first_name": "ullam",
+    "last_name": "ipsa",
+    "email": "westley26@example.net",
+    "password": "a"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-register">
+</span>
+<span id="execution-results-POSTapi-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-register"></code></pre>
+</span>
+<span id="execution-error-POSTapi-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-register"></code></pre>
+</span>
+<form id="form-POSTapi-register" data-method="POST"
+      data-path="api/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-register"
+                    onclick="tryItOut('POSTapi-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-register"
+                    onclick="cancelTryOut('POSTapi-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-register" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/register</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>employee_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="employee_id"
+               data-endpoint="POSTapi-register"
+               value="ullam"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="first_name"
+               data-endpoint="POSTapi-register"
+               value="ullam"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="last_name"
+               data-endpoint="POSTapi-register"
+               value="ipsa"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>middle_name</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="middle_name"
+               data-endpoint="POSTapi-register"
+               value=""
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>suffix</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="suffix"
+               data-endpoint="POSTapi-register"
+               value=""
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>company_id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="company_id"
+               data-endpoint="POSTapi-register"
+               value=""
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>role_request</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="role_request"
+               data-endpoint="POSTapi-register"
+               value=""
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-register"
+               value="westley26@example.net"
+               data-component="body" hidden>
+    <br>
+<p>Must be a valid email address.</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-register"
+               value="a"
+               data-component="body" hidden>
+    <br>
+<p>The value and <code>confirmPassword</code> must match.</p>
+        </p>
+        </form>
+
+            <h2 id="authentication-POSTapi-login">Login api</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://d6df-49-146-46-12.ngrok.io/api/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"fijksjacdvyzzfrxzlqhqrqzrxulniahjjylcud\",
+    \"password\": \"nihil\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "fijksjacdvyzzfrxzlqhqrqzrxulniahjjylcud",
+    "password": "nihil"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-login">
+</span>
+<span id="execution-results-POSTapi-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-login"></code></pre>
+</span>
+<span id="execution-error-POSTapi-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-login"></code></pre>
+</span>
+<form id="form-POSTapi-login" data-method="POST"
+      data-path="api/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-login"
+                    onclick="tryItOut('POSTapi-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-login"
+                    onclick="cancelTryOut('POSTapi-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-login" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/login</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-login"
+               value="fijksjacdvyzzfrxzlqhqrqzrxulniahjjylcud"
+               data-component="body" hidden>
+    <br>
+<p>Must not be greater than 191 characters.</p>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-login"
+               value="nihil"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="authentication-POSTapi-logout">Logout</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-logout">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://d6df-49-146-46-12.ngrok.io/api/logout" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/logout"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-logout">
+</span>
+<span id="execution-results-POSTapi-logout" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-logout"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-logout"></code></pre>
+</span>
+<span id="execution-error-POSTapi-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-logout"></code></pre>
+</span>
+<form id="form-POSTapi-logout" data-method="POST"
+      data-path="api/logout"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-logout', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-logout"
+                    onclick="tryItOut('POSTapi-logout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-logout"
+                    onclick="cancelTryOut('POSTapi-logout');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-logout" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/logout</code></b>
+        </p>
+                    </form>
 
         <h1 id="category-management">Category Management</h1>
 
@@ -250,6 +649,7 @@ You can switch the language used with the tabs at the top right (or from the nav
             <h2 id="category-management-GETapi-category">Display a listing of the resource.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -260,21 +660,21 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/category" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/category" \
+    --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "Authorization: Bearer {token}"</code></pre></div>
+    --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/category"
+    "https://d6df-49-146-46-12.ngrok.io/api/category"
 );
 
 const headers = {
+    "Authorization": "Bearer {token}",
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "Authorization": "Bearer {token}",
 };
 
 fetch(url, {
@@ -295,44 +695,100 @@ fetch(url, {
         {
             &quot;id&quot;: 1,
             &quot;category&quot;: &quot;Laptop&quot;,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;,
+            &quot;created_at&quot;: &quot;06/09/2022&quot;,
+            &quot;updated_at&quot;: &quot;06/09/2022&quot;,
             &quot;specification&quot;: [
                 {
                     &quot;id&quot;: 1,
                     &quot;name&quot;: &quot;CPU&quot;,
                     &quot;category_id&quot;: 1,
-                    &quot;created_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;
+                    &quot;created_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;
                 },
                 {
                     &quot;id&quot;: 2,
                     &quot;name&quot;: &quot;Memory&quot;,
                     &quot;category_id&quot;: 1,
-                    &quot;created_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;
+                    &quot;created_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;name&quot;: &quot;gpu&quot;,
+                    &quot;category_id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 4,
+                    &quot;name&quot;: &quot;storage&quot;,
+                    &quot;category_id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 5,
+                    &quot;name&quot;: &quot;remark&quot;,
+                    &quot;category_id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 6,
+                    &quot;name&quot;: &quot;color&quot;,
+                    &quot;category_id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;
                 }
             ]
         },
         {
             &quot;id&quot;: 1,
             &quot;category&quot;: &quot;Laptop&quot;,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;,
+            &quot;created_at&quot;: &quot;06/09/2022&quot;,
+            &quot;updated_at&quot;: &quot;06/09/2022&quot;,
             &quot;specification&quot;: [
                 {
                     &quot;id&quot;: 1,
                     &quot;name&quot;: &quot;CPU&quot;,
                     &quot;category_id&quot;: 1,
-                    &quot;created_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;
+                    &quot;created_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;
                 },
                 {
                     &quot;id&quot;: 2,
                     &quot;name&quot;: &quot;Memory&quot;,
                     &quot;category_id&quot;: 1,
-                    &quot;created_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;,
-                    &quot;updated_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;
+                    &quot;created_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;name&quot;: &quot;gpu&quot;,
+                    &quot;category_id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 4,
+                    &quot;name&quot;: &quot;storage&quot;,
+                    &quot;category_id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 5,
+                    &quot;name&quot;: &quot;remark&quot;,
+                    &quot;category_id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 6,
+                    &quot;name&quot;: &quot;color&quot;,
+                    &quot;category_id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;
                 }
             ]
         }
@@ -352,10 +808,10 @@ fetch(url, {
 </span>
 <form id="form-GETapi-category" data-method="GET"
       data-path="api/category"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json","Authorization":"Bearer {token}"}'
+      data-headers='{"Authorization":"Bearer {token}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETapi-category', this);">
     <h3>
@@ -379,7 +835,15 @@ fetch(url, {
             <small class="badge badge-green">GET</small>
             <b><code>api/category</code></b>
         </p>
-                    </form>
+                <p>
+            <label id="auth-GETapi-category" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-category"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
             <h2 id="category-management-POSTapi-category">Store a newly created resource in storage.</h2>
 
@@ -394,13 +858,13 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/category" \
+    "https://d6df-49-146-46-12.ngrok.io/api/category" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"iusto\",
+    \"name\": \"eos\",
     \"spec\": [
-        \"aliquid\"
+        \"qui\"
     ]
 }"
 </code></pre></div>
@@ -408,7 +872,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/category"
+    "https://d6df-49-146-46-12.ngrok.io/api/category"
 );
 
 const headers = {
@@ -417,9 +881,9 @@ const headers = {
 };
 
 let body = {
-    "name": "iusto",
+    "name": "eos",
     "spec": [
-        "aliquid"
+        "qui"
     ]
 };
 
@@ -478,7 +942,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-category"
-               value="iusto"
+               value="eos"
                data-component="body" hidden>
     <br>
 
@@ -511,14 +975,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/category/20" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/category/10" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/category/20"
+    "https://d6df-49-146-46-12.ngrok.io/api/category/10"
 );
 
 const headers = {
@@ -543,22 +1007,50 @@ fetch(url, {
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;category&quot;: &quot;Laptop&quot;,
-        &quot;created_at&quot;: &quot;02/09/2022&quot;,
-        &quot;updated_at&quot;: &quot;02/09/2022&quot;,
+        &quot;created_at&quot;: &quot;06/09/2022&quot;,
+        &quot;updated_at&quot;: &quot;06/09/2022&quot;,
         &quot;specification&quot;: [
             {
                 &quot;id&quot;: 1,
                 &quot;name&quot;: &quot;CPU&quot;,
                 &quot;category_id&quot;: 1,
-                &quot;created_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;
+                &quot;created_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;
             },
             {
                 &quot;id&quot;: 2,
                 &quot;name&quot;: &quot;Memory&quot;,
                 &quot;category_id&quot;: 1,
-                &quot;created_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-02T08:19:33.000000Z&quot;
+                &quot;created_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:25:54.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 3,
+                &quot;name&quot;: &quot;gpu&quot;,
+                &quot;category_id&quot;: 1,
+                &quot;created_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 4,
+                &quot;name&quot;: &quot;storage&quot;,
+                &quot;category_id&quot;: 1,
+                &quot;created_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T03:06:41.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 5,
+                &quot;name&quot;: &quot;remark&quot;,
+                &quot;category_id&quot;: 1,
+                &quot;created_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 6,
+                &quot;name&quot;: &quot;color&quot;,
+                &quot;category_id&quot;: 1,
+                &quot;created_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T03:08:23.000000Z&quot;
             }
         ]
     }
@@ -610,7 +1102,7 @@ fetch(url, {
                 <input type="number"
                name="id"
                data-endpoint="GETapi-category--id-"
-               value="20"
+               value="10"
                data-component="url" hidden>
     <br>
 <p>Category ID</p>
@@ -630,18 +1122,18 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/category/1" \
+    "https://d6df-49-146-46-12.ngrok.io/api/category/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"optio\"
+    \"name\": \"quia\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/category/1"
+    "https://d6df-49-146-46-12.ngrok.io/api/category/1"
 );
 
 const headers = {
@@ -650,7 +1142,7 @@ const headers = {
 };
 
 let body = {
-    "name": "optio"
+    "name": "quia"
 };
 
 fetch(url, {
@@ -723,7 +1215,459 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-category--id-"
-               value="optio"
+               value="quia"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+        <h1 id="company-management">Company Management</h1>
+
+    
+
+            <h2 id="company-management-GETapi-company">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-company">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/company" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/company"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-company">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-company" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-company"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-company"></code></pre>
+</span>
+<span id="execution-error-GETapi-company" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-company"></code></pre>
+</span>
+<form id="form-GETapi-company" data-method="GET"
+      data-path="api/company"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-company', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-company"
+                    onclick="tryItOut('GETapi-company');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-company"
+                    onclick="cancelTryOut('GETapi-company');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-company" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/company</code></b>
+        </p>
+                    </form>
+
+            <h2 id="company-management-POSTapi-company">Store a newly created resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-company">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://d6df-49-146-46-12.ngrok.io/api/company" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"repellat\",
+    \"acronym\": \"consequatur\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/company"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "repellat",
+    "acronym": "consequatur"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-company">
+</span>
+<span id="execution-results-POSTapi-company" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-company"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-company"></code></pre>
+</span>
+<span id="execution-error-POSTapi-company" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-company"></code></pre>
+</span>
+<form id="form-POSTapi-company" data-method="POST"
+      data-path="api/company"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-company', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-company"
+                    onclick="tryItOut('POSTapi-company');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-company"
+                    onclick="cancelTryOut('POSTapi-company');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-company" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/company</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="POSTapi-company"
+               value="repellat"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>acronym</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="acronym"
+               data-endpoint="POSTapi-company"
+               value="consequatur"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="company-management-GETapi-company--id-">Display the specified resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-company--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/company/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/company/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-company--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-company--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-company--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-company--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-company--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-company--id-"></code></pre>
+</span>
+<form id="form-GETapi-company--id-" data-method="GET"
+      data-path="api/company/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-company--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-company--id-"
+                    onclick="tryItOut('GETapi-company--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-company--id-"
+                    onclick="cancelTryOut('GETapi-company--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-company--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/company/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-company--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the company.</p>
+            </p>
+                    </form>
+
+            <h2 id="company-management-PUTapi-company--id-">Update the specified resource in storage.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-company--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://d6df-49-146-46-12.ngrok.io/api/company/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"dolor\",
+    \"acronym\": \"et\",
+    \"status\": 17
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/company/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "dolor",
+    "acronym": "et",
+    "status": 17
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-company--id-">
+</span>
+<span id="execution-results-PUTapi-company--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-company--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-company--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-company--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-company--id-"></code></pre>
+</span>
+<form id="form-PUTapi-company--id-" data-method="PUT"
+      data-path="api/company/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-company--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-company--id-"
+                    onclick="tryItOut('PUTapi-company--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-company--id-"
+                    onclick="cancelTryOut('PUTapi-company--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-company--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/company/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/company/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-company--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the company.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="PUTapi-company--id-"
+               value="dolor"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>acronym</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="acronym"
+               data-endpoint="PUTapi-company--id-"
+               value="et"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>status</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+                <input type="number"
+               name="status"
+               data-endpoint="PUTapi-company--id-"
+               value="17"
                data-component="body" hidden>
     <br>
 
@@ -733,302 +1677,6 @@ fetch(url, {
         <h1 id="endpoints">Endpoints</h1>
 
     
-
-            <h2 id="endpoints-POSTapi-register">Register api</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-register">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/register" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"employee_id\": \"nobis\",
-    \"first_name\": \"quod\",
-    \"last_name\": \"unde\",
-    \"email\": \"stiedemann.jared@example.com\",
-    \"password\": \"sed\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/register"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "employee_id": "nobis",
-    "first_name": "quod",
-    "last_name": "unde",
-    "email": "stiedemann.jared@example.com",
-    "password": "sed"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-register">
-</span>
-<span id="execution-results-POSTapi-register" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-register"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-register"></code></pre>
-</span>
-<span id="execution-error-POSTapi-register" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-register"></code></pre>
-</span>
-<form id="form-POSTapi-register" data-method="POST"
-      data-path="api/register"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-register', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-register"
-                    onclick="tryItOut('POSTapi-register');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-register"
-                    onclick="cancelTryOut('POSTapi-register');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-register" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/register</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>employee_id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="employee_id"
-               data-endpoint="POSTapi-register"
-               value="nobis"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="first_name"
-               data-endpoint="POSTapi-register"
-               value="quod"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="last_name"
-               data-endpoint="POSTapi-register"
-               value="unde"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>middle_name</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="middle_name"
-               data-endpoint="POSTapi-register"
-               value=""
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>suffix</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="suffix"
-               data-endpoint="POSTapi-register"
-               value=""
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>company_id</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="company_id"
-               data-endpoint="POSTapi-register"
-               value=""
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>role_request</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="role_request"
-               data-endpoint="POSTapi-register"
-               value=""
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="email"
-               data-endpoint="POSTapi-register"
-               value="stiedemann.jared@example.com"
-               data-component="body" hidden>
-    <br>
-<p>Must be a valid email address.</p>
-        </p>
-                <p>
-            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="password"
-               data-endpoint="POSTapi-register"
-               value="sed"
-               data-component="body" hidden>
-    <br>
-<p>The value and <code>confirmPassword</code> must match.</p>
-        </p>
-        </form>
-
-            <h2 id="endpoints-POSTapi-login">Login api</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-login">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/login" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"email\": \"mbkseknynbwfxrmlbvlauqpmqjdsduyivdaxh\",
-    \"password\": \"et\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/login"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "email": "mbkseknynbwfxrmlbvlauqpmqjdsduyivdaxh",
-    "password": "et"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-login">
-</span>
-<span id="execution-results-POSTapi-login" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-login"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-login"></code></pre>
-</span>
-<span id="execution-error-POSTapi-login" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-login"></code></pre>
-</span>
-<form id="form-POSTapi-login" data-method="POST"
-      data-path="api/login"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-login', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-login"
-                    onclick="tryItOut('POSTapi-login');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-login"
-                    onclick="cancelTryOut('POSTapi-login');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-login" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/login</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="email"
-               data-endpoint="POSTapi-login"
-               value="mbkseknynbwfxrmlbvlauqpmqjdsduyivdaxh"
-               data-component="body" hidden>
-    <br>
-<p>Must not be greater than 191 characters.</p>
-        </p>
-                <p>
-            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="password"
-               data-endpoint="POSTapi-login"
-               value="et"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-        </form>
 
             <h2 id="endpoints-GETapi-role">GET api/role</h2>
 
@@ -1043,14 +1691,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/role" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/role" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/role"
+    "https://d6df-49-146-46-12.ngrok.io/api/role"
 );
 
 const headers = {
@@ -1076,7 +1724,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
+x-ratelimit-remaining: 54
 vary: Origin
  </code></pre>
         </details>         <pre>
@@ -1088,15 +1736,15 @@ vary: Origin
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;super_admin&quot;,
             &quot;guard_name&quot;: &quot;web&quot;,
-            &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;
+            &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;
         },
         {
             &quot;id&quot;: 2,
             &quot;name&quot;: &quot;admin&quot;,
             &quot;guard_name&quot;: &quot;web&quot;,
-            &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;
+            &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;
         }
     ],
     &quot;message&quot;: &quot;Role retrieved successfully.&quot;
@@ -1157,13 +1805,13 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/role" \
+    "https://d6df-49-146-46-12.ngrok.io/api/role" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ut\",
+    \"name\": \"quos\",
     \"permissions\": [
-        4
+        20
     ]
 }"
 </code></pre></div>
@@ -1171,7 +1819,7 @@ vary: Origin
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/role"
+    "https://d6df-49-146-46-12.ngrok.io/api/role"
 );
 
 const headers = {
@@ -1180,9 +1828,9 @@ const headers = {
 };
 
 let body = {
-    "name": "ut",
+    "name": "quos",
     "permissions": [
-        4
+        20
     ]
 };
 
@@ -1241,7 +1889,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-role"
-               value="ut"
+               value="quos"
                data-component="body" hidden>
     <br>
 
@@ -1274,14 +1922,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/role/1" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/role/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/role/1"
+    "https://d6df-49-146-46-12.ngrok.io/api/role/1"
 );
 
 const headers = {
@@ -1307,7 +1955,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 53
 vary: Origin
  </code></pre>
         </details>         <pre>
@@ -1317,15 +1965,15 @@ vary: Origin
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;super_admin&quot;,
-        &quot;created_at&quot;: &quot;01/09/2022&quot;,
-        &quot;updated_at&quot;: &quot;01/09/2022&quot;,
+        &quot;created_at&quot;: &quot;06/09/2022&quot;,
+        &quot;updated_at&quot;: &quot;06/09/2022&quot;,
         &quot;permissions&quot;: [
             {
                 &quot;id&quot;: 1,
                 &quot;name&quot;: &quot;admin_panel_access&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 1
@@ -1335,8 +1983,8 @@ vary: Origin
                 &quot;id&quot;: 2,
                 &quot;name&quot;: &quot;user_approval&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 2
@@ -1346,8 +1994,8 @@ vary: Origin
                 &quot;id&quot;: 3,
                 &quot;name&quot;: &quot;users_access&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 3
@@ -1357,8 +2005,8 @@ vary: Origin
                 &quot;id&quot;: 4,
                 &quot;name&quot;: &quot;user-user_assign_role&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 4
@@ -1368,8 +2016,8 @@ vary: Origin
                 &quot;id&quot;: 5,
                 &quot;name&quot;: &quot;user_delete&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 5
@@ -1379,8 +2027,8 @@ vary: Origin
                 &quot;id&quot;: 6,
                 &quot;name&quot;: &quot;user_show_details&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 6
@@ -1390,8 +2038,8 @@ vary: Origin
                 &quot;id&quot;: 7,
                 &quot;name&quot;: &quot;roles_access&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 7
@@ -1401,8 +2049,8 @@ vary: Origin
                 &quot;id&quot;: 8,
                 &quot;name&quot;: &quot;role_edit&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 8
@@ -1412,8 +2060,8 @@ vary: Origin
                 &quot;id&quot;: 9,
                 &quot;name&quot;: &quot;role_delete&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 9
@@ -1423,8 +2071,8 @@ vary: Origin
                 &quot;id&quot;: 10,
                 &quot;name&quot;: &quot;role_create&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 10
@@ -1434,8 +2082,8 @@ vary: Origin
                 &quot;id&quot;: 11,
                 &quot;name&quot;: &quot;role_show&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 11
@@ -1445,8 +2093,8 @@ vary: Origin
                 &quot;id&quot;: 12,
                 &quot;name&quot;: &quot;permissions_access&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 12
@@ -1456,8 +2104,8 @@ vary: Origin
                 &quot;id&quot;: 13,
                 &quot;name&quot;: &quot;permission_edit&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 13
@@ -1467,8 +2115,8 @@ vary: Origin
                 &quot;id&quot;: 14,
                 &quot;name&quot;: &quot;company_access&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 14
@@ -1478,8 +2126,8 @@ vary: Origin
                 &quot;id&quot;: 15,
                 &quot;name&quot;: &quot;company_create&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 15
@@ -1489,8 +2137,8 @@ vary: Origin
                 &quot;id&quot;: 16,
                 &quot;name&quot;: &quot;company_update&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 16
@@ -1500,8 +2148,8 @@ vary: Origin
                 &quot;id&quot;: 17,
                 &quot;name&quot;: &quot;company_show_details&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 17
@@ -1511,8 +2159,8 @@ vary: Origin
                 &quot;id&quot;: 18,
                 &quot;name&quot;: &quot;company_delete&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 18
@@ -1522,8 +2170,8 @@ vary: Origin
                 &quot;id&quot;: 19,
                 &quot;name&quot;: &quot;equipment_access&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:38.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 19
@@ -1533,8 +2181,8 @@ vary: Origin
                 &quot;id&quot;: 20,
                 &quot;name&quot;: &quot;category_access&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 20
@@ -1544,8 +2192,8 @@ vary: Origin
                 &quot;id&quot;: 21,
                 &quot;name&quot;: &quot;category_create&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 21
@@ -1555,8 +2203,8 @@ vary: Origin
                 &quot;id&quot;: 22,
                 &quot;name&quot;: &quot;specification_access&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 22
@@ -1566,8 +2214,8 @@ vary: Origin
                 &quot;id&quot;: 23,
                 &quot;name&quot;: &quot;specification_create&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 23
@@ -1577,8 +2225,8 @@ vary: Origin
                 &quot;id&quot;: 24,
                 &quot;name&quot;: &quot;specification_show_details&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 24
@@ -1588,8 +2236,8 @@ vary: Origin
                 &quot;id&quot;: 25,
                 &quot;name&quot;: &quot;specification_delete&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 25
@@ -1599,8 +2247,8 @@ vary: Origin
                 &quot;id&quot;: 26,
                 &quot;name&quot;: &quot;specification_update_btn&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 26
@@ -1610,8 +2258,8 @@ vary: Origin
                 &quot;id&quot;: 27,
                 &quot;name&quot;: &quot;unit_access&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 27
@@ -1621,8 +2269,8 @@ vary: Origin
                 &quot;id&quot;: 28,
                 &quot;name&quot;: &quot;unit_create&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 28
@@ -1632,8 +2280,8 @@ vary: Origin
                 &quot;id&quot;: 29,
                 &quot;name&quot;: &quot;unit_show_details&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 29
@@ -1643,8 +2291,8 @@ vary: Origin
                 &quot;id&quot;: 30,
                 &quot;name&quot;: &quot;unit_delete&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 30
@@ -1654,8 +2302,8 @@ vary: Origin
                 &quot;id&quot;: 31,
                 &quot;name&quot;: &quot;unit_update_btn&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 31
@@ -1665,8 +2313,8 @@ vary: Origin
                 &quot;id&quot;: 32,
                 &quot;name&quot;: &quot;status_access&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 32
@@ -1676,8 +2324,8 @@ vary: Origin
                 &quot;id&quot;: 33,
                 &quot;name&quot;: &quot;status_create&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 33
@@ -1687,8 +2335,8 @@ vary: Origin
                 &quot;id&quot;: 34,
                 &quot;name&quot;: &quot;status_show_details&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 34
@@ -1698,8 +2346,8 @@ vary: Origin
                 &quot;id&quot;: 35,
                 &quot;name&quot;: &quot;status_delete&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 35
@@ -1709,8 +2357,8 @@ vary: Origin
                 &quot;id&quot;: 36,
                 &quot;name&quot;: &quot;status_update_btn&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 36
@@ -1720,8 +2368,8 @@ vary: Origin
                 &quot;id&quot;: 37,
                 &quot;name&quot;: &quot;activity_log&quot;,
                 &quot;guard_name&quot;: &quot;web&quot;,
-                &quot;created_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
-                &quot;updated_at&quot;: &quot;2022-09-01T02:01:22.000000Z&quot;,
+                &quot;created_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2022-09-06T02:24:39.000000Z&quot;,
                 &quot;pivot&quot;: {
                     &quot;role_id&quot;: 1,
                     &quot;permission_id&quot;: 37
@@ -1798,12 +2446,12 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/role/1" \
+    "https://d6df-49-146-46-12.ngrok.io/api/role/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"permissions\": [
-        4
+        1
     ]
 }"
 </code></pre></div>
@@ -1811,7 +2459,7 @@ vary: Origin
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/role/1"
+    "https://d6df-49-146-46-12.ngrok.io/api/role/1"
 );
 
 const headers = {
@@ -1821,7 +2469,7 @@ const headers = {
 
 let body = {
     "permissions": [
-        4
+        1
     ]
 };
 
@@ -1918,14 +2566,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/user/approval_request" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/user/approval_request" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/approval_request"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/approval_request"
 );
 
 const headers = {
@@ -1951,7 +2599,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
+x-ratelimit-remaining: 52
 vary: Origin
  </code></pre>
         </details>         <pre>
@@ -1960,20 +2608,36 @@ vary: Origin
     &quot;success&quot;: true,
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 38,
-            &quot;employee_id&quot;: &quot;102030-555&quot;,
-            &quot;last_name&quot;: &quot;Gwaps&quot;,
-            &quot;first_name&quot;: &quot;Maymay&quot;,
-            &quot;middle_name&quot;: null,
-            &quot;suffix&quot;: null,
-            &quot;email&quot;: &quot;may@gmail.com&quot;,
-            &quot;role_request&quot;: &quot;admin&quot;,
+            &quot;id&quot;: 1,
+            &quot;employee_id&quot;: &quot;123admin&quot;,
+            &quot;last_name&quot;: &quot;wq&quot;,
+            &quot;first_name&quot;: &quot;das&quot;,
+            &quot;middle_name&quot;: &quot;wqfgvgfgfg&quot;,
+            &quot;suffix&quot;: &quot;wgfgggfgf&quot;,
+            &quot;email&quot;: &quot;admin@gmail.com&quot;,
+            &quot;role_request&quot;: null,
             &quot;approved_at&quot;: null,
             &quot;disapproved_at&quot;: null,
             &quot;company_name&quot;: [],
             &quot;email_verified_at&quot;: null,
-            &quot;created_at&quot;: &quot;05/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;05/09/2022&quot;
+            &quot;created_at&quot;: &quot;06/09/2022&quot;,
+            &quot;updated_at&quot;: &quot;06/09/2022&quot;
+        },
+        {
+            &quot;id&quot;: 12,
+            &quot;employee_id&quot;: &quot;123admin11&quot;,
+            &quot;last_name&quot;: &quot;wq&quot;,
+            &quot;first_name&quot;: &quot;das&quot;,
+            &quot;middle_name&quot;: &quot;wqfgvgfgfg&quot;,
+            &quot;suffix&quot;: &quot;wgfgggfgf&quot;,
+            &quot;email&quot;: &quot;admi11@gmail.com&quot;,
+            &quot;role_request&quot;: null,
+            &quot;approved_at&quot;: null,
+            &quot;disapproved_at&quot;: null,
+            &quot;company_name&quot;: [],
+            &quot;email_verified_at&quot;: null,
+            &quot;created_at&quot;: &quot;06/09/2022&quot;,
+            &quot;updated_at&quot;: &quot;06/09/2022&quot;
         }
     ],
     &quot;message&quot;: &quot;Accounts for approval retrieved successfully.&quot;
@@ -2034,14 +2698,14 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/user/deactivated_account" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/user/deactivated_account" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/deactivated_account"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/deactivated_account"
 );
 
 const headers = {
@@ -2067,7 +2731,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
+x-ratelimit-remaining: 51
 vary: Origin
  </code></pre>
         </details>         <pre>
@@ -2077,20 +2741,35 @@ vary: Origin
     &quot;data&quot;: [
         {
             &quot;id&quot;: 3,
-            &quot;employee_id&quot;: &quot;123employee&quot;,
+            &quot;employee_id&quot;: &quot;123admi3&quot;,
             &quot;last_name&quot;: &quot;wq&quot;,
             &quot;first_name&quot;: &quot;das&quot;,
             &quot;middle_name&quot;: &quot;wqfgvgfgfg&quot;,
             &quot;suffix&quot;: &quot;wgfgggfgf&quot;,
-            &quot;email&quot;: &quot;employee@gmail.com&quot;,
+            &quot;email&quot;: &quot;admin3@gmail.com&quot;,
             &quot;role_request&quot;: null,
-            &quot;approved_at&quot;: &quot;2022-09-01 05:50:40&quot;,
+            &quot;approved_at&quot;: &quot;2022-09-06 07:11:07&quot;,
             &quot;disapproved_at&quot;: null,
-            &quot;status&quot;: 0,
-            &quot;deactivated_at&quot;: &quot;2022-09-01 08:13:54&quot;,
+            &quot;deactivated_at&quot;: &quot;2022-09-06 07:21:52&quot;,
             &quot;email_verified_at&quot;: null,
-            &quot;created_at&quot;: &quot;2022-09-01T02:21:39.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2022-09-01T08:13:54.000000Z&quot;
+            &quot;created_at&quot;: &quot;2022-09-06T05:47:57.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-06T07:21:52.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;employee_id&quot;: &quot;123admin5&quot;,
+            &quot;last_name&quot;: &quot;wq&quot;,
+            &quot;first_name&quot;: &quot;das&quot;,
+            &quot;middle_name&quot;: &quot;wqfgvgfgfg&quot;,
+            &quot;suffix&quot;: &quot;wgfgggfgf&quot;,
+            &quot;email&quot;: &quot;admin5@gmail.com&quot;,
+            &quot;role_request&quot;: null,
+            &quot;approved_at&quot;: &quot;2022-09-06 07:27:09&quot;,
+            &quot;disapproved_at&quot;: null,
+            &quot;deactivated_at&quot;: &quot;2022-09-06 07:23:24&quot;,
+            &quot;email_verified_at&quot;: null,
+            &quot;created_at&quot;: &quot;2022-09-06T07:14:54.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2022-09-06T07:27:09.000000Z&quot;
         }
     ],
     &quot;message&quot;: &quot;Deactivated user accounts were retrieved successfully.&quot;
@@ -2138,647 +2817,6 @@ vary: Origin
         </p>
                     </form>
 
-            <h2 id="endpoints-GETapi-company">Display a listing of the resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-company">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/company" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-company">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
-vary: Origin
- </code></pre>
-        </details>         <pre>
-
-<code class="language-json">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Fligno AU&quot;,
-            &quot;acronym&quot;: &quot;FAU&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;01/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;01/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Fligno PH&quot;,
-            &quot;acronym&quot;: &quot;FPH&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;01/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;01/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 3,
-            &quot;name&quot;: &quot;AFRIL&quot;,
-            &quot;acronym&quot;: &quot;AFR&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;01/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;01/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Addon&quot;,
-            &quot;acronym&quot;: &quot;Add&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;TableTimes&quot;,
-            &quot;acronym&quot;: &quot;TblTme&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;USTEP&quot;,
-            &quot;acronym&quot;: &quot;USTP&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;MUSTEP&quot;,
-            &quot;acronym&quot;: &quot;MUST&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 8,
-            &quot;name&quot;: &quot;TRIAL1&quot;,
-            &quot;acronym&quot;: &quot;Try1&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 9,
-            &quot;name&quot;: &quot;Frilll&quot;,
-            &quot;acronym&quot;: &quot;OEY&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 10,
-            &quot;name&quot;: &quot;Try&quot;,
-            &quot;acronym&quot;: &quot;t&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 11,
-            &quot;name&quot;: &quot;Try&quot;,
-            &quot;acronym&quot;: &quot;t&quot;,
-            &quot;status&quot;: 1,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        }
-    ],
-    &quot;message&quot;: &quot;Company retrieved successfully.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-company" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-company"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-company"></code></pre>
-</span>
-<span id="execution-error-GETapi-company" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-company"></code></pre>
-</span>
-<form id="form-GETapi-company" data-method="GET"
-      data-path="api/company"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-company', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-company"
-                    onclick="tryItOut('GETapi-company');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-company"
-                    onclick="cancelTryOut('GETapi-company');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-company" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/company</code></b>
-        </p>
-                    </form>
-
-            <h2 id="endpoints-POSTapi-company">Store a newly created resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-company">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/company" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"name\": \"eaque\",
-    \"acronym\": \"omnis\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "name": "eaque",
-    "acronym": "omnis"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-company">
-</span>
-<span id="execution-results-POSTapi-company" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-company"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-company"></code></pre>
-</span>
-<span id="execution-error-POSTapi-company" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-company"></code></pre>
-</span>
-<form id="form-POSTapi-company" data-method="POST"
-      data-path="api/company"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-company', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-company"
-                    onclick="tryItOut('POSTapi-company');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-company"
-                    onclick="cancelTryOut('POSTapi-company');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-company" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/company</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="name"
-               data-endpoint="POSTapi-company"
-               value="eaque"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>acronym</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="acronym"
-               data-endpoint="POSTapi-company"
-               value="omnis"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-        </form>
-
-            <h2 id="endpoints-GETapi-company--id-">Display the specified resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-company--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/company/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-company--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
-vary: Origin
- </code></pre>
-        </details>         <pre>
-
-<code class="language-json">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Fligno AU&quot;,
-        &quot;acronym&quot;: &quot;FAU&quot;,
-        &quot;status&quot;: 1,
-        &quot;created_at&quot;: &quot;01/09/2022&quot;,
-        &quot;updated_at&quot;: &quot;01/09/2022&quot;
-    },
-    &quot;message&quot;: &quot;Company retrieved successfully.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-company--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-company--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-company--id-"></code></pre>
-</span>
-<span id="execution-error-GETapi-company--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-company--id-"></code></pre>
-</span>
-<form id="form-GETapi-company--id-" data-method="GET"
-      data-path="api/company/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-company--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-company--id-"
-                    onclick="tryItOut('GETapi-company--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-company--id-"
-                    onclick="cancelTryOut('GETapi-company--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-company--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/company/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="GETapi-company--id-"
-               value="1"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the company.</p>
-            </p>
-                    </form>
-
-            <h2 id="endpoints-PUTapi-company--id-">Update the specified resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PUTapi-company--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/company/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"name\": \"aut\",
-    \"acronym\": \"mollitia\",
-    \"status\": 1
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "name": "aut",
-    "acronym": "mollitia",
-    "status": 1
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-company--id-">
-</span>
-<span id="execution-results-PUTapi-company--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-company--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-company--id-"></code></pre>
-</span>
-<span id="execution-error-PUTapi-company--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-company--id-"></code></pre>
-</span>
-<form id="form-PUTapi-company--id-" data-method="PUT"
-      data-path="api/company/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-company--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-company--id-"
-                    onclick="tryItOut('PUTapi-company--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-company--id-"
-                    onclick="cancelTryOut('PUTapi-company--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-company--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/company/{id}</code></b>
-        </p>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/company/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="PUTapi-company--id-"
-               value="1"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the company.</p>
-            </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="name"
-               data-endpoint="PUTapi-company--id-"
-               value="aut"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>acronym</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="acronym"
-               data-endpoint="PUTapi-company--id-"
-               value="mollitia"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>status</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-                <input type="number"
-               name="status"
-               data-endpoint="PUTapi-company--id-"
-               value="1"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-        </form>
-
-            <h2 id="endpoints-DELETEapi-company--id-">Remove the specified resource from storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-company--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/company/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/company/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-company--id-">
-</span>
-<span id="execution-results-DELETEapi-company--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-company--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-company--id-"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-company--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-company--id-"></code></pre>
-</span>
-<form id="form-DELETEapi-company--id-" data-method="DELETE"
-      data-path="api/company/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-company--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-company--id-"
-                    onclick="tryItOut('DELETEapi-company--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-company--id-"
-                    onclick="cancelTryOut('DELETEapi-company--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-company--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/company/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="DELETEapi-company--id-"
-               value="1"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the company.</p>
-            </p>
-                    </form>
-
             <h2 id="endpoints-POSTapi-user--requestor_id--approve">Register approved accounts api</h2>
 
 <p>
@@ -2792,14 +2830,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/user/1/approve" \
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/approve" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/1/approve"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/approve"
 );
 
 const headers = {
@@ -2881,14 +2919,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/user/1/disapprove" \
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/disapprove" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/1/disapprove"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/disapprove"
 );
 
 const headers = {
@@ -2970,14 +3008,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/user/disapproved_account" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/user/disapproved_account" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/disapproved_account"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/disapproved_account"
 );
 
 const headers = {
@@ -3003,7 +3041,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 50
 vary: Origin
  </code></pre>
         </details>         <pre>
@@ -3012,132 +3050,22 @@ vary: Origin
     &quot;success&quot;: true,
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 7,
-            &quot;employee_id&quot;: &quot;123employee4&quot;,
+            &quot;id&quot;: 11,
+            &quot;employee_id&quot;: &quot;123admin10&quot;,
             &quot;last_name&quot;: &quot;wq&quot;,
             &quot;first_name&quot;: &quot;das&quot;,
             &quot;middle_name&quot;: &quot;wqfgvgfgfg&quot;,
             &quot;suffix&quot;: &quot;wgfgggfgf&quot;,
-            &quot;email&quot;: &quot;employee4@gmail.com&quot;,
-            &quot;role_request&quot;: &quot;admin&quot;,
+            &quot;email&quot;: &quot;admi10@gmail.com&quot;,
+            &quot;role_request&quot;: null,
             &quot;approved_at&quot;: null,
-            &quot;disapproved_at&quot;: &quot;2022-09-02 01:17:40&quot;,
-            &quot;company_name&quot;: [],
+            &quot;disapproved_at&quot;: &quot;2022-09-06 08:13:21&quot;,
+            &quot;company_name&quot;: [
+                &quot;Fligno PH&quot;
+            ],
             &quot;email_verified_at&quot;: null,
-            &quot;created_at&quot;: &quot;01/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 9,
-            &quot;employee_id&quot;: &quot;201934-000&quot;,
-            &quot;last_name&quot;: &quot;Lourds&quot;,
-            &quot;first_name&quot;: &quot;Mama&quot;,
-            &quot;middle_name&quot;: &quot;Gwapa&quot;,
-            &quot;suffix&quot;: &quot;Seniora&quot;,
-            &quot;email&quot;: &quot;mamal@gmail.com&quot;,
-            &quot;role_request&quot;: &quot;super_admin&quot;,
-            &quot;approved_at&quot;: null,
-            &quot;disapproved_at&quot;: &quot;2022-09-02 01:57:49&quot;,
-            &quot;company_name&quot;: [],
-            &quot;email_verified_at&quot;: null,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 10,
-            &quot;employee_id&quot;: &quot;123employee6&quot;,
-            &quot;last_name&quot;: &quot;wq&quot;,
-            &quot;first_name&quot;: &quot;das&quot;,
-            &quot;middle_name&quot;: &quot;wqfgvgfgfg&quot;,
-            &quot;suffix&quot;: &quot;wgfgggfgf&quot;,
-            &quot;email&quot;: &quot;employee6@gmail.com&quot;,
-            &quot;role_request&quot;: &quot;admin&quot;,
-            &quot;approved_at&quot;: null,
-            &quot;disapproved_at&quot;: &quot;2022-09-02 01:58:52&quot;,
-            &quot;company_name&quot;: [],
-            &quot;email_verified_at&quot;: null,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;02/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 12,
-            &quot;employee_id&quot;: &quot;123employee5&quot;,
-            &quot;last_name&quot;: &quot;wq&quot;,
-            &quot;first_name&quot;: &quot;das&quot;,
-            &quot;middle_name&quot;: &quot;wqfgvgfgfg&quot;,
-            &quot;suffix&quot;: &quot;wgfgggfgf&quot;,
-            &quot;email&quot;: &quot;employee5@gmail.com&quot;,
-            &quot;role_request&quot;: &quot;admin&quot;,
-            &quot;approved_at&quot;: null,
-            &quot;disapproved_at&quot;: &quot;2022-09-05 03:06:56&quot;,
-            &quot;company_name&quot;: [],
-            &quot;email_verified_at&quot;: null,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;05/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 25,
-            &quot;employee_id&quot;: &quot;201893-222&quot;,
-            &quot;last_name&quot;: &quot;Cumayas&quot;,
-            &quot;first_name&quot;: &quot;Afril&quot;,
-            &quot;middle_name&quot;: null,
-            &quot;suffix&quot;: null,
-            &quot;email&quot;: &quot;afril@gmail.com&quot;,
-            &quot;role_request&quot;: &quot;admin&quot;,
-            &quot;approved_at&quot;: null,
-            &quot;disapproved_at&quot;: &quot;2022-09-05 03:15:39&quot;,
-            &quot;company_name&quot;: [],
-            &quot;email_verified_at&quot;: null,
-            &quot;created_at&quot;: &quot;02/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;05/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 34,
-            &quot;employee_id&quot;: &quot;204920835-33&quot;,
-            &quot;last_name&quot;: &quot;Nksnjds&quot;,
-            &quot;first_name&quot;: &quot;Louawygd&quot;,
-            &quot;middle_name&quot;: null,
-            &quot;suffix&quot;: null,
-            &quot;email&quot;: &quot;adwg@gamil.com&quot;,
-            &quot;role_request&quot;: &quot;admin&quot;,
-            &quot;approved_at&quot;: null,
-            &quot;disapproved_at&quot;: &quot;2022-09-05 05:15:50&quot;,
-            &quot;company_name&quot;: [],
-            &quot;email_verified_at&quot;: null,
-            &quot;created_at&quot;: &quot;05/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;05/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 35,
-            &quot;employee_id&quot;: &quot;00030-39435&quot;,
-            &quot;last_name&quot;: &quot;Cumayas&quot;,
-            &quot;first_name&quot;: &quot;Joyjoy&quot;,
-            &quot;middle_name&quot;: null,
-            &quot;suffix&quot;: null,
-            &quot;email&quot;: &quot;joyjoy@gmail.com&quot;,
-            &quot;role_request&quot;: &quot;admin&quot;,
-            &quot;approved_at&quot;: null,
-            &quot;disapproved_at&quot;: &quot;2022-09-05 03:17:53&quot;,
-            &quot;company_name&quot;: [],
-            &quot;email_verified_at&quot;: null,
-            &quot;created_at&quot;: &quot;05/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;05/09/2022&quot;
-        },
-        {
-            &quot;id&quot;: 37,
-            &quot;employee_id&quot;: &quot;2013138-8080&quot;,
-            &quot;last_name&quot;: &quot;Cuyamas&quot;,
-            &quot;first_name&quot;: &quot;Afrilyn&quot;,
-            &quot;middle_name&quot;: null,
-            &quot;suffix&quot;: null,
-            &quot;email&quot;: &quot;lyn@gmail.com&quot;,
-            &quot;role_request&quot;: &quot;super_admin&quot;,
-            &quot;approved_at&quot;: null,
-            &quot;disapproved_at&quot;: &quot;2022-09-05 05:16:46&quot;,
-            &quot;company_name&quot;: [],
-            &quot;email_verified_at&quot;: null,
-            &quot;created_at&quot;: &quot;05/09/2022&quot;,
-            &quot;updated_at&quot;: &quot;05/09/2022&quot;
+            &quot;created_at&quot;: &quot;06/09/2022&quot;,
+            &quot;updated_at&quot;: &quot;06/09/2022&quot;
         }
     ],
     &quot;message&quot;: &quot;Disapproved accounts retrieved successfully.&quot;
@@ -3185,84 +3113,6 @@ vary: Origin
         </p>
                     </form>
 
-            <h2 id="endpoints-POSTapi-logout">POST api/logout</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-logout">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/logout" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/logout"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-logout">
-</span>
-<span id="execution-results-POSTapi-logout" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-logout"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-logout"></code></pre>
-</span>
-<span id="execution-error-POSTapi-logout" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-logout"></code></pre>
-</span>
-<form id="form-POSTapi-logout" data-method="POST"
-      data-path="api/logout"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-logout', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-logout"
-                    onclick="tryItOut('POSTapi-logout');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-logout"
-                    onclick="cancelTryOut('POSTapi-logout');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-logout" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/logout</code></b>
-        </p>
-                    </form>
-
             <h2 id="endpoints-PUTapi-user--user_id--change_role">PUT api/user/{user_id}/change_role</h2>
 
 <p>
@@ -3276,18 +3126,18 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/user/1/change_role" \
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/change_role" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"role_id\": \"quaerat\"
+    \"role_id\": \"eos\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/1/change_role"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/change_role"
 );
 
 const headers = {
@@ -3296,7 +3146,7 @@ const headers = {
 };
 
 let body = {
-    "role_id": "quaerat"
+    "role_id": "eos"
 };
 
 fetch(url, {
@@ -3365,7 +3215,7 @@ fetch(url, {
                 <input type="text"
                name="role_id"
                data-endpoint="PUTapi-user--user_id--change_role"
-               value="quaerat"
+               value="eos"
                data-component="body" hidden>
     <br>
 
@@ -3385,14 +3235,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/user/1/activate" \
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/activate" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/1/activate"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/activate"
 );
 
 const headers = {
@@ -3474,14 +3324,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/user/1/deactivate" \
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/deactivate" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/1/deactivate"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/deactivate"
 );
 
 const headers = {
@@ -3563,14 +3413,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/user/1/admin_details" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/user/1/admin_details" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/1/admin_details"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/1/admin_details"
 );
 
 const headers = {
@@ -3669,14 +3519,14 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/unit" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/unit" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/unit"
+    "https://d6df-49-146-46-12.ngrok.io/api/unit"
 );
 
 const headers = {
@@ -3764,24 +3614,24 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/unit" \
+    "https://d6df-49-146-46-12.ngrok.io/api/unit" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"brand\": \"eum\",
-    \"model\": \"sit\",
-    \"serial\": \"non\",
-    \"details\": \"earum\",
-    \"remarks\": \"id\",
-    \"company_id\": \"itaque\",
-    \"category_id\": \"veniam\"
+    \"brand\": \"nihil\",
+    \"model\": \"omnis\",
+    \"serial\": \"repellendus\",
+    \"details\": \"sit\",
+    \"remarks\": \"sunt\",
+    \"company_id\": \"odit\",
+    \"category_id\": \"nulla\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/unit"
+    "https://d6df-49-146-46-12.ngrok.io/api/unit"
 );
 
 const headers = {
@@ -3790,13 +3640,13 @@ const headers = {
 };
 
 let body = {
-    "brand": "eum",
-    "model": "sit",
-    "serial": "non",
-    "details": "earum",
-    "remarks": "id",
-    "company_id": "itaque",
-    "category_id": "veniam"
+    "brand": "nihil",
+    "model": "omnis",
+    "serial": "repellendus",
+    "details": "sit",
+    "remarks": "sunt",
+    "company_id": "odit",
+    "category_id": "nulla"
 };
 
 fetch(url, {
@@ -3854,7 +3704,7 @@ fetch(url, {
                 <input type="text"
                name="brand"
                data-endpoint="POSTapi-unit"
-               value="eum"
+               value="nihil"
                data-component="body" hidden>
     <br>
 
@@ -3864,7 +3714,7 @@ fetch(url, {
                 <input type="text"
                name="model"
                data-endpoint="POSTapi-unit"
-               value="sit"
+               value="omnis"
                data-component="body" hidden>
     <br>
 
@@ -3874,7 +3724,7 @@ fetch(url, {
                 <input type="text"
                name="serial"
                data-endpoint="POSTapi-unit"
-               value="non"
+               value="repellendus"
                data-component="body" hidden>
     <br>
 
@@ -3884,7 +3734,7 @@ fetch(url, {
                 <input type="text"
                name="details"
                data-endpoint="POSTapi-unit"
-               value="earum"
+               value="sit"
                data-component="body" hidden>
     <br>
 
@@ -3894,7 +3744,7 @@ fetch(url, {
                 <input type="text"
                name="remarks"
                data-endpoint="POSTapi-unit"
-               value="id"
+               value="sunt"
                data-component="body" hidden>
     <br>
 
@@ -3904,7 +3754,7 @@ fetch(url, {
                 <input type="text"
                name="company_id"
                data-endpoint="POSTapi-unit"
-               value="itaque"
+               value="odit"
                data-component="body" hidden>
     <br>
 
@@ -3914,7 +3764,7 @@ fetch(url, {
                 <input type="text"
                name="category_id"
                data-endpoint="POSTapi-unit"
-               value="veniam"
+               value="nulla"
                data-component="body" hidden>
     <br>
 
@@ -3944,14 +3794,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/unit/1" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/unit/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/unit/1"
+    "https://d6df-49-146-46-12.ngrok.io/api/unit/1"
 );
 
 const headers = {
@@ -4050,22 +3900,22 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/unit/1" \
+    "https://d6df-49-146-46-12.ngrok.io/api/unit/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"brand\": \"incidunt\",
-    \"model\": \"nisi\",
-    \"serial\": \"accusamus\",
-    \"company_id\": \"veritatis\",
-    \"category_id\": \"in\"
+    \"brand\": \"soluta\",
+    \"model\": \"repudiandae\",
+    \"serial\": \"nam\",
+    \"company_id\": \"praesentium\",
+    \"category_id\": \"consequatur\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/unit/1"
+    "https://d6df-49-146-46-12.ngrok.io/api/unit/1"
 );
 
 const headers = {
@@ -4074,11 +3924,11 @@ const headers = {
 };
 
 let body = {
-    "brand": "incidunt",
-    "model": "nisi",
-    "serial": "accusamus",
-    "company_id": "veritatis",
-    "category_id": "in"
+    "brand": "soluta",
+    "model": "repudiandae",
+    "serial": "nam",
+    "company_id": "praesentium",
+    "category_id": "consequatur"
 };
 
 fetch(url, {
@@ -4151,7 +4001,7 @@ fetch(url, {
                 <input type="text"
                name="brand"
                data-endpoint="PUTapi-unit--id-"
-               value="incidunt"
+               value="soluta"
                data-component="body" hidden>
     <br>
 
@@ -4161,7 +4011,7 @@ fetch(url, {
                 <input type="text"
                name="model"
                data-endpoint="PUTapi-unit--id-"
-               value="nisi"
+               value="repudiandae"
                data-component="body" hidden>
     <br>
 
@@ -4171,7 +4021,7 @@ fetch(url, {
                 <input type="text"
                name="serial"
                data-endpoint="PUTapi-unit--id-"
-               value="accusamus"
+               value="nam"
                data-component="body" hidden>
     <br>
 
@@ -4181,7 +4031,7 @@ fetch(url, {
                 <input type="text"
                name="company_id"
                data-endpoint="PUTapi-unit--id-"
-               value="veritatis"
+               value="praesentium"
                data-component="body" hidden>
     <br>
 
@@ -4191,7 +4041,7 @@ fetch(url, {
                 <input type="text"
                name="category_id"
                data-endpoint="PUTapi-unit--id-"
-               value="in"
+               value="consequatur"
                data-component="body" hidden>
     <br>
 
@@ -4221,14 +4071,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/unit/1" \
+    "https://d6df-49-146-46-12.ngrok.io/api/unit/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/unit/1"
+    "https://d6df-49-146-46-12.ngrok.io/api/unit/1"
 );
 
 const headers = {
@@ -4310,14 +4160,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/status" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/status" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/status"
+    "https://d6df-49-146-46-12.ngrok.io/api/status"
 );
 
 const headers = {
@@ -4405,18 +4255,18 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/status" \
+    "https://d6df-49-146-46-12.ngrok.io/api/status" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"aut\"
+    \"name\": \"dicta\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/status"
+    "https://d6df-49-146-46-12.ngrok.io/api/status"
 );
 
 const headers = {
@@ -4425,7 +4275,7 @@ const headers = {
 };
 
 let body = {
-    "name": "aut"
+    "name": "dicta"
 };
 
 fetch(url, {
@@ -4483,7 +4333,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-status"
-               value="aut"
+               value="dicta"
                data-component="body" hidden>
     <br>
 
@@ -4503,14 +4353,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/status/1" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/status/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/status/1"
+    "https://d6df-49-146-46-12.ngrok.io/api/status/1"
 );
 
 const headers = {
@@ -4609,18 +4459,18 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/status/1" \
+    "https://d6df-49-146-46-12.ngrok.io/api/status/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"voluptas\"
+    \"name\": \"quasi\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/status/1"
+    "https://d6df-49-146-46-12.ngrok.io/api/status/1"
 );
 
 const headers = {
@@ -4629,7 +4479,7 @@ const headers = {
 };
 
 let body = {
-    "name": "voluptas"
+    "name": "quasi"
 };
 
 fetch(url, {
@@ -4702,438 +4552,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTapi-status--id-"
-               value="voluptas"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-        </form>
-
-            <h2 id="endpoints-GETapi-spec">Display a listing of the resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-spec">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/spec" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/spec"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-spec">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-vary: Origin
- </code></pre>
-        </details>         <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-spec" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-spec"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-spec"></code></pre>
-</span>
-<span id="execution-error-GETapi-spec" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-spec"></code></pre>
-</span>
-<form id="form-GETapi-spec" data-method="GET"
-      data-path="api/spec"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-spec', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-spec"
-                    onclick="tryItOut('GETapi-spec');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-spec"
-                    onclick="cancelTryOut('GETapi-spec');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-spec" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/spec</code></b>
-        </p>
-                    </form>
-
-            <h2 id="endpoints-POSTapi-spec">Store a newly created resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-spec">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/spec" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"category_name\": \"eligendi\",
-    \"spec_name\": [
-        \"ut\"
-    ]
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/spec"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "category_name": "eligendi",
-    "spec_name": [
-        "ut"
-    ]
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-spec">
-</span>
-<span id="execution-results-POSTapi-spec" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-spec"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-spec"></code></pre>
-</span>
-<span id="execution-error-POSTapi-spec" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-spec"></code></pre>
-</span>
-<form id="form-POSTapi-spec" data-method="POST"
-      data-path="api/spec"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-spec', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-spec"
-                    onclick="tryItOut('POSTapi-spec');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-spec"
-                    onclick="cancelTryOut('POSTapi-spec');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-spec" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/spec</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>category_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="category_name"
-               data-endpoint="POSTapi-spec"
-               value="eligendi"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-                <p>
-            <b><code>spec_name</code></b>&nbsp;&nbsp;<small>string[]</small>     <i>optional</i> &nbsp;
-                <input type="text"
-               name="spec_name[0]"
-               data-endpoint="POSTapi-spec"
-               data-component="body" hidden>
-        <input type="text"
-               name="spec_name[1]"
-               data-endpoint="POSTapi-spec"
-               data-component="body" hidden>
-    <br>
-
-        </p>
-        </form>
-
-            <h2 id="endpoints-GETapi-spec--id-">Display the specified resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-spec--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/spec/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/spec/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-spec--id-">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary>
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-vary: Origin
- </code></pre>
-        </details>         <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-spec--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-spec--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-spec--id-"></code></pre>
-</span>
-<span id="execution-error-GETapi-spec--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-spec--id-"></code></pre>
-</span>
-<form id="form-GETapi-spec--id-" data-method="GET"
-      data-path="api/spec/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-spec--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-spec--id-"
-                    onclick="tryItOut('GETapi-spec--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-spec--id-"
-                    onclick="cancelTryOut('GETapi-spec--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-spec--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/spec/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="GETapi-spec--id-"
-               value="1"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the spec.</p>
-            </p>
-                    </form>
-
-            <h2 id="endpoints-PUTapi-spec--id-">Update the specified resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PUTapi-spec--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/spec/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"name\": \"doloribus\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/spec/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "name": "doloribus"
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-spec--id-">
-</span>
-<span id="execution-results-PUTapi-spec--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-spec--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-spec--id-"></code></pre>
-</span>
-<span id="execution-error-PUTapi-spec--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-spec--id-"></code></pre>
-</span>
-<form id="form-PUTapi-spec--id-" data-method="PUT"
-      data-path="api/spec/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-spec--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-spec--id-"
-                    onclick="tryItOut('PUTapi-spec--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-spec--id-"
-                    onclick="cancelTryOut('PUTapi-spec--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-spec--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/spec/{id}</code></b>
-        </p>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/spec/{id}</code></b>
-        </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="PUTapi-spec--id-"
-               value="1"
-               data-component="url" hidden>
-    <br>
-<p>The ID of the spec.</p>
-            </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="name"
-               data-endpoint="PUTapi-spec--id-"
-               value="doloribus"
+               value="quasi"
                data-component="body" hidden>
     <br>
 
@@ -5153,14 +4572,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/remark" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/remark" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/remark"
+    "https://d6df-49-146-46-12.ngrok.io/api/remark"
 );
 
 const headers = {
@@ -5248,20 +4667,20 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/remark" \
+    "https://d6df-49-146-46-12.ngrok.io/api/remark" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"magni\",
-    \"date\": \"itaque\",
-    \"unit\": \"sed\"
+    \"name\": \"quos\",
+    \"date\": \"dicta\",
+    \"unit\": \"nam\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/remark"
+    "https://d6df-49-146-46-12.ngrok.io/api/remark"
 );
 
 const headers = {
@@ -5270,9 +4689,9 @@ const headers = {
 };
 
 let body = {
-    "name": "magni",
-    "date": "itaque",
-    "unit": "sed"
+    "name": "quos",
+    "date": "dicta",
+    "unit": "nam"
 };
 
 fetch(url, {
@@ -5330,7 +4749,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTapi-remark"
-               value="magni"
+               value="quos"
                data-component="body" hidden>
     <br>
 
@@ -5340,7 +4759,7 @@ fetch(url, {
                 <input type="text"
                name="date"
                data-endpoint="POSTapi-remark"
-               value="itaque"
+               value="dicta"
                data-component="body" hidden>
     <br>
 
@@ -5350,7 +4769,7 @@ fetch(url, {
                 <input type="text"
                name="unit"
                data-endpoint="POSTapi-remark"
-               value="sed"
+               value="nam"
                data-component="body" hidden>
     <br>
 
@@ -5370,14 +4789,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/remark/1" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/remark/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/remark/1"
+    "https://d6df-49-146-46-12.ngrok.io/api/remark/1"
 );
 
 const headers = {
@@ -5476,14 +4895,14 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/user/admin_list" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/user/admin_list" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/admin_list"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/admin_list"
 );
 
 const headers = {
@@ -5571,14 +4990,14 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/user/employee_list" \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/user/employee_list" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/user/employee_list"
+    "https://d6df-49-146-46-12.ngrok.io/api/user/employee_list"
 );
 
 const headers = {
@@ -5652,6 +5071,580 @@ vary: Origin
             <b><code>api/user/employee_list</code></b>
         </p>
                     </form>
+
+            <h2 id="endpoints-GETapi-activity_logs">GET api/activity_logs</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-activity_logs">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/activity_logs" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/activity_logs"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-activity_logs">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-activity_logs" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-activity_logs"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-activity_logs"></code></pre>
+</span>
+<span id="execution-error-GETapi-activity_logs" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-activity_logs"></code></pre>
+</span>
+<form id="form-GETapi-activity_logs" data-method="GET"
+      data-path="api/activity_logs"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-activity_logs', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-activity_logs"
+                    onclick="tryItOut('GETapi-activity_logs');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-activity_logs"
+                    onclick="cancelTryOut('GETapi-activity_logs');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-activity_logs" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/activity_logs</code></b>
+        </p>
+                    </form>
+
+        <h1 id="specification-management">Specification Management</h1>
+
+    
+
+            <h2 id="specification-management-GETapi-spec">Display a listing of the resource.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-spec">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/spec" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/spec"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-spec">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-spec" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-spec"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-spec"></code></pre>
+</span>
+<span id="execution-error-GETapi-spec" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-spec"></code></pre>
+</span>
+<form id="form-GETapi-spec" data-method="GET"
+      data-path="api/spec"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-spec', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-spec"
+                    onclick="tryItOut('GETapi-spec');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-spec"
+                    onclick="cancelTryOut('GETapi-spec');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-spec" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/spec</code></b>
+        </p>
+                <p>
+            <label id="auth-GETapi-spec" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-spec"
+                                                                data-component="header"></label>
+        </p>
+                </form>
+
+            <h2 id="specification-management-POSTapi-spec">Store a newly created resource in storage.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-spec">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://d6df-49-146-46-12.ngrok.io/api/spec" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"category_name\": \"tempore\",
+    \"spec_name\": [
+        \"voluptate\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/spec"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "category_name": "tempore",
+    "spec_name": [
+        "voluptate"
+    ]
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-spec">
+</span>
+<span id="execution-results-POSTapi-spec" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-spec"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-spec"></code></pre>
+</span>
+<span id="execution-error-POSTapi-spec" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-spec"></code></pre>
+</span>
+<form id="form-POSTapi-spec" data-method="POST"
+      data-path="api/spec"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-spec', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-spec"
+                    onclick="tryItOut('POSTapi-spec');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-spec"
+                    onclick="cancelTryOut('POSTapi-spec');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-spec" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/spec</code></b>
+        </p>
+                <p>
+            <label id="auth-POSTapi-spec" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-spec"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>category_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="category_name"
+               data-endpoint="POSTapi-spec"
+               value="tempore"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>spec_name</code></b>&nbsp;&nbsp;<small>string[]</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="spec_name[0]"
+               data-endpoint="POSTapi-spec"
+               data-component="body" hidden>
+        <input type="text"
+               name="spec_name[1]"
+               data-endpoint="POSTapi-spec"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="specification-management-GETapi-spec--id-">Display the specified resource.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-spec--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://d6df-49-146-46-12.ngrok.io/api/spec/1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/spec/1"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-spec--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-spec--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-spec--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-spec--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-spec--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-spec--id-"></code></pre>
+</span>
+<form id="form-GETapi-spec--id-" data-method="GET"
+      data-path="api/spec/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-spec--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-spec--id-"
+                    onclick="tryItOut('GETapi-spec--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-spec--id-"
+                    onclick="cancelTryOut('GETapi-spec--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-spec--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/spec/{id}</code></b>
+        </p>
+                <p>
+            <label id="auth-GETapi-spec--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-spec--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-spec--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the spec.</p>
+            </p>
+                    </form>
+
+            <h2 id="specification-management-PUTapi-spec--id-">Update the specified resource in storage.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-spec--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://d6df-49-146-46-12.ngrok.io/api/spec/1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"debitis\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://d6df-49-146-46-12.ngrok.io/api/spec/1"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "debitis"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-spec--id-">
+</span>
+<span id="execution-results-PUTapi-spec--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-spec--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-spec--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-spec--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-spec--id-"></code></pre>
+</span>
+<form id="form-PUTapi-spec--id-" data-method="PUT"
+      data-path="api/spec/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-spec--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-spec--id-"
+                    onclick="tryItOut('PUTapi-spec--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-spec--id-"
+                    onclick="cancelTryOut('PUTapi-spec--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-spec--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/spec/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/spec/{id}</code></b>
+        </p>
+                <p>
+            <label id="auth-PUTapi-spec--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTapi-spec--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-spec--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the spec.</p>
+            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="PUTapi-spec--id-"
+               value="debitis"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
 
     
 

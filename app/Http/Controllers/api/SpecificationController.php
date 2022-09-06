@@ -10,6 +10,10 @@ use App\Models\Category;
 use App\Models\Specification;
 use Illuminate\Http\JsonResponse;
 
+/**
+ * @group Specification Management
+ * @authenticated
+ */
 class SpecificationController extends BaseController
 {
     public function __construct()
@@ -65,7 +69,6 @@ class SpecificationController extends BaseController
      */
     public function show(Specification $spec): JsonResponse
     {
-//        dd($spec->details);
         return $this->sendResponse(new SpecificationResource($spec), 'Specification retrieved successfully.');
     }
 
@@ -84,15 +87,3 @@ class SpecificationController extends BaseController
         return $this->sendResponse(new SpecificationResource($spec), 'Specification updated successfully.');
     }
 }
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param  Specification  $spec
-//     * @return JsonResponse
-//     */
-//    public function destroy(Specification $spec): JsonResponse
-//    {
-//        $spec->delete();
-//
-//        return $this->sendResponse($spec, 'Specification deleted.');
-//    }

@@ -32,6 +32,7 @@ class CategoryController extends BaseController
      * @header Authorization Bearer {token}
      * @apiResourceCollection App\Http\Resources\CategoryResource
      * @apiResourceModel App\Models\Category
+     * @authenticated
      *
      * @return JsonResponse
      */

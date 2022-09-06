@@ -11,8 +11,6 @@
 |
 */
 
-use Knuckles\Scribe\ScribeServiceProvider;
-
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
@@ -43,10 +41,6 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
-$app->register(ScribeServiceProvider::class);
-//$app->register(Fruitcake\Cors\CorsServiceProvider::class);
-//$app->configure('scribe');
-//$app->configure('cors');
 /*
 |--------------------------------------------------------------------------
 | Return The Application

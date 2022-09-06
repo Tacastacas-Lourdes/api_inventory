@@ -9,7 +9,11 @@ use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
+/**
+ * @group Authentication
+ */
 class RegisterController extends BaseController
 {
     /**
@@ -30,7 +34,6 @@ class RegisterController extends BaseController
             $user->company()->sync($input['company_id']);
         } else {
             $user = User::query()->create($input)->assignRole('super_admin');
-            $user->createToken('MyApp')->plainTextToken;
         }
 
         return $this->sendResponse(new UserResource($user), 'User register successfully.');
@@ -45,19 +48,25 @@ class RegisterController extends BaseController
     public function login(LoginRequest $request): JsonResponse
     {
         $input = $request->validated();
-        if (Auth::attempt(['email' => $input['email'], 'password' => $input['password'], 'deactivated_at' => null])) {
-            $user = Auth::user();
+        $user = User::query()->where('email', $input['email'])->first();
+
+        if (! $user || ! Hash::check($input['password'], $user->password)) {
+            return $this->sendError('Wrong credentials.', ['error' => 'Unauthorised']);
+        } elseif ($user->isDeactivated()) {
+            return $this->sendError('Your account has been deactivated. Please contact the system administrator.', ['error' => 'Unauthorised']);
+        } else {
             $success['token'] = $user->createToken('MyApp')->plainTextToken;
             $success['attributes'] = $user;
 
             return $this->sendResponse($success, 'User login successfully.');
-        } elseif (Auth::attempt(['email' => $input['email'], 'password' => $input['password']])) {
-            return $this->sendError('Your account has been deactivated. Please contact the administrator to have your account activated.', ['error' => 'Unauthorised']);
-        } else {
-            return $this->sendError('Wrong credentials.', ['error' => 'Unauthorised']);
         }
     }
 
+    /**
+     * Logout
+     *
+     * @return JsonResponse
+     */
     public function logout(): JsonResponse
     {
         $user = Auth::user();

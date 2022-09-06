@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\ActivityLog;
 use App\Http\Controllers\api\CategoryController;
 use App\Http\Controllers\api\CompanyController;
 use App\Http\Controllers\api\RegisterController;
@@ -10,7 +11,6 @@ use App\Http\Controllers\api\StatusController;
 use App\Http\Controllers\api\UnitController;
 use App\Http\Controllers\api\UserController;
 use Illuminate\Support\Facades\Route;
-use Spatie\Activitylog\Models\Activity;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +22,7 @@ use Spatie\Activitylog\Models\Activity;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/', function () {
-    return Activity::all();
-});
+
 Route::controller(RegisterController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('login', 'login');
@@ -35,10 +33,11 @@ Route::get('user/deactivated_account', [UserController::class, 'deactivatedAccou
 Route::post('user/{requestor}/approve', [UserController::class, 'approveAccount']);
 Route::post('user/{requestor}/disapprove', [UserController::class, 'disapproveAccount']);
 Route::get('user/disapproved_account', [UserController::class, 'disapprovedList']);
-Route::apiResource('company', CompanyController::class);
-Route::apiResource('category', CategoryController::class);
 
 Route::middleware('auth:sanctum')->group(function () {
+    Route::get('activity_logs', [ActivityLog::class, 'getActivityLogs']);
+    Route::apiResource('company', CompanyController::class);
+    Route::apiResource('category', CategoryController::class);
     Route::post('logout', [RegisterController::class, 'logout']);
     Route::put('user/{user}/change_role', [UserController::class, 'changeRole']);
     Route::put('user/{user}/activate', [UserController::class, 'activate']);

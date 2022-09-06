@@ -5,16 +5,112 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost"
+            "value": "https:\/\/d6df-49-146-46-12.ngrok.io"
         }
     ],
     "info": {
         "name": "Inventory System API",
-        "_postman_id": "4e534e3b-b46a-4e55-9109-7566e48d221d",
+        "_postman_id": "ba7eb912-684f-4e3a-a11c-72ebce6315aa",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Authentication",
+            "description": "",
+            "item": [
+                {
+                    "name": "Register api",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"employee_id\":\"ullam\",\"first_name\":\"ullam\",\"last_name\":\"ipsa\",\"email\":\"westley26@example.net\",\"password\":\"a\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Login api",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"fijksjacdvyzzfrxzlqhqrqzrxulniahjjylcud\",\"password\":\"nihil\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
         {
             "name": "Category Management",
             "description": "\nAPIs to manage the category resource.",
@@ -40,16 +136,13 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"category\":\"Laptop\",\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\",\"specification\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-02T08:19:33.000000Z\",\"updated_at\":\"2022-09-02T08:19:33.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-02T08:19:33.000000Z\",\"updated_at\":\"2022-09-02T08:19:33.000000Z\"}]},{\"id\":1,\"category\":\"Laptop\",\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\",\"specification\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-02T08:19:33.000000Z\",\"updated_at\":\"2022-09-02T08:19:33.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-02T08:19:33.000000Z\",\"updated_at\":\"2022-09-02T08:19:33.000000Z\"}]}]}",
+                            "body": "{\"data\":[{\"id\":1,\"category\":\"Laptop\",\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\",\"specification\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":3,\"name\":\"gpu\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":4,\"name\":\"storage\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":5,\"name\":\"remark\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"},{\"id\":6,\"name\":\"color\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"}]},{\"id\":1,\"category\":\"Laptop\",\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\",\"specification\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":3,\"name\":\"gpu\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":4,\"name\":\"storage\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":5,\"name\":\"remark\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"},{\"id\":6,\"name\":\"color\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"}]}]}",
                             "name": "0"
                         }
                     ]
@@ -76,7 +169,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"iusto\",\"spec\":[\"aliquid\"]}"
+                            "raw": "{\"name\":\"eos\",\"spec\":[\"qui\"]}"
                         },
                         "description": "",
                         "auth": {
@@ -97,7 +190,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "10",
                                     "description": "Category ID"
                                 }
                             ]
@@ -123,7 +216,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"category\":\"Laptop\",\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\",\"specification\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-02T08:19:33.000000Z\",\"updated_at\":\"2022-09-02T08:19:33.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-02T08:19:33.000000Z\",\"updated_at\":\"2022-09-02T08:19:33.000000Z\"}]}}",
+                            "body": "{\"data\":{\"id\":1,\"category\":\"Laptop\",\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\",\"specification\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":3,\"name\":\"gpu\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":4,\"name\":\"storage\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":5,\"name\":\"remark\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"},{\"id\":6,\"name\":\"color\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"}]}}",
                             "name": "0"
                         }
                     ]
@@ -158,7 +251,187 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"optio\"}"
+                            "raw": "{\"name\":\"quia\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Company Management",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"repellat\",\"acronym\":\"consequatur\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the company."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/company\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/company\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the company."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"dolor\",\"acronym\":\"et\",\"status\":17}"
                         },
                         "description": "",
                         "auth": {
@@ -173,68 +446,6 @@
             "name": "Endpoints",
             "description": "",
             "item": [
-                {
-                    "name": "Register api",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/register",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/register"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"employee_id\":\"nobis\",\"first_name\":\"quod\",\"last_name\":\"unde\",\"email\":\"stiedemann.jared@example.com\",\"password\":\"sed\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Login api",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/login",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/login"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"email\":\"mbkseknynbwfxrmlbvlauqpmqjdsduyivdaxh\",\"password\":\"et\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
                 {
                     "name": "api\/role",
                     "request": {
@@ -278,7 +489,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "54"
                                 },
                                 {
                                     "key": "vary",
@@ -286,7 +497,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"name\":\"super_admin\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\"},{\"id\":2,\"name\":\"admin\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\"}],\"message\":\"Role retrieved successfully.\"}",
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"name\":\"super_admin\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\"},{\"id\":2,\"name\":\"admin\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\"}],\"message\":\"Role retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -313,7 +524,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"ut\",\"permissions\":[4]}"
+                            "raw": "{\"name\":\"quos\",\"permissions\":[20]}"
                         },
                         "description": "",
                         "auth": {
@@ -373,7 +584,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "58"
+                                    "value": "53"
                                 },
                                 {
                                     "key": "vary",
@@ -381,7 +592,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"super_admin\",\"created_at\":\"01\\\/09\\\/2022\",\"updated_at\":\"01\\\/09\\\/2022\",\"permissions\":[{\"id\":1,\"name\":\"admin_panel_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":1}},{\"id\":2,\"name\":\"user_approval\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":2}},{\"id\":3,\"name\":\"users_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":3}},{\"id\":4,\"name\":\"user-user_assign_role\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":4}},{\"id\":5,\"name\":\"user_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":5}},{\"id\":6,\"name\":\"user_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":6}},{\"id\":7,\"name\":\"roles_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":7}},{\"id\":8,\"name\":\"role_edit\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":8}},{\"id\":9,\"name\":\"role_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":9}},{\"id\":10,\"name\":\"role_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":10}},{\"id\":11,\"name\":\"role_show\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":11}},{\"id\":12,\"name\":\"permissions_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":12}},{\"id\":13,\"name\":\"permission_edit\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":13}},{\"id\":14,\"name\":\"company_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":14}},{\"id\":15,\"name\":\"company_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":15}},{\"id\":16,\"name\":\"company_update\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":16}},{\"id\":17,\"name\":\"company_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":17}},{\"id\":18,\"name\":\"company_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":18}},{\"id\":19,\"name\":\"equipment_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":19}},{\"id\":20,\"name\":\"category_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":20}},{\"id\":21,\"name\":\"category_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":21}},{\"id\":22,\"name\":\"specification_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":22}},{\"id\":23,\"name\":\"specification_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":23}},{\"id\":24,\"name\":\"specification_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":24}},{\"id\":25,\"name\":\"specification_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":25}},{\"id\":26,\"name\":\"specification_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":26}},{\"id\":27,\"name\":\"unit_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":27}},{\"id\":28,\"name\":\"unit_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":28}},{\"id\":29,\"name\":\"unit_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":29}},{\"id\":30,\"name\":\"unit_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":30}},{\"id\":31,\"name\":\"unit_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":31}},{\"id\":32,\"name\":\"status_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":32}},{\"id\":33,\"name\":\"status_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":33}},{\"id\":34,\"name\":\"status_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":34}},{\"id\":35,\"name\":\"status_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":35}},{\"id\":36,\"name\":\"status_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":36}},{\"id\":37,\"name\":\"activity_log\",\"guard_name\":\"web\",\"created_at\":\"2022-09-01T02:01:22.000000Z\",\"updated_at\":\"2022-09-01T02:01:22.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":37}}]},\"message\":\"Roles retrieved successfully.\"}",
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"super_admin\",\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\",\"permissions\":[{\"id\":1,\"name\":\"admin_panel_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":1}},{\"id\":2,\"name\":\"user_approval\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":2}},{\"id\":3,\"name\":\"users_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":3}},{\"id\":4,\"name\":\"user-user_assign_role\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":4}},{\"id\":5,\"name\":\"user_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":5}},{\"id\":6,\"name\":\"user_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":6}},{\"id\":7,\"name\":\"roles_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":7}},{\"id\":8,\"name\":\"role_edit\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":8}},{\"id\":9,\"name\":\"role_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":9}},{\"id\":10,\"name\":\"role_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":10}},{\"id\":11,\"name\":\"role_show\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":11}},{\"id\":12,\"name\":\"permissions_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":12}},{\"id\":13,\"name\":\"permission_edit\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":13}},{\"id\":14,\"name\":\"company_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":14}},{\"id\":15,\"name\":\"company_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":15}},{\"id\":16,\"name\":\"company_update\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":16}},{\"id\":17,\"name\":\"company_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":17}},{\"id\":18,\"name\":\"company_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":18}},{\"id\":19,\"name\":\"equipment_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":19}},{\"id\":20,\"name\":\"category_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":20}},{\"id\":21,\"name\":\"category_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":21}},{\"id\":22,\"name\":\"specification_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":22}},{\"id\":23,\"name\":\"specification_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":23}},{\"id\":24,\"name\":\"specification_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":24}},{\"id\":25,\"name\":\"specification_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":25}},{\"id\":26,\"name\":\"specification_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":26}},{\"id\":27,\"name\":\"unit_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":27}},{\"id\":28,\"name\":\"unit_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":28}},{\"id\":29,\"name\":\"unit_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":29}},{\"id\":30,\"name\":\"unit_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":30}},{\"id\":31,\"name\":\"unit_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":31}},{\"id\":32,\"name\":\"status_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":32}},{\"id\":33,\"name\":\"status_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":33}},{\"id\":34,\"name\":\"status_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":34}},{\"id\":35,\"name\":\"status_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":35}},{\"id\":36,\"name\":\"status_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":36}},{\"id\":37,\"name\":\"activity_log\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":37}}]},\"message\":\"Roles retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -416,7 +627,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"permissions\":[4]}"
+                            "raw": "{\"permissions\":[1]}"
                         },
                         "description": "",
                         "auth": {
@@ -468,7 +679,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "57"
+                                    "value": "52"
                                 },
                                 {
                                     "key": "vary",
@@ -476,7 +687,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":[{\"id\":38,\"employee_id\":\"102030-555\",\"last_name\":\"Gwaps\",\"first_name\":\"Maymay\",\"middle_name\":null,\"suffix\":null,\"email\":\"may@gmail.com\",\"role_request\":\"admin\",\"approved_at\":null,\"disapproved_at\":null,\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"05\\\/09\\\/2022\",\"updated_at\":\"05\\\/09\\\/2022\"}],\"message\":\"Accounts for approval retrieved successfully.\"}",
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"employee_id\":\"123admin\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admin@gmail.com\",\"role_request\":null,\"approved_at\":null,\"disapproved_at\":null,\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\"},{\"id\":12,\"employee_id\":\"123admin11\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admi11@gmail.com\",\"role_request\":null,\"approved_at\":null,\"disapproved_at\":null,\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\"}],\"message\":\"Accounts for approval retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -524,7 +735,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "56"
+                                    "value": "51"
                                 },
                                 {
                                     "key": "vary",
@@ -532,236 +743,10 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":[{\"id\":3,\"employee_id\":\"123employee\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"employee@gmail.com\",\"role_request\":null,\"approved_at\":\"2022-09-01 05:50:40\",\"disapproved_at\":null,\"status\":0,\"deactivated_at\":\"2022-09-01 08:13:54\",\"email_verified_at\":null,\"created_at\":\"2022-09-01T02:21:39.000000Z\",\"updated_at\":\"2022-09-01T08:13:54.000000Z\"}],\"message\":\"Deactivated user accounts were retrieved successfully.\"}",
+                            "body": "{\"success\":true,\"data\":[{\"id\":3,\"employee_id\":\"123admi3\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admin3@gmail.com\",\"role_request\":null,\"approved_at\":\"2022-09-06 07:11:07\",\"disapproved_at\":null,\"deactivated_at\":\"2022-09-06 07:21:52\",\"email_verified_at\":null,\"created_at\":\"2022-09-06T05:47:57.000000Z\",\"updated_at\":\"2022-09-06T07:21:52.000000Z\"},{\"id\":6,\"employee_id\":\"123admin5\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admin5@gmail.com\",\"role_request\":null,\"approved_at\":\"2022-09-06 07:27:09\",\"disapproved_at\":null,\"deactivated_at\":\"2022-09-06 07:23:24\",\"email_verified_at\":null,\"created_at\":\"2022-09-06T07:14:54.000000Z\",\"updated_at\":\"2022-09-06T07:27:09.000000Z\"}],\"message\":\"Deactivated user accounts were retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/company",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/company"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "x-ratelimit-limit",
-                                    "value": "60"
-                                },
-                                {
-                                    "key": "x-ratelimit-remaining",
-                                    "value": "54"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 200,
-                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"name\":\"Fligno AU\",\"acronym\":\"FAU\",\"status\":1,\"created_at\":\"01\\\/09\\\/2022\",\"updated_at\":\"01\\\/09\\\/2022\"},{\"id\":2,\"name\":\"Fligno PH\",\"acronym\":\"FPH\",\"status\":1,\"created_at\":\"01\\\/09\\\/2022\",\"updated_at\":\"01\\\/09\\\/2022\"},{\"id\":3,\"name\":\"AFRIL\",\"acronym\":\"AFR\",\"status\":1,\"created_at\":\"01\\\/09\\\/2022\",\"updated_at\":\"01\\\/09\\\/2022\"},{\"id\":4,\"name\":\"Addon\",\"acronym\":\"Add\",\"status\":1,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"},{\"id\":5,\"name\":\"TableTimes\",\"acronym\":\"TblTme\",\"status\":1,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"},{\"id\":6,\"name\":\"USTEP\",\"acronym\":\"USTP\",\"status\":1,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"},{\"id\":7,\"name\":\"MUSTEP\",\"acronym\":\"MUST\",\"status\":1,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"},{\"id\":8,\"name\":\"TRIAL1\",\"acronym\":\"Try1\",\"status\":1,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"},{\"id\":9,\"name\":\"Frilll\",\"acronym\":\"OEY\",\"status\":1,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"},{\"id\":10,\"name\":\"Try\",\"acronym\":\"t\",\"status\":1,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"},{\"id\":11,\"name\":\"Try\",\"acronym\":\"t\",\"status\":1,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"}],\"message\":\"Company retrieved successfully.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/company",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/company"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"eaque\",\"acronym\":\"omnis\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/company\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/company\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the company."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "x-ratelimit-limit",
-                                    "value": "60"
-                                },
-                                {
-                                    "key": "x-ratelimit-remaining",
-                                    "value": "53"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 200,
-                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"Fligno AU\",\"acronym\":\"FAU\",\"status\":1,\"created_at\":\"01\\\/09\\\/2022\",\"updated_at\":\"01\\\/09\\\/2022\"},\"message\":\"Company retrieved successfully.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/company\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/company\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the company."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"aut\",\"acronym\":\"mollitia\",\"status\":1}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/company\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/company\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the company."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
                 },
                 {
                     "name": "Register approved accounts api",
@@ -878,7 +863,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "55"
+                                    "value": "50"
                                 },
                                 {
                                     "key": "vary",
@@ -886,38 +871,10 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":[{\"id\":7,\"employee_id\":\"123employee4\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"employee4@gmail.com\",\"role_request\":\"admin\",\"approved_at\":null,\"disapproved_at\":\"2022-09-02 01:17:40\",\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"01\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"},{\"id\":9,\"employee_id\":\"201934-000\",\"last_name\":\"Lourds\",\"first_name\":\"Mama\",\"middle_name\":\"Gwapa\",\"suffix\":\"Seniora\",\"email\":\"mamal@gmail.com\",\"role_request\":\"super_admin\",\"approved_at\":null,\"disapproved_at\":\"2022-09-02 01:57:49\",\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"},{\"id\":10,\"employee_id\":\"123employee6\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"employee6@gmail.com\",\"role_request\":\"admin\",\"approved_at\":null,\"disapproved_at\":\"2022-09-02 01:58:52\",\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"02\\\/09\\\/2022\"},{\"id\":12,\"employee_id\":\"123employee5\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"employee5@gmail.com\",\"role_request\":\"admin\",\"approved_at\":null,\"disapproved_at\":\"2022-09-05 03:06:56\",\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"05\\\/09\\\/2022\"},{\"id\":25,\"employee_id\":\"201893-222\",\"last_name\":\"Cumayas\",\"first_name\":\"Afril\",\"middle_name\":null,\"suffix\":null,\"email\":\"afril@gmail.com\",\"role_request\":\"admin\",\"approved_at\":null,\"disapproved_at\":\"2022-09-05 03:15:39\",\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"02\\\/09\\\/2022\",\"updated_at\":\"05\\\/09\\\/2022\"},{\"id\":34,\"employee_id\":\"204920835-33\",\"last_name\":\"Nksnjds\",\"first_name\":\"Louawygd\",\"middle_name\":null,\"suffix\":null,\"email\":\"adwg@gamil.com\",\"role_request\":\"admin\",\"approved_at\":null,\"disapproved_at\":\"2022-09-05 05:15:50\",\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"05\\\/09\\\/2022\",\"updated_at\":\"05\\\/09\\\/2022\"},{\"id\":35,\"employee_id\":\"00030-39435\",\"last_name\":\"Cumayas\",\"first_name\":\"Joyjoy\",\"middle_name\":null,\"suffix\":null,\"email\":\"joyjoy@gmail.com\",\"role_request\":\"admin\",\"approved_at\":null,\"disapproved_at\":\"2022-09-05 03:17:53\",\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"05\\\/09\\\/2022\",\"updated_at\":\"05\\\/09\\\/2022\"},{\"id\":37,\"employee_id\":\"2013138-8080\",\"last_name\":\"Cuyamas\",\"first_name\":\"Afrilyn\",\"middle_name\":null,\"suffix\":null,\"email\":\"lyn@gmail.com\",\"role_request\":\"super_admin\",\"approved_at\":null,\"disapproved_at\":\"2022-09-05 05:16:46\",\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"05\\\/09\\\/2022\",\"updated_at\":\"05\\\/09\\\/2022\"}],\"message\":\"Disapproved accounts retrieved successfully.\"}",
+                            "body": "{\"success\":true,\"data\":[{\"id\":11,\"employee_id\":\"123admin10\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admi10@gmail.com\",\"role_request\":null,\"approved_at\":null,\"disapproved_at\":\"2022-09-06 08:13:21\",\"company_name\":[\"Fligno PH\"],\"email_verified_at\":null,\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\"}],\"message\":\"Disapproved accounts retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
-                },
-                {
-                    "name": "api\/logout",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/logout",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/logout"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
                 },
                 {
                     "name": "api\/user\/{user_id}\/change_role",
@@ -949,7 +906,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"role_id\":\"quaerat\"}"
+                            "raw": "{\"role_id\":\"eos\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1156,7 +1113,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"brand\":\"eum\",\"model\":\"sit\",\"serial\":\"non\",\"details\":\"earum\",\"remarks\":\"id\",\"company_id\":\"itaque\",\"category_id\":\"veniam\"}"
+                            "raw": "{\"brand\":\"nihil\",\"model\":\"omnis\",\"serial\":\"repellendus\",\"details\":\"sit\",\"remarks\":\"sunt\",\"company_id\":\"odit\",\"category_id\":\"nulla\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1251,7 +1208,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"brand\":\"incidunt\",\"model\":\"nisi\",\"serial\":\"accusamus\",\"company_id\":\"veritatis\",\"category_id\":\"in\"}"
+                            "raw": "{\"brand\":\"soluta\",\"model\":\"repudiandae\",\"serial\":\"nam\",\"company_id\":\"praesentium\",\"category_id\":\"consequatur\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1366,7 +1323,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"aut\"}"
+                            "raw": "{\"name\":\"dicta\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1461,181 +1418,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"voluptas\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/spec",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/spec"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/spec",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/spec"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"category_name\":\"eligendi\",\"spec_name\":[\"ut\"]}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/spec\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/spec\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the spec."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/spec\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/spec\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the spec."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"doloribus\"}"
+                            "raw": "{\"name\":\"quasi\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1714,7 +1497,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"magni\",\"date\":\"itaque\",\"unit\":\"sed\"}"
+                            "raw": "{\"name\":\"quos\",\"date\":\"dicta\",\"unit\":\"nam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1874,6 +1657,222 @@
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "api\/activity_logs",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/activity_logs",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/activity_logs"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Specification Management",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/spec",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/spec"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/spec",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/spec"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"category_name\":\"tempore\",\"spec_name\":[\"voluptate\"]}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/spec\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/spec\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the spec."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/spec\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/spec\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the spec."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"debitis\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
                 }
             ]
         }
