@@ -10,11 +10,16 @@ use App\Models\Category;
 use App\Models\Specification;
 use Illuminate\Http\JsonResponse;
 
+/**
+ * @group Category Management
+ *
+ * APIs to manage the category resource.
+ */
 class CategoryController extends BaseController
 {
     public function __construct()
     {
-        $this->middleware('permission:category_create', ['only' => ['store']]);
+//        $this->middleware('permission:category_create', ['only' => ['store']]);
 //        $this->middleware('permission:product-create', ['only' => ['create','store']]);
 //        $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
 //        $this->middleware('permission:product-delete', ['only' => ['destroy']]);
@@ -23,17 +28,26 @@ class CategoryController extends BaseController
     /**
      * Display a listing of the resource.
      *
+     *
+     * @header Authorization Bearer {token}
+     * @apiResourceCollection App\Http\Resources\CategoryResource
+     * @apiResourceModel App\Models\Category
+     *
      * @return JsonResponse
      */
     public function index(): JsonResponse
     {
         $category = Category::all();
+        if ($category->isNotEmpty()) {
+            return $this->sendResponse(CategoryResource::collection($category), 'Category retrieved successfully.');
+        }
 
-        return $this->sendResponse(CategoryResource::collection($category), 'Category retrieved successfully.');
+        return $this->sendError('No Record.');
     }
 
     /**
      * Store a newly created resource in storage.
+     *
      *
      * @param  StoreCategoryRequest  $request
      * @return JsonResponse
@@ -53,17 +67,14 @@ class CategoryController extends BaseController
         } else {
             return $this->sendResponse(new CategoryResource($category), 'Category created successfully.');
         }
-
-//            $specs = collect($specs)->map(function($spec){
-//               return Specification::create([
-//                    'name' => $spec,
-//                ]);
-//            });
-//            $category->spec()->sync($specs);
     }
 
     /**
      * Display the specified resource.
+     *
+     * @urlParam id int required Category ID
+     * @apiResource  App\Http\Resources\CategoryResource
+     * @apiResourceModel App\Models\Category
      *
      * @param  Category  $category
      * @return JsonResponse
@@ -86,18 +97,5 @@ class CategoryController extends BaseController
         $category->name = $input['name'];
 
         return $this->sendResponse(new CategoryResource($category), 'Category updated successfully.');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  Category  $category
-     * @return JsonResponse
-     */
-    public function destroy(Category $category): JsonResponse
-    {
-        $category->delete();
-
-        return $this->sendResponse(new CategoryResource($category), 'Category deleted.');
     }
 }

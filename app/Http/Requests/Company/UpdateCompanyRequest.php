@@ -26,6 +26,7 @@ class UpdateCompanyRequest extends FormRequest
         return [
             'name' => 'required',
             'acronym' => 'required',
+            'status' => 'integer',
         ];
     }
 }

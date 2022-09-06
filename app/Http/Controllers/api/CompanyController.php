@@ -13,7 +13,7 @@ class CompanyController extends BaseController
 {
     public function __construct()
     {
-        $this->middleware('permission:company_create', ['only' => ['store']]);
+//        $this->middleware('permission:company_create', ['only' => ['store']]);
 //        $this->middleware('permission:product-create', ['only' => ['create','store']]);
 //        $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
 //        $this->middleware('permission:product-delete', ['only' => ['destroy']]);
@@ -27,8 +27,11 @@ class CompanyController extends BaseController
     public function index(): JsonResponse
     {
         $company = Company::all();
+        if ($company->isNotEmpty()) {
+            return $this->sendResponse(CompanyResource::collection($company), 'Company retrieved successfully.');
+        }
 
-        return $this->sendResponse(CompanyResource::collection($company), 'Company retrieved successfully.');
+        return $this->sendError('No Record.');
     }
 
     /**
@@ -40,7 +43,7 @@ class CompanyController extends BaseController
     public function store(StoreCompanyRequest $request): JsonResponse
     {
         $input = $request->validated();
-        $company = Company::query()->create($input);
+        $company = Company::create($input);
 
         return $this->sendResponse(new CompanyResource($company), 'Company created successfully.');
     }
@@ -68,6 +71,7 @@ class CompanyController extends BaseController
         $input = $request->validated();
         $company->company = $input['name'];
         $company->acronym = $input['acronym'];
+        $company->status = $input['status'];
 
         return $this->sendResponse(new CompanyResource($company), 'Company updated successfully.');
     }

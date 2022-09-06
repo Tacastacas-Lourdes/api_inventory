@@ -25,6 +25,7 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'spec' => 'array',
         ];
     }
 }

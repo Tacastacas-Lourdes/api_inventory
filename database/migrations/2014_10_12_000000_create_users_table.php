@@ -11,7 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string('suffix')->nullable();
             $table->string('email')->unique();
             $table->string('role_request')->nullable();
+            $table->dateTime('approved_at')->nullable();
+            $table->dateTime('disapproved_at')->nullable();
+            $table->dateTime('deactivated_at')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
@@ -34,7 +37,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('users');
     }

@@ -10,6 +10,7 @@ use App\Http\Controllers\api\StatusController;
 use App\Http\Controllers\api\UnitController;
 use App\Http\Controllers\api\UserController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Activitylog\Models\Activity;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,23 +22,33 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get('/', function () {
+    return Activity::all();
+});
 Route::controller(RegisterController::class)->group(function () {
     Route::post('register', 'register');
     Route::post('login', 'login');
 });
 Route::apiResource('role', RoleController::class);
-Route::get('approval_list', [UserController::class, 'approvalList']);
+Route::get('user/approval_request', [UserController::class, 'approvalList']);
+Route::get('user/deactivated_account', [UserController::class, 'deactivatedAccount']);
+Route::post('user/{requestor}/approve', [UserController::class, 'approveAccount']);
+Route::post('user/{requestor}/disapprove', [UserController::class, 'disapproveAccount']);
+Route::get('user/disapproved_account', [UserController::class, 'disapprovedList']);
+Route::apiResource('company', CompanyController::class);
+Route::apiResource('category', CategoryController::class);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout', [RegisterController::class, 'logout']);
-    Route::post('approved/{requests}', [UserController::class, 'registerAccount']);
-    Route::delete('disapproved/{requests}', [UserController::class, 'disapprove']);
-    Route::put('change_role/{user}', [UserController::class, 'changeRole']);
-    Route::get('admin_details/{user}', [UserController::class, 'getAdminById']);
-    Route::get('admin_list', [UserController::class, 'adminList']);
+    Route::put('user/{user}/change_role', [UserController::class, 'changeRole']);
+    Route::put('user/{user}/activate', [UserController::class, 'activate']);
+    Route::put('user/{user}/deactivate', [UserController::class, 'deactivate']);
+    Route::get('user/{user}/admin_details', [UserController::class, 'getUserById']);
+    Route::get('user/admin_list', [UserController::class, 'adminList']);
+    Route::get('user/employee_list', [UserController::class, 'employeeList']);
+//    Route::put('admin_updateProfile', [UserController::class, 'updateProfile']);
+//    Route::put('employee_updateProfile', [EmployeeController::class, 'update']);
     Route::apiResource('unit', UnitController::class);
-    Route::apiResource('company', CompanyController::class);
-    Route::apiResource('category', CategoryController::class);
     Route::apiResource('status', StatusController::class);
     Route::apiResource('spec', SpecificationController::class);
     Route::apiResource('remark', RemarkController::class);

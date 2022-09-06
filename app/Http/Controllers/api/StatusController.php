@@ -13,7 +13,7 @@ class StatusController extends BaseController
 {
     public function __construct()
     {
-        $this->middleware('permission:status_create', ['only' => ['store']]);
+//        $this->middleware('permission:status_create', ['only' => ['store']]);
 //        $this->middleware('permission:product-create', ['only' => ['create','store']]);
 //        $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
 //        $this->middleware('permission:product-delete', ['only' => ['destroy']]);
@@ -71,16 +71,16 @@ class StatusController extends BaseController
         return $this->sendResponse(new StatusResource($status), 'Status updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  Status  $status
-     * @return JsonResponse
-     */
-    public function destroy(Status $status): JsonResponse
-    {
-        $status->delete();
-
-        return $this->sendResponse($status, 'Status deleted.');
-    }
+//    /**
+//     * Remove the specified resource from storage.
+//     *
+//     * @param  Status  $status
+//     * @return JsonResponse
+//     */
+//    public function destroy(Status $status): JsonResponse
+//    {
+//        $status->delete();
+//
+//        return $this->sendResponse($status, 'Status deleted.');
+//    }
 }

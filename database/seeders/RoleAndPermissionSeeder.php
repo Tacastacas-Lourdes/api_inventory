@@ -66,12 +66,14 @@ class RoleAndPermissionSeeder extends Seeder
             Permission::create(['name' => $permission]);
         }
 
-        $adminRole = Role::create(['name' => 'super_admin']);
-        $editorRole = Role::create(['name' => 'admin']);
+        $superAdminRole = Role::create(['name' => 'super_admin']);
+        $adminRole = Role::create(['name' => 'admin']);
+        $employeeRole = Role::create(['name' => 'employee']);
+        $guestRole = Role::create(['name' => 'guest']);
 
-        $adminRole->givePermissionTo($permissions);
+        $superAdminRole->givePermissionTo($permissions);
 
-        $editorRole->givePermissionTo([
+        $adminRole->givePermissionTo([
             'status_access',
             'status_create',
             'status_show_details',

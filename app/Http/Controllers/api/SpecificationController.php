@@ -14,7 +14,7 @@ class SpecificationController extends BaseController
 {
     public function __construct()
     {
-        $this->middleware('permission:category_create', ['only' => ['store']]);
+//        $this->middleware('permission:category_create', ['only' => ['store']]);
 //        $this->middleware('permission:product-create', ['only' => ['create','store']]);
 //        $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
 //        $this->middleware('permission:product-delete', ['only' => ['destroy']]);
@@ -49,6 +49,7 @@ class SpecificationController extends BaseController
                 ]);
                 $spec->category()->associate($category)->save();
             }
+            $spec->load('category');
 
             return $this->sendResponse(new SpecificationResource($spec), 'Specification created successfully.');
         } else {
@@ -82,17 +83,16 @@ class SpecificationController extends BaseController
 
         return $this->sendResponse(new SpecificationResource($spec), 'Specification updated successfully.');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  Specification  $spec
-     * @return JsonResponse
-     */
-    public function destroy(Specification $spec): JsonResponse
-    {
-        $spec->delete();
-
-        return $this->sendResponse($spec, 'Specification deleted.');
-    }
 }
+//    /**
+//     * Remove the specified resource from storage.
+//     *
+//     * @param  Specification  $spec
+//     * @return JsonResponse
+//     */
+//    public function destroy(Specification $spec): JsonResponse
+//    {
+//        $spec->delete();
+//
+//        return $this->sendResponse($spec, 'Specification deleted.');
+//    }

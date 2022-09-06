@@ -27,8 +27,8 @@ class UpdateUnitRequest extends FormRequest
             'brand' => 'required',
             'model' => 'required',
             'serial' => 'required',
-            'company_id' => 'required|exists:company,id',
-            'category_id' => 'required|exists:category,id',
+            'company_id' => 'required|exists:companies,id',
+            'category_id' => 'required|exists:categories,id',
             'status_id' => 'exists:statuses,id',
         ];
     }

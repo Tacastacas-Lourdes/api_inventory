@@ -9,7 +9,6 @@ use App\Http\Resources\RemarkResource;
 use App\Models\Remark;
 use App\Models\Unit;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
 
 class RemarkController extends BaseController
 {
@@ -21,8 +20,11 @@ class RemarkController extends BaseController
     public function index(): JsonResponse
     {
         $unit = Remark::all();
+        if ($unit->isNotEmpty()) {
+            return $this->sendResponse(RemarkResource::collection($unit), 'Remark retrieved successfully.');
+        }
 
-        return $this->sendResponse(RemarkResource::collection($unit), 'Remark retrieved successfully.');
+        return $this->sendError('No record.');
     }
 
     /**
@@ -35,7 +37,6 @@ class RemarkController extends BaseController
     {
         $input = $request->validated();
         $unit = Unit::query()->findOrFail($input['unit']);
-//        dd(count($input['name']));
         $name = $input['name'];
         $date = $input['date'];
         for ($i = 0; $i < count($input['name']); $i++) {
@@ -59,26 +60,18 @@ class RemarkController extends BaseController
         return $this->sendResponse(new RemarkResource($remark), 'Remarks retrieved successfully.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  UpdateRemarkRequest  $request
-     * @param  Remark  $remark
-     * @return Response
-     */
-    public function update(UpdateRemarkRequest $request, Remark $remark)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+//    /**
+//     * Update the specified resource in storage.
+//     *
+//     * @param  UpdateRemarkRequest  $request
+//     * @param  Remark  $remark
+//     * @return JsonResponse
+//     */
+//    public function update(UpdateRemarkRequest $request, Remark $remark): JsonResponse
+//    {
+//        $input = $request->validated();
+//        $remark->company = $input['name'];
+//        $remark->acronym = $input['date'];
+//        return $this->sendResponse(new RemarkResource($remark), 'Remark created successfully.');
+//    }
 }

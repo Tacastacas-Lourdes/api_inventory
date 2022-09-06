@@ -1,0 +1,3058 @@
+openapi: 3.0.3
+info:
+  title: 'Inventory System API'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/category:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {token}'
+          schema:
+            type: string
+      responses:
+        200:
+          description: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      category: Laptop
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                      specification:
+                        -
+                          id: 1
+                          name: CPU
+                          category_id: 1
+                          created_at: '2022-09-02T08:19:33.000000Z'
+                          updated_at: '2022-09-02T08:19:33.000000Z'
+                        -
+                          id: 2
+                          name: Memory
+                          category_id: 1
+                          created_at: '2022-09-02T08:19:33.000000Z'
+                          updated_at: '2022-09-02T08:19:33.000000Z'
+                    -
+                      id: 1
+                      category: Laptop
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                      specification:
+                        -
+                          id: 1
+                          name: CPU
+                          category_id: 1
+                          created_at: '2022-09-02T08:19:33.000000Z'
+                          updated_at: '2022-09-02T08:19:33.000000Z'
+                        -
+                          id: 2
+                          name: Memory
+                          category_id: 1
+                          created_at: '2022-09-02T08:19:33.000000Z'
+                          updated_at: '2022-09-02T08:19:33.000000Z'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        category: Laptop
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                        specification:
+                          -
+                            id: 1
+                            name: CPU
+                            category_id: 1
+                            created_at: '2022-09-02T08:19:33.000000Z'
+                            updated_at: '2022-09-02T08:19:33.000000Z'
+                          -
+                            id: 2
+                            name: Memory
+                            category_id: 1
+                            created_at: '2022-09-02T08:19:33.000000Z'
+                            updated_at: '2022-09-02T08:19:33.000000Z'
+                      -
+                        id: 1
+                        category: Laptop
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                        specification:
+                          -
+                            id: 1
+                            name: CPU
+                            category_id: 1
+                            created_at: '2022-09-02T08:19:33.000000Z'
+                            updated_at: '2022-09-02T08:19:33.000000Z'
+                          -
+                            id: 2
+                            name: Memory
+                            category_id: 1
+                            created_at: '2022-09-02T08:19:33.000000Z'
+                            updated_at: '2022-09-02T08:19:33.000000Z'
+                    items:
+                      type: object
+      tags:
+        - 'Category Management'
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Category Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: iusto
+                spec:
+                  type: array
+                  description: ''
+                  example:
+                    - aliquid
+                  items:
+                    type: string
+              required:
+                - name
+      security: []
+  '/api/category/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: '0'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    category: Laptop
+                    created_at: 02/09/2022
+                    updated_at: 02/09/2022
+                    specification:
+                      -
+                        id: 1
+                        name: CPU
+                        category_id: 1
+                        created_at: '2022-09-02T08:19:33.000000Z'
+                        updated_at: '2022-09-02T08:19:33.000000Z'
+                      -
+                        id: 2
+                        name: Memory
+                        category_id: 1
+                        created_at: '2022-09-02T08:19:33.000000Z'
+                        updated_at: '2022-09-02T08:19:33.000000Z'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 1
+                      category: Laptop
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                      specification:
+                        -
+                          id: 1
+                          name: CPU
+                          category_id: 1
+                          created_at: '2022-09-02T08:19:33.000000Z'
+                          updated_at: '2022-09-02T08:19:33.000000Z'
+                        -
+                          id: 2
+                          name: Memory
+                          category_id: 1
+                          created_at: '2022-09-02T08:19:33.000000Z'
+                          updated_at: '2022-09-02T08:19:33.000000Z'
+      tags:
+        - 'Category Management'
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Category Management'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: optio
+              required:
+                - name
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'Category ID'
+        example: 20
+        required: true
+        schema:
+          type: integer
+  /api/register:
+    post:
+      summary: 'Register api'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employee_id:
+                  type: string
+                  description: ''
+                  example: nobis
+                first_name:
+                  type: string
+                  description: ''
+                  example: quod
+                last_name:
+                  type: string
+                  description: ''
+                  example: unde
+                middle_name:
+                  type: string
+                  description: ''
+                  example: null
+                suffix:
+                  type: string
+                  description: ''
+                  example: null
+                company_id:
+                  type: string
+                  description: ''
+                  example: null
+                role_request:
+                  type: string
+                  description: ''
+                  example: null
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: stiedemann.jared@example.com
+                password:
+                  type: string
+                  description: 'The value and <code>confirmPassword</code> must match.'
+                  example: sed
+              required:
+                - employee_id
+                - first_name
+                - last_name
+                - email
+                - password
+      security: []
+  /api/login:
+    post:
+      summary: 'Login api'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must not be greater than 191 characters.'
+                  example: mbkseknynbwfxrmlbvlauqpmqjdsduyivdaxh
+                password:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - email
+                - password
+      security: []
+  /api/role:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id: 1
+                      name: super_admin
+                      guard_name: web
+                      created_at: '2022-09-01T02:01:22.000000Z'
+                      updated_at: '2022-09-01T02:01:22.000000Z'
+                    -
+                      id: 2
+                      name: admin
+                      guard_name: web
+                      created_at: '2022-09-01T02:01:22.000000Z'
+                      updated_at: '2022-09-01T02:01:22.000000Z'
+                  message: 'Role retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: super_admin
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                      -
+                        id: 2
+                        name: admin
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                    items:
+                      type: object
+                  message:
+                    type: string
+                    example: 'Role retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: ut
+                permissions:
+                  type: array
+                  description: ''
+                  example:
+                    - 4
+                  items:
+                    type: integer
+              required:
+                - name
+      security: []
+  '/api/role/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    id: 1
+                    name: super_admin
+                    created_at: 01/09/2022
+                    updated_at: 01/09/2022
+                    permissions:
+                      -
+                        id: 1
+                        name: admin_panel_access
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 1
+                      -
+                        id: 2
+                        name: user_approval
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 2
+                      -
+                        id: 3
+                        name: users_access
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 3
+                      -
+                        id: 4
+                        name: user-user_assign_role
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 4
+                      -
+                        id: 5
+                        name: user_delete
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 5
+                      -
+                        id: 6
+                        name: user_show_details
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 6
+                      -
+                        id: 7
+                        name: roles_access
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 7
+                      -
+                        id: 8
+                        name: role_edit
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 8
+                      -
+                        id: 9
+                        name: role_delete
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 9
+                      -
+                        id: 10
+                        name: role_create
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 10
+                      -
+                        id: 11
+                        name: role_show
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 11
+                      -
+                        id: 12
+                        name: permissions_access
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 12
+                      -
+                        id: 13
+                        name: permission_edit
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 13
+                      -
+                        id: 14
+                        name: company_access
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 14
+                      -
+                        id: 15
+                        name: company_create
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 15
+                      -
+                        id: 16
+                        name: company_update
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 16
+                      -
+                        id: 17
+                        name: company_show_details
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 17
+                      -
+                        id: 18
+                        name: company_delete
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 18
+                      -
+                        id: 19
+                        name: equipment_access
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 19
+                      -
+                        id: 20
+                        name: category_access
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 20
+                      -
+                        id: 21
+                        name: category_create
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 21
+                      -
+                        id: 22
+                        name: specification_access
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 22
+                      -
+                        id: 23
+                        name: specification_create
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 23
+                      -
+                        id: 24
+                        name: specification_show_details
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 24
+                      -
+                        id: 25
+                        name: specification_delete
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 25
+                      -
+                        id: 26
+                        name: specification_update_btn
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 26
+                      -
+                        id: 27
+                        name: unit_access
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 27
+                      -
+                        id: 28
+                        name: unit_create
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 28
+                      -
+                        id: 29
+                        name: unit_show_details
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 29
+                      -
+                        id: 30
+                        name: unit_delete
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 30
+                      -
+                        id: 31
+                        name: unit_update_btn
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 31
+                      -
+                        id: 32
+                        name: status_access
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 32
+                      -
+                        id: 33
+                        name: status_create
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 33
+                      -
+                        id: 34
+                        name: status_show_details
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 34
+                      -
+                        id: 35
+                        name: status_delete
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 35
+                      -
+                        id: 36
+                        name: status_update_btn
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 36
+                      -
+                        id: 37
+                        name: activity_log
+                        guard_name: web
+                        created_at: '2022-09-01T02:01:22.000000Z'
+                        updated_at: '2022-09-01T02:01:22.000000Z'
+                        pivot:
+                          role_id: 1
+                          permission_id: 37
+                  message: 'Roles retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    example:
+                      id: 1
+                      name: super_admin
+                      created_at: 01/09/2022
+                      updated_at: 01/09/2022
+                      permissions:
+                        -
+                          id: 1
+                          name: admin_panel_access
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 1
+                        -
+                          id: 2
+                          name: user_approval
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 2
+                        -
+                          id: 3
+                          name: users_access
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 3
+                        -
+                          id: 4
+                          name: user-user_assign_role
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 4
+                        -
+                          id: 5
+                          name: user_delete
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 5
+                        -
+                          id: 6
+                          name: user_show_details
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 6
+                        -
+                          id: 7
+                          name: roles_access
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 7
+                        -
+                          id: 8
+                          name: role_edit
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 8
+                        -
+                          id: 9
+                          name: role_delete
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 9
+                        -
+                          id: 10
+                          name: role_create
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 10
+                        -
+                          id: 11
+                          name: role_show
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 11
+                        -
+                          id: 12
+                          name: permissions_access
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 12
+                        -
+                          id: 13
+                          name: permission_edit
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 13
+                        -
+                          id: 14
+                          name: company_access
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 14
+                        -
+                          id: 15
+                          name: company_create
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 15
+                        -
+                          id: 16
+                          name: company_update
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 16
+                        -
+                          id: 17
+                          name: company_show_details
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 17
+                        -
+                          id: 18
+                          name: company_delete
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 18
+                        -
+                          id: 19
+                          name: equipment_access
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 19
+                        -
+                          id: 20
+                          name: category_access
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 20
+                        -
+                          id: 21
+                          name: category_create
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 21
+                        -
+                          id: 22
+                          name: specification_access
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 22
+                        -
+                          id: 23
+                          name: specification_create
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 23
+                        -
+                          id: 24
+                          name: specification_show_details
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 24
+                        -
+                          id: 25
+                          name: specification_delete
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 25
+                        -
+                          id: 26
+                          name: specification_update_btn
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 26
+                        -
+                          id: 27
+                          name: unit_access
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 27
+                        -
+                          id: 28
+                          name: unit_create
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 28
+                        -
+                          id: 29
+                          name: unit_show_details
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 29
+                        -
+                          id: 30
+                          name: unit_delete
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 30
+                        -
+                          id: 31
+                          name: unit_update_btn
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 31
+                        -
+                          id: 32
+                          name: status_access
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 32
+                        -
+                          id: 33
+                          name: status_create
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 33
+                        -
+                          id: 34
+                          name: status_show_details
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 34
+                        -
+                          id: 35
+                          name: status_delete
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 35
+                        -
+                          id: 36
+                          name: status_update_btn
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 36
+                        -
+                          id: 37
+                          name: activity_log
+                          guard_name: web
+                          created_at: '2022-09-01T02:01:22.000000Z'
+                          updated_at: '2022-09-01T02:01:22.000000Z'
+                          pivot:
+                            role_id: 1
+                            permission_id: 37
+                  message:
+                    type: string
+                    example: 'Roles retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                permissions:
+                  type: array
+                  description: ''
+                  example:
+                    - 4
+                  items:
+                    type: integer
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the role.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/user/approval_request:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id: 38
+                      employee_id: 102030-555
+                      last_name: Gwaps
+                      first_name: Maymay
+                      middle_name: null
+                      suffix: null
+                      email: may@gmail.com
+                      role_request: admin
+                      approved_at: null
+                      disapproved_at: null
+                      company_name: []
+                      email_verified_at: null
+                      created_at: 05/09/2022
+                      updated_at: 05/09/2022
+                  message: 'Accounts for approval retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 38
+                        employee_id: 102030-555
+                        last_name: Gwaps
+                        first_name: Maymay
+                        middle_name: null
+                        suffix: null
+                        email: may@gmail.com
+                        role_request: admin
+                        approved_at: null
+                        disapproved_at: null
+                        company_name: []
+                        email_verified_at: null
+                        created_at: 05/09/2022
+                        updated_at: 05/09/2022
+                    items:
+                      type: object
+                  message:
+                    type: string
+                    example: 'Accounts for approval retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+  /api/user/deactivated_account:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id: 3
+                      employee_id: 123employee
+                      last_name: wq
+                      first_name: das
+                      middle_name: wqfgvgfgfg
+                      suffix: wgfgggfgf
+                      email: employee@gmail.com
+                      role_request: null
+                      approved_at: '2022-09-01 05:50:40'
+                      disapproved_at: null
+                      status: 0
+                      deactivated_at: '2022-09-01 08:13:54'
+                      email_verified_at: null
+                      created_at: '2022-09-01T02:21:39.000000Z'
+                      updated_at: '2022-09-01T08:13:54.000000Z'
+                  message: 'Deactivated user accounts were retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 3
+                        employee_id: 123employee
+                        last_name: wq
+                        first_name: das
+                        middle_name: wqfgvgfgfg
+                        suffix: wgfgggfgf
+                        email: employee@gmail.com
+                        role_request: null
+                        approved_at: '2022-09-01 05:50:40'
+                        disapproved_at: null
+                        status: 0
+                        deactivated_at: '2022-09-01 08:13:54'
+                        email_verified_at: null
+                        created_at: '2022-09-01T02:21:39.000000Z'
+                        updated_at: '2022-09-01T08:13:54.000000Z'
+                    items:
+                      type: object
+                  message:
+                    type: string
+                    example: 'Deactivated user accounts were retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+  /api/company:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id: 1
+                      name: 'Fligno AU'
+                      acronym: FAU
+                      status: 1
+                      created_at: 01/09/2022
+                      updated_at: 01/09/2022
+                    -
+                      id: 2
+                      name: 'Fligno PH'
+                      acronym: FPH
+                      status: 1
+                      created_at: 01/09/2022
+                      updated_at: 01/09/2022
+                    -
+                      id: 3
+                      name: AFRIL
+                      acronym: AFR
+                      status: 1
+                      created_at: 01/09/2022
+                      updated_at: 01/09/2022
+                    -
+                      id: 4
+                      name: Addon
+                      acronym: Add
+                      status: 1
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                    -
+                      id: 5
+                      name: TableTimes
+                      acronym: TblTme
+                      status: 1
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                    -
+                      id: 6
+                      name: USTEP
+                      acronym: USTP
+                      status: 1
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                    -
+                      id: 7
+                      name: MUSTEP
+                      acronym: MUST
+                      status: 1
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                    -
+                      id: 8
+                      name: TRIAL1
+                      acronym: Try1
+                      status: 1
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                    -
+                      id: 9
+                      name: Frilll
+                      acronym: OEY
+                      status: 1
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                    -
+                      id: 10
+                      name: Try
+                      acronym: t
+                      status: 1
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                    -
+                      id: 11
+                      name: Try
+                      acronym: t
+                      status: 1
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                  message: 'Company retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'Fligno AU'
+                        acronym: FAU
+                        status: 1
+                        created_at: 01/09/2022
+                        updated_at: 01/09/2022
+                      -
+                        id: 2
+                        name: 'Fligno PH'
+                        acronym: FPH
+                        status: 1
+                        created_at: 01/09/2022
+                        updated_at: 01/09/2022
+                      -
+                        id: 3
+                        name: AFRIL
+                        acronym: AFR
+                        status: 1
+                        created_at: 01/09/2022
+                        updated_at: 01/09/2022
+                      -
+                        id: 4
+                        name: Addon
+                        acronym: Add
+                        status: 1
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                      -
+                        id: 5
+                        name: TableTimes
+                        acronym: TblTme
+                        status: 1
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                      -
+                        id: 6
+                        name: USTEP
+                        acronym: USTP
+                        status: 1
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                      -
+                        id: 7
+                        name: MUSTEP
+                        acronym: MUST
+                        status: 1
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                      -
+                        id: 8
+                        name: TRIAL1
+                        acronym: Try1
+                        status: 1
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                      -
+                        id: 9
+                        name: Frilll
+                        acronym: OEY
+                        status: 1
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                      -
+                        id: 10
+                        name: Try
+                        acronym: t
+                        status: 1
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                      -
+                        id: 11
+                        name: Try
+                        acronym: t
+                        status: 1
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                    items:
+                      type: object
+                  message:
+                    type: string
+                    example: 'Company retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: eaque
+                acronym:
+                  type: string
+                  description: ''
+                  example: omnis
+              required:
+                - name
+                - acronym
+      security: []
+  '/api/company/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    id: 1
+                    name: 'Fligno AU'
+                    acronym: FAU
+                    status: 1
+                    created_at: 01/09/2022
+                    updated_at: 01/09/2022
+                  message: 'Company retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    example:
+                      id: 1
+                      name: 'Fligno AU'
+                      acronym: FAU
+                      status: 1
+                      created_at: 01/09/2022
+                      updated_at: 01/09/2022
+                  message:
+                    type: string
+                    example: 'Company retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: aut
+                acronym:
+                  type: string
+                  description: ''
+                  example: mollitia
+                status:
+                  type: integer
+                  description: ''
+                  example: 1
+              required:
+                - name
+                - acronym
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the company.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/user/{requestor_id}/approve':
+    post:
+      summary: 'Register approved accounts api'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: requestor_id
+        description: 'The ID of the requestor.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/user/{requestor_id}/disapprove':
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: requestor_id
+        description: 'The ID of the requestor.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/user/disapproved_account:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  data:
+                    -
+                      id: 7
+                      employee_id: 123employee4
+                      last_name: wq
+                      first_name: das
+                      middle_name: wqfgvgfgfg
+                      suffix: wgfgggfgf
+                      email: employee4@gmail.com
+                      role_request: admin
+                      approved_at: null
+                      disapproved_at: '2022-09-02 01:17:40'
+                      company_name: []
+                      email_verified_at: null
+                      created_at: 01/09/2022
+                      updated_at: 02/09/2022
+                    -
+                      id: 9
+                      employee_id: 201934-000
+                      last_name: Lourds
+                      first_name: Mama
+                      middle_name: Gwapa
+                      suffix: Seniora
+                      email: mamal@gmail.com
+                      role_request: super_admin
+                      approved_at: null
+                      disapproved_at: '2022-09-02 01:57:49'
+                      company_name: []
+                      email_verified_at: null
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                    -
+                      id: 10
+                      employee_id: 123employee6
+                      last_name: wq
+                      first_name: das
+                      middle_name: wqfgvgfgfg
+                      suffix: wgfgggfgf
+                      email: employee6@gmail.com
+                      role_request: admin
+                      approved_at: null
+                      disapproved_at: '2022-09-02 01:58:52'
+                      company_name: []
+                      email_verified_at: null
+                      created_at: 02/09/2022
+                      updated_at: 02/09/2022
+                    -
+                      id: 12
+                      employee_id: 123employee5
+                      last_name: wq
+                      first_name: das
+                      middle_name: wqfgvgfgfg
+                      suffix: wgfgggfgf
+                      email: employee5@gmail.com
+                      role_request: admin
+                      approved_at: null
+                      disapproved_at: '2022-09-05 03:06:56'
+                      company_name: []
+                      email_verified_at: null
+                      created_at: 02/09/2022
+                      updated_at: 05/09/2022
+                    -
+                      id: 25
+                      employee_id: 201893-222
+                      last_name: Cumayas
+                      first_name: Afril
+                      middle_name: null
+                      suffix: null
+                      email: afril@gmail.com
+                      role_request: admin
+                      approved_at: null
+                      disapproved_at: '2022-09-05 03:15:39'
+                      company_name: []
+                      email_verified_at: null
+                      created_at: 02/09/2022
+                      updated_at: 05/09/2022
+                    -
+                      id: 34
+                      employee_id: 204920835-33
+                      last_name: Nksnjds
+                      first_name: Louawygd
+                      middle_name: null
+                      suffix: null
+                      email: adwg@gamil.com
+                      role_request: admin
+                      approved_at: null
+                      disapproved_at: '2022-09-05 05:15:50'
+                      company_name: []
+                      email_verified_at: null
+                      created_at: 05/09/2022
+                      updated_at: 05/09/2022
+                    -
+                      id: 35
+                      employee_id: 00030-39435
+                      last_name: Cumayas
+                      first_name: Joyjoy
+                      middle_name: null
+                      suffix: null
+                      email: joyjoy@gmail.com
+                      role_request: admin
+                      approved_at: null
+                      disapproved_at: '2022-09-05 03:17:53'
+                      company_name: []
+                      email_verified_at: null
+                      created_at: 05/09/2022
+                      updated_at: 05/09/2022
+                    -
+                      id: 37
+                      employee_id: 2013138-8080
+                      last_name: Cuyamas
+                      first_name: Afrilyn
+                      middle_name: null
+                      suffix: null
+                      email: lyn@gmail.com
+                      role_request: super_admin
+                      approved_at: null
+                      disapproved_at: '2022-09-05 05:16:46'
+                      company_name: []
+                      email_verified_at: null
+                      created_at: 05/09/2022
+                      updated_at: 05/09/2022
+                  message: 'Disapproved accounts retrieved successfully.'
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 7
+                        employee_id: 123employee4
+                        last_name: wq
+                        first_name: das
+                        middle_name: wqfgvgfgfg
+                        suffix: wgfgggfgf
+                        email: employee4@gmail.com
+                        role_request: admin
+                        approved_at: null
+                        disapproved_at: '2022-09-02 01:17:40'
+                        company_name: []
+                        email_verified_at: null
+                        created_at: 01/09/2022
+                        updated_at: 02/09/2022
+                      -
+                        id: 9
+                        employee_id: 201934-000
+                        last_name: Lourds
+                        first_name: Mama
+                        middle_name: Gwapa
+                        suffix: Seniora
+                        email: mamal@gmail.com
+                        role_request: super_admin
+                        approved_at: null
+                        disapproved_at: '2022-09-02 01:57:49'
+                        company_name: []
+                        email_verified_at: null
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                      -
+                        id: 10
+                        employee_id: 123employee6
+                        last_name: wq
+                        first_name: das
+                        middle_name: wqfgvgfgfg
+                        suffix: wgfgggfgf
+                        email: employee6@gmail.com
+                        role_request: admin
+                        approved_at: null
+                        disapproved_at: '2022-09-02 01:58:52'
+                        company_name: []
+                        email_verified_at: null
+                        created_at: 02/09/2022
+                        updated_at: 02/09/2022
+                      -
+                        id: 12
+                        employee_id: 123employee5
+                        last_name: wq
+                        first_name: das
+                        middle_name: wqfgvgfgfg
+                        suffix: wgfgggfgf
+                        email: employee5@gmail.com
+                        role_request: admin
+                        approved_at: null
+                        disapproved_at: '2022-09-05 03:06:56'
+                        company_name: []
+                        email_verified_at: null
+                        created_at: 02/09/2022
+                        updated_at: 05/09/2022
+                      -
+                        id: 25
+                        employee_id: 201893-222
+                        last_name: Cumayas
+                        first_name: Afril
+                        middle_name: null
+                        suffix: null
+                        email: afril@gmail.com
+                        role_request: admin
+                        approved_at: null
+                        disapproved_at: '2022-09-05 03:15:39'
+                        company_name: []
+                        email_verified_at: null
+                        created_at: 02/09/2022
+                        updated_at: 05/09/2022
+                      -
+                        id: 34
+                        employee_id: 204920835-33
+                        last_name: Nksnjds
+                        first_name: Louawygd
+                        middle_name: null
+                        suffix: null
+                        email: adwg@gamil.com
+                        role_request: admin
+                        approved_at: null
+                        disapproved_at: '2022-09-05 05:15:50'
+                        company_name: []
+                        email_verified_at: null
+                        created_at: 05/09/2022
+                        updated_at: 05/09/2022
+                      -
+                        id: 35
+                        employee_id: 00030-39435
+                        last_name: Cumayas
+                        first_name: Joyjoy
+                        middle_name: null
+                        suffix: null
+                        email: joyjoy@gmail.com
+                        role_request: admin
+                        approved_at: null
+                        disapproved_at: '2022-09-05 03:17:53'
+                        company_name: []
+                        email_verified_at: null
+                        created_at: 05/09/2022
+                        updated_at: 05/09/2022
+                      -
+                        id: 37
+                        employee_id: 2013138-8080
+                        last_name: Cuyamas
+                        first_name: Afrilyn
+                        middle_name: null
+                        suffix: null
+                        email: lyn@gmail.com
+                        role_request: super_admin
+                        approved_at: null
+                        disapproved_at: '2022-09-05 05:16:46'
+                        company_name: []
+                        email_verified_at: null
+                        created_at: 05/09/2022
+                        updated_at: 05/09/2022
+                    items:
+                      type: object
+                  message:
+                    type: string
+                    example: 'Disapproved accounts retrieved successfully.'
+      tags:
+        - Endpoints
+      security: []
+  /api/logout:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/user/{user_id}/change_role':
+    put:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                role_id:
+                  type: string
+                  description: ''
+                  example: quaerat
+              required:
+                - role_id
+      security: []
+    parameters:
+      -
+        in: path
+        name: user_id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/user/{user_id}/activate':
+    put:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: user_id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/user/{user_id}/deactivate':
+    put:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: user_id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/user/{user_id}/admin_details':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: user_id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/unit:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                brand:
+                  type: string
+                  description: ''
+                  example: eum
+                model:
+                  type: string
+                  description: ''
+                  example: sit
+                serial:
+                  type: string
+                  description: ''
+                  example: non
+                details:
+                  type: string
+                  description: ''
+                  example: earum
+                remarks:
+                  type: string
+                  description: ''
+                  example: id
+                company_id:
+                  type: string
+                  description: ''
+                  example: itaque
+                category_id:
+                  type: string
+                  description: ''
+                  example: veniam
+                status_id:
+                  type: string
+                  description: ''
+                  example: null
+              required:
+                - brand
+                - model
+                - serial
+                - details
+                - remarks
+                - company_id
+                - category_id
+      security: []
+  '/api/unit/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                brand:
+                  type: string
+                  description: ''
+                  example: incidunt
+                model:
+                  type: string
+                  description: ''
+                  example: nisi
+                serial:
+                  type: string
+                  description: ''
+                  example: accusamus
+                company_id:
+                  type: string
+                  description: ''
+                  example: veritatis
+                category_id:
+                  type: string
+                  description: ''
+                  example: in
+                status_id:
+                  type: string
+                  description: ''
+                  example: null
+              required:
+                - brand
+                - model
+                - serial
+                - company_id
+                - category_id
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the unit.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/status:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: aut
+              required:
+                - name
+      security: []
+  '/api/status/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: voluptas
+              required:
+                - name
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the status.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/spec:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                category_name:
+                  type: string
+                  description: ''
+                  example: eligendi
+                spec_name:
+                  type: array
+                  description: ''
+                  example:
+                    - ut
+                  items:
+                    type: string
+              required:
+                - category_name
+      security: []
+  '/api/spec/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: doloribus
+              required:
+                - name
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the spec.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/remark:
+    get:
+      summary: 'Display a listing of the resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: magni
+                date:
+                  type: string
+                  description: ''
+                  example: itaque
+                unit:
+                  type: string
+                  description: ''
+                  example: sed
+              required:
+                - name
+                - date
+                - unit
+      security: []
+  '/api/remark/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the remark.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/user/admin_list:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/user/employee_list:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: 'Category Management'
+    description: "\nAPIs to manage the category resource."
+  -
+    name: Endpoints
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []

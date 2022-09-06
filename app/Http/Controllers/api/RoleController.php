@@ -13,7 +13,9 @@ class RoleController extends BaseController
 {
     public function index(): JsonResponse
     {
-        $role = Role::all();
+        $role = Role::query()->where('name', 'like', '%admin%')->get();
+//        $role = Role::all()->except([1,2]);
+//            Role::query()->whereIn('name', ['super_admin', 'admin'])->get();
 
         return $this->sendResponse($role, 'Role retrieved successfully.');
     }
@@ -62,16 +64,16 @@ class RoleController extends BaseController
         return $this->sendResponse(new RoleResource($role), 'Role with permissions updated successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  Role  $role
-     * @return JsonResponse
-     */
-    public function destroy(Role $role): JsonResponse
-    {
-        $role->delete();
-
-        return $this->sendResponse($role, 'Role deleted.');
-    }
+//    /**
+//     * Display the specified resource.
+//     *
+//     * @param  Role  $role
+//     * @return JsonResponse
+//     */
+//    public function destroy(Role $role): JsonResponse
+//    {
+//        $role->delete();
+//
+//        return $this->sendResponse($role, 'Role deleted.');
+//    }
 }

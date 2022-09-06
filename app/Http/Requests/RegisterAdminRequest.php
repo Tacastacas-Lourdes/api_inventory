@@ -27,9 +27,10 @@ class RegisterAdminRequest extends FormRequest
             'employee_id' => 'required',
             'first_name' => 'required',
             'last_name' => 'required',
-            'middle_name' => 'min:8',
-            'suffix' => 'min:5',
-            'role_request' => 'exists:roles,name',
+            'middle_name' => '',
+            'suffix' => '',
+            'company_id' => '',
+            'role_request' => '',
             'email' => 'required|email',
             'password' => 'required|same:confirmPassword',
         ];

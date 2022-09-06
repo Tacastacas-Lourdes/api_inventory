@@ -35,7 +35,7 @@ class Unit extends Model
         return $this->belongsTo(Status::class);
     }
 
-    public function remark(): HasMany
+    public function remarks(): HasMany
     {
         return $this->hasMany(Remark::class);
     }
@@ -59,8 +59,8 @@ class Unit extends Model
 
         static::creating(function (Model $unit) {
 //            dd($unit);
-            $unit->count = Unit::query()->where('category_id', $unit->category_id)->max('count') + 1;
-            $unit->unit_id = $unit->company->acronym.'-'.$unit->category->category_name.'-'.str_pad($unit->count, 6, 0, STR_PAD_LEFT);
+            $unit->count = Unit::query()->where('category_id', $unit->category->id)->max('count') + 1;
+            $unit->unit_id = $unit->company->acronym.'-'.$unit->category->name.'-'.str_pad($unit->count, 6, 0, STR_PAD_LEFT);
 //            $unit->unit_id = 'Company-category-count';
         });
     }
