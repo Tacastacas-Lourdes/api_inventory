@@ -11,20 +11,26 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Company extends Model
 {
-    use HasFactory, LogsActivity;
+    use HasFactory;
+    use LogsActivity;
 
     protected $fillable = ['name', 'acronym', 'status'];
 
     /***** RELATIONSHIP *****/
 
-    public function unit(): HasMany
+    public function units(): HasMany
     {
         return $this->hasMany(Unit::class);
     }
 
-    public function user(): BelongsToMany
+    public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class)->using(CompanyUser::class);
+    }
+
+    public function categories(): BelongsToMany
+    {
+        return $this->belongsToMany(Category::class)->using(CompanyCategory::class);
     }
 
     /***** OTHER FUNCTIONS *****/

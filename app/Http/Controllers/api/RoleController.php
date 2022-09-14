@@ -9,6 +9,9 @@ use App\Http\Resources\RoleResource;
 use Illuminate\Http\JsonResponse;
 use Spatie\Permission\Models\Role;
 
+/**
+ * @group Role Management
+ */
 class RoleController extends BaseController
 {
     public function index(): JsonResponse
@@ -16,7 +19,6 @@ class RoleController extends BaseController
         $role = Role::query()->where('name', 'like', '%admin%')->get();
 //        $role = Role::all()->except([1,2]);
 //            Role::query()->whereIn('name', ['super_admin', 'admin'])->get();
-
         return $this->sendResponse($role, 'Role retrieved successfully.');
     }
 

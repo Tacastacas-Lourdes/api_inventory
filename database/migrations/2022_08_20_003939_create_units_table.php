@@ -8,7 +8,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+return new class() extends Migration
 {
     /**
      * Run the migrations.
@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('brand');
             $table->string('model');
             $table->string('serial');
-            $table->integer('count')->nullable();
             $table->foreignIdFor(Category::class)->nullable()->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Company::class)->nullable()->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Status::class)->default('1')->constrained()->cascadeOnDelete();

@@ -5,22 +5,84 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "https:\/\/d6df-49-146-46-12.ngrok.io"
+            "value": "http:\/\/localhost:8000"
         }
     ],
     "info": {
         "name": "Inventory System API",
-        "_postman_id": "ba7eb912-684f-4e3a-a11c-72ebce6315aa",
+        "_postman_id": "2fbae074-589b-4e10-ba72-e107bde21cec",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
         {
+            "name": "Activity Logs",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/activity_logs",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/activity_logs"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "50"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"log_name\":\"user\",\"description\":\"created\",\"subject_type\":\"App\\\\Models\\\\User\",\"event\":\"created\",\"subject_id\":1,\"causer_type\":null,\"causer_id\":null,\"properties\":{\"attributes\":{\"brand\":null,\"model\":null,\"serial\":null,\"approved_at\":null,\"deactivated_at\":null}},\"batch_uuid\":null,\"created_at\":\"2022-09-14T01:06:16.000000Z\",\"updated_at\":\"2022-09-14T01:06:16.000000Z\"},{\"id\":2,\"log_name\":\"user\",\"description\":\"User has been approved.\",\"subject_type\":\"App\\\\Models\\\\User\",\"event\":\"updated\",\"subject_id\":1,\"causer_type\":null,\"causer_id\":null,\"properties\":{\"attributes\":{\"approved_at\":\"2022-09-14 01:06:16\"},\"old\":{\"approved_at\":null}},\"batch_uuid\":null,\"created_at\":\"2022-09-14T01:06:16.000000Z\",\"updated_at\":\"2022-09-14T01:06:16.000000Z\"},{\"id\":3,\"log_name\":\"company\",\"description\":\"This model has been created\",\"subject_type\":\"App\\\\Models\\\\Company\",\"event\":\"created\",\"subject_id\":1,\"causer_type\":null,\"causer_id\":null,\"properties\":{\"attributes\":{\"name\":\"Fligno AU\",\"acronym\":\"FAU\"}},\"batch_uuid\":null,\"created_at\":\"2022-09-14T01:07:50.000000Z\",\"updated_at\":\"2022-09-14T01:07:50.000000Z\"},{\"id\":4,\"log_name\":\"company\",\"description\":\"This model has been created\",\"subject_type\":\"App\\\\Models\\\\Company\",\"event\":\"created\",\"subject_id\":2,\"causer_type\":null,\"causer_id\":null,\"properties\":{\"attributes\":{\"name\":\"Fligno PH\",\"acronym\":\"FPH\"}},\"batch_uuid\":null,\"created_at\":\"2022-09-14T01:07:58.000000Z\",\"updated_at\":\"2022-09-14T01:07:58.000000Z\"},{\"id\":5,\"log_name\":\"user\",\"description\":\"created\",\"subject_type\":\"App\\\\Models\\\\User\",\"event\":\"created\",\"subject_id\":2,\"causer_type\":null,\"causer_id\":null,\"properties\":{\"attributes\":{\"brand\":null,\"model\":null,\"serial\":null,\"approved_at\":null,\"deactivated_at\":null}},\"batch_uuid\":null,\"created_at\":\"2022-09-14T01:45:49.000000Z\",\"updated_at\":\"2022-09-14T01:45:49.000000Z\"}],\"message\":\"Activity Logs retrieved successfully\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "Authentication",
             "description": "",
             "item": [
                 {
-                    "name": "Register api",
+                    "name": "Register",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -41,7 +103,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"employee_id\":\"ullam\",\"first_name\":\"ullam\",\"last_name\":\"ipsa\",\"email\":\"westley26@example.net\",\"password\":\"a\"}"
+                            "raw": "{\"employee_id\":\"2019-001\",\"first_name\":\"Oliver\",\"last_name\":\"Pierce\",\"middle_name\":\"Mason\",\"suffix\":\"Jr.\",\"company_id\":1,\"role_request\":\"admin\",\"email\":\"oliver.pierce@gmail.com\",\"password\":\"cmp5ZVpIMe\",\"confirmPassword\":\"cmp5ZVpIMe\"}"
                         },
                         "description": "",
                         "auth": {
@@ -51,7 +113,7 @@
                     "response": []
                 },
                 {
-                    "name": "Login api",
+                    "name": "Login",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -72,7 +134,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"fijksjacdvyzzfrxzlqhqrqzrxulniahjjylcud\",\"password\":\"nihil\"}"
+                            "raw": "{\"email\":\"oliver.pierce@gmail.com\",\"password\":\"cmp5ZVpIMe\"}"
                         },
                         "description": "",
                         "auth": {
@@ -102,10 +164,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 }
@@ -142,7 +201,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"category\":\"Laptop\",\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\",\"specification\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":3,\"name\":\"gpu\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":4,\"name\":\"storage\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":5,\"name\":\"remark\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"},{\"id\":6,\"name\":\"color\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"}]},{\"id\":1,\"category\":\"Laptop\",\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\",\"specification\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":3,\"name\":\"gpu\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":4,\"name\":\"storage\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":5,\"name\":\"remark\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"},{\"id\":6,\"name\":\"color\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"}]}]}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\",\"spec\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"}]},{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\",\"spec\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"}]}]}",
                             "name": "0"
                         }
                     ]
@@ -169,7 +228,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"eos\",\"spec\":[\"qui\"]}"
+                            "raw": "{\"name\":\"Laptop\",\"spec\":[{\"name\":\"CPU\"}]}"
                         },
                         "description": "",
                         "auth": {
@@ -190,8 +249,8 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "10",
-                                    "description": "Category ID"
+                                    "value": "20",
+                                    "description": "The ID of the category."
                                 }
                             ]
                         },
@@ -216,7 +275,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"category\":\"Laptop\",\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\",\"specification\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-06T02:25:54.000000Z\",\"updated_at\":\"2022-09-06T02:25:54.000000Z\"},{\"id\":3,\"name\":\"gpu\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":4,\"name\":\"storage\",\"category_id\":1,\"created_at\":\"2022-09-06T03:06:41.000000Z\",\"updated_at\":\"2022-09-06T03:06:41.000000Z\"},{\"id\":5,\"name\":\"remark\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"},{\"id\":6,\"name\":\"color\",\"category_id\":1,\"created_at\":\"2022-09-06T03:08:23.000000Z\",\"updated_at\":\"2022-09-06T03:08:23.000000Z\"}]}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\",\"spec\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"}]}}",
                             "name": "0"
                         }
                     ]
@@ -251,7 +310,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quia\"}"
+                            "raw": "{\"name\":\"repellat\"}"
                         },
                         "description": "",
                         "auth": {
@@ -264,7 +323,7 @@
         },
         {
             "name": "Company Management",
-            "description": "",
+            "description": "\n APIs to manage the category resource",
             "item": [
                 {
                     "name": "Display a listing of the resource.",
@@ -304,12 +363,20 @@
                                     "value": "application\/json"
                                 },
                                 {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "49"
+                                },
+                                {
                                     "key": "vary",
                                     "value": "Origin"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"name\":\"Fligno AU\",\"acronym\":\"FAU\",\"status\":null,\"created_at\":\"2022-09-14T01:07:50.000000Z\",\"updated_at\":\"2022-09-14T01:07:50.000000Z\",\"categories\":[{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"company_id\":1,\"category_id\":1},\"specs\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"}],\"units\":[{\"id\":1,\"unit_id\":\"FAU-Laptop-000001\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\",\"specs\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":1,\"specification_id\":1,\"details\":\"Intel\",\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"}},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":1,\"specification_id\":2,\"details\":\"8G\",\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"}},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":1,\"specification_id\":3,\"details\":null,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"}}]},{\"id\":2,\"unit_id\":\"FAU-Laptop-000002\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\",\"specs\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":2,\"specification_id\":1,\"details\":\"Intel\",\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":2,\"specification_id\":2,\"details\":\"8G\",\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":2,\"specification_id\":3,\"details\":\"Rawr\",\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}}]}]},{\"id\":2,\"name\":\"Keyboard\",\"created_at\":\"2022-09-14T01:07:33.000000Z\",\"updated_at\":\"2022-09-14T01:07:33.000000Z\",\"pivot\":{\"company_id\":1,\"category_id\":2},\"specs\":[{\"id\":4,\"name\":\"Color\",\"category_id\":2,\"created_at\":\"2022-09-14T01:07:33.000000Z\",\"updated_at\":\"2022-09-14T01:07:33.000000Z\"},{\"id\":5,\"name\":\"Type\",\"category_id\":2,\"created_at\":\"2022-09-14T01:07:33.000000Z\",\"updated_at\":\"2022-09-14T01:07:33.000000Z\"},{\"id\":6,\"name\":\"Date\",\"category_id\":2,\"created_at\":\"2022-09-14T01:07:33.000000Z\",\"updated_at\":\"2022-09-14T01:07:33.000000Z\"}],\"units\":[]}],\"users\":[]},{\"id\":2,\"name\":\"Fligno PH\",\"acronym\":\"FPH\",\"status\":null,\"created_at\":\"2022-09-14T01:07:58.000000Z\",\"updated_at\":\"2022-09-14T01:07:58.000000Z\",\"categories\":[{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"company_id\":2,\"category_id\":1},\"specs\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"}],\"units\":[{\"id\":1,\"unit_id\":\"FAU-Laptop-000001\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\",\"specs\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":1,\"specification_id\":1,\"details\":\"Intel\",\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"}},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":1,\"specification_id\":2,\"details\":\"8G\",\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"}},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":1,\"specification_id\":3,\"details\":null,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"}}]},{\"id\":2,\"unit_id\":\"FAU-Laptop-000002\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\",\"specs\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":2,\"specification_id\":1,\"details\":\"Intel\",\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":2,\"specification_id\":2,\"details\":\"8G\",\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":2,\"specification_id\":3,\"details\":\"Rawr\",\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}}]}]}],\"users\":[]}],\"message\":\"Company retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -336,7 +403,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"repellat\",\"acronym\":\"consequatur\"}"
+                            "raw": "{\"name\":\"Fligno AU\",\"acronym\":\"FAU\"}"
                         },
                         "description": "",
                         "auth": {
@@ -391,12 +458,20 @@
                                     "value": "application\/json"
                                 },
                                 {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "48"
+                                },
+                                {
                                     "key": "vary",
                                     "value": "Origin"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"Fligno AU\",\"acronym\":\"FAU\",\"status\":null,\"categories\":[{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"company_id\":1,\"category_id\":1}},{\"id\":2,\"name\":\"Keyboard\",\"created_at\":\"2022-09-14T01:07:33.000000Z\",\"updated_at\":\"2022-09-14T01:07:33.000000Z\",\"pivot\":{\"company_id\":1,\"category_id\":2}}],\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},\"message\":\"Company retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -431,7 +506,46 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"dolor\",\"acronym\":\"et\",\"status\":17}"
+                            "raw": "{\"name\":\"Fligno AU\",\"acronym\":\"FAU\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add Categories on specific company",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/company\/:company_id\/add-categories",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/company\/:company_id\/add-categories",
+                            "variable": [
+                                {
+                                    "id": "company_id",
+                                    "key": "company_id",
+                                    "value": "1",
+                                    "description": "The ID of the company."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"categories\":[1]}"
                         },
                         "description": "",
                         "auth": {
@@ -443,7 +557,164 @@
             ]
         },
         {
-            "name": "Endpoints",
+            "name": "Remark Management",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/remark",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/remark"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "42"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"name\":\"speaker defectedwad\",\"date\":\"2022-08-24\",\"unit\":{\"id\":1,\"unit_id\":\"FAU-Laptop-000001\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"},\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},{\"id\":2,\"name\":\"defecteddw\",\"date\":\"2022-09-07\",\"unit\":{\"id\":1,\"unit_id\":\"FAU-Laptop-000001\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"},\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},{\"id\":3,\"name\":\"speaker defectedwad\",\"date\":\"2022-08-24\",\"unit\":{\"id\":2,\"unit_id\":\"FAU-Laptop-000002\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"},\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},{\"id\":4,\"name\":\"defecteddw\",\"date\":\"2022-09-07\",\"unit\":{\"id\":2,\"unit_id\":\"FAU-Laptop-000002\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"},\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"}],\"message\":\"Remark retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/remark",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/remark"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"unit\":\"sapiente\",\"name\":\"vel\",\"date\":\"consequatur\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/remark\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/remark\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the remark."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "41"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"speaker defectedwad\",\"date\":\"2022-08-24\",\"unit\":{\"id\":1,\"unit_id\":\"FAU-Laptop-000001\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"},\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},\"message\":\"Remarks retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Role Management",
             "description": "",
             "item": [
                 {
@@ -489,7 +760,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "54"
+                                    "value": "59"
                                 },
                                 {
                                     "key": "vary",
@@ -497,7 +768,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"name\":\"super_admin\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\"},{\"id\":2,\"name\":\"admin\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\"}],\"message\":\"Role retrieved successfully.\"}",
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"name\":\"super_admin\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\"},{\"id\":2,\"name\":\"admin\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\"}],\"message\":\"Role retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -524,7 +795,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quos\",\"permissions\":[20]}"
+                            "raw": "{\"name\":\"nemo\",\"permissions\":[4]}"
                         },
                         "description": "",
                         "auth": {
@@ -584,7 +855,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "53"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "vary",
@@ -592,7 +863,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"super_admin\",\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\",\"permissions\":[{\"id\":1,\"name\":\"admin_panel_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":1}},{\"id\":2,\"name\":\"user_approval\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":2}},{\"id\":3,\"name\":\"users_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":3}},{\"id\":4,\"name\":\"user-user_assign_role\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":4}},{\"id\":5,\"name\":\"user_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":5}},{\"id\":6,\"name\":\"user_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":6}},{\"id\":7,\"name\":\"roles_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":7}},{\"id\":8,\"name\":\"role_edit\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":8}},{\"id\":9,\"name\":\"role_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":9}},{\"id\":10,\"name\":\"role_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":10}},{\"id\":11,\"name\":\"role_show\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":11}},{\"id\":12,\"name\":\"permissions_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":12}},{\"id\":13,\"name\":\"permission_edit\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":13}},{\"id\":14,\"name\":\"company_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":14}},{\"id\":15,\"name\":\"company_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":15}},{\"id\":16,\"name\":\"company_update\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":16}},{\"id\":17,\"name\":\"company_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":17}},{\"id\":18,\"name\":\"company_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":18}},{\"id\":19,\"name\":\"equipment_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:38.000000Z\",\"updated_at\":\"2022-09-06T02:24:38.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":19}},{\"id\":20,\"name\":\"category_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":20}},{\"id\":21,\"name\":\"category_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":21}},{\"id\":22,\"name\":\"specification_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":22}},{\"id\":23,\"name\":\"specification_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":23}},{\"id\":24,\"name\":\"specification_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":24}},{\"id\":25,\"name\":\"specification_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":25}},{\"id\":26,\"name\":\"specification_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":26}},{\"id\":27,\"name\":\"unit_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":27}},{\"id\":28,\"name\":\"unit_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":28}},{\"id\":29,\"name\":\"unit_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":29}},{\"id\":30,\"name\":\"unit_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":30}},{\"id\":31,\"name\":\"unit_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":31}},{\"id\":32,\"name\":\"status_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":32}},{\"id\":33,\"name\":\"status_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":33}},{\"id\":34,\"name\":\"status_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":34}},{\"id\":35,\"name\":\"status_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":35}},{\"id\":36,\"name\":\"status_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":36}},{\"id\":37,\"name\":\"activity_log\",\"guard_name\":\"web\",\"created_at\":\"2022-09-06T02:24:39.000000Z\",\"updated_at\":\"2022-09-06T02:24:39.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":37}}]},\"message\":\"Roles retrieved successfully.\"}",
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"super_admin\",\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\",\"permissions\":[{\"id\":1,\"name\":\"admin_panel_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":1}},{\"id\":2,\"name\":\"user_approval\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":2}},{\"id\":3,\"name\":\"users_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":3}},{\"id\":4,\"name\":\"user-user_assign_role\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":4}},{\"id\":5,\"name\":\"user_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":5}},{\"id\":6,\"name\":\"user_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":6}},{\"id\":7,\"name\":\"roles_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":7}},{\"id\":8,\"name\":\"role_edit\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":8}},{\"id\":9,\"name\":\"role_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":9}},{\"id\":10,\"name\":\"role_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":10}},{\"id\":11,\"name\":\"role_show\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":11}},{\"id\":12,\"name\":\"permissions_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":12}},{\"id\":13,\"name\":\"permission_edit\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":13}},{\"id\":14,\"name\":\"company_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":14}},{\"id\":15,\"name\":\"company_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":15}},{\"id\":16,\"name\":\"company_update\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":16}},{\"id\":17,\"name\":\"company_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":17}},{\"id\":18,\"name\":\"company_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":18}},{\"id\":19,\"name\":\"equipment_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":19}},{\"id\":20,\"name\":\"category_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:29.000000Z\",\"updated_at\":\"2022-09-14T01:01:29.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":20}},{\"id\":21,\"name\":\"category_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":21}},{\"id\":22,\"name\":\"specification_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":22}},{\"id\":23,\"name\":\"specification_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":23}},{\"id\":24,\"name\":\"specification_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":24}},{\"id\":25,\"name\":\"specification_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":25}},{\"id\":26,\"name\":\"specification_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":26}},{\"id\":27,\"name\":\"unit_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":27}},{\"id\":28,\"name\":\"unit_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":28}},{\"id\":29,\"name\":\"unit_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":29}},{\"id\":30,\"name\":\"unit_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":30}},{\"id\":31,\"name\":\"unit_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":31}},{\"id\":32,\"name\":\"status_access\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":32}},{\"id\":33,\"name\":\"status_create\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":33}},{\"id\":34,\"name\":\"status_show_details\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":34}},{\"id\":35,\"name\":\"status_delete\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":35}},{\"id\":36,\"name\":\"status_update_btn\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":36}},{\"id\":37,\"name\":\"activity_log\",\"guard_name\":\"web\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\",\"pivot\":{\"role_id\":1,\"permission_id\":37}}]},\"message\":\"Roles retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -635,15 +906,401 @@
                         }
                     },
                     "response": []
-                },
+                }
+            ]
+        },
+        {
+            "name": "Specification Management",
+            "description": "",
+            "item": [
                 {
-                    "name": "api\/user\/approval_request",
+                    "name": "Display a listing of the resource.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/user\/approval_request",
+                            "path": "api\/spec",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/user\/approval_request"
+                            "raw": "{{baseUrl}}\/api\/spec"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "54"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"name\":\"CPU\",\"category\":{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},\"details\":[{\"id\":1,\"details\":\"Intel\",\"specification_id\":1,\"unit_id\":1,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"},{\"id\":4,\"details\":\"Intel\",\"specification_id\":1,\"unit_id\":2,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}],\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},{\"id\":2,\"name\":\"Memory\",\"category\":{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},\"details\":[{\"id\":2,\"details\":\"8G\",\"specification_id\":2,\"unit_id\":1,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"},{\"id\":5,\"details\":\"8G\",\"specification_id\":2,\"unit_id\":2,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}],\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},{\"id\":3,\"name\":\"GPU\",\"category\":{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},\"details\":[{\"id\":3,\"details\":null,\"specification_id\":3,\"unit_id\":1,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"},{\"id\":6,\"details\":\"Rawr\",\"specification_id\":3,\"unit_id\":2,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}],\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},{\"id\":4,\"name\":\"Color\",\"category\":{\"id\":2,\"name\":\"Keyboard\",\"created_at\":\"2022-09-14T01:07:33.000000Z\",\"updated_at\":\"2022-09-14T01:07:33.000000Z\"},\"details\":[],\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},{\"id\":5,\"name\":\"Type\",\"category\":{\"id\":2,\"name\":\"Keyboard\",\"created_at\":\"2022-09-14T01:07:33.000000Z\",\"updated_at\":\"2022-09-14T01:07:33.000000Z\"},\"details\":[],\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},{\"id\":6,\"name\":\"Date\",\"category\":{\"id\":2,\"name\":\"Keyboard\",\"created_at\":\"2022-09-14T01:07:33.000000Z\",\"updated_at\":\"2022-09-14T01:07:33.000000Z\"},\"details\":[],\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"}],\"message\":\"Specification retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/spec",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/spec"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"category_id\":\"et\",\"spec_name\":[\"expedita\"]}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/spec\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/spec\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the spec."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "53"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"name\":\"CPU\",\"category\":{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},\"details\":[{\"id\":1,\"details\":\"Intel\",\"specification_id\":1,\"unit_id\":1,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"},{\"id\":4,\"details\":\"Intel\",\"specification_id\":1,\"unit_id\":2,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}],\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},\"message\":\"Specification retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/spec\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/spec\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the spec."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"facere\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Status Management",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/status"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "44"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"status\":\"Available\",\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"}],\"message\":\"Status retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/status",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/status"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"nesciunt\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/status\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/status\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the status."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "43"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"status\":\"Available\",\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},\"message\":\"Status retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/status\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/status\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the status."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"et\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Unit Management",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/unit",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/unit"
                         },
                         "method": "GET",
                         "header": [
@@ -687,7 +1344,203 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"employee_id\":\"123admin\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admin@gmail.com\",\"role_request\":null,\"approved_at\":null,\"disapproved_at\":null,\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\"},{\"id\":12,\"employee_id\":\"123admin11\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admi11@gmail.com\",\"role_request\":null,\"approved_at\":null,\"disapproved_at\":null,\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\"}],\"message\":\"Accounts for approval retrieved successfully.\"}",
+                            "body": "{\"success\":true,\"data\":[{\"id\":1,\"unit_id\":\"FAU-Laptop-000001\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\",\"category\":{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},\"company\":{\"id\":1,\"name\":\"Fligno AU\",\"acronym\":\"FAU\",\"status\":null,\"created_at\":\"2022-09-14T01:07:50.000000Z\",\"updated_at\":\"2022-09-14T01:07:50.000000Z\"},\"status\":{\"id\":1,\"name\":\"Available\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\"},\"remarks\":[{\"id\":1,\"name\":\"speaker defectedwad\",\"date\":\"2022-08-24\",\"unit_id\":1,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"},{\"id\":2,\"name\":\"defecteddw\",\"date\":\"2022-09-07\",\"unit_id\":1,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"}],\"user\":null,\"specs\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":1,\"specification_id\":1,\"details\":\"Intel\",\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"}},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":1,\"specification_id\":2,\"details\":\"8G\",\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"}},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":1,\"specification_id\":3,\"details\":null,\"created_at\":\"2022-09-14T01:09:07.000000Z\",\"updated_at\":\"2022-09-14T01:09:07.000000Z\"}}]},{\"id\":2,\"unit_id\":\"FAU-Laptop-000002\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"category_id\":1,\"company_id\":1,\"status_id\":1,\"user_id\":null,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\",\"category\":{\"id\":1,\"name\":\"Laptop\",\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\"},\"company\":{\"id\":1,\"name\":\"Fligno AU\",\"acronym\":\"FAU\",\"status\":null,\"created_at\":\"2022-09-14T01:07:50.000000Z\",\"updated_at\":\"2022-09-14T01:07:50.000000Z\"},\"status\":{\"id\":1,\"name\":\"Available\",\"created_at\":\"2022-09-14T01:01:30.000000Z\",\"updated_at\":\"2022-09-14T01:01:30.000000Z\"},\"remarks\":[{\"id\":3,\"name\":\"speaker defectedwad\",\"date\":\"2022-08-24\",\"unit_id\":2,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"},{\"id\":4,\"name\":\"defecteddw\",\"date\":\"2022-09-07\",\"unit_id\":2,\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}],\"user\":null,\"specs\":[{\"id\":1,\"name\":\"CPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":2,\"specification_id\":1,\"details\":\"Intel\",\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}},{\"id\":2,\"name\":\"Memory\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":2,\"specification_id\":2,\"details\":\"8G\",\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}},{\"id\":3,\"name\":\"GPU\",\"category_id\":1,\"created_at\":\"2022-09-14T01:07:02.000000Z\",\"updated_at\":\"2022-09-14T01:07:02.000000Z\",\"pivot\":{\"unit_id\":2,\"specification_id\":3,\"details\":\"Rawr\",\"created_at\":\"2022-09-14T01:09:47.000000Z\",\"updated_at\":\"2022-09-14T01:09:47.000000Z\"}}]}],\"message\":\"Unit retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/unit",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/unit"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"brand\":\"ut\",\"model\":\"similique\",\"serial\":\"at\",\"details\":\"labore\",\"remarks\":\"fuga\",\"company_id\":12,\"category_id\":\"officia\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/unit\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/unit\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the unit."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "51"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"unit_id\":\"FAU-Laptop-000001\",\"brand\":\"efwfef\",\"model\":\"s\",\"serial\":\"aaafwef\",\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"},\"message\":\"Unit retrieved successfully.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/unit\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/unit\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the unit."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"brand\":\"rerum\",\"model\":\"vitae\",\"serial\":\"et\",\"company_id\":\"non\",\"category_id\":\"perferendis\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "User Management",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/user\/approval_request",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/approval_request",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/approval_request"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "57"
+                                },
+                                {
+                                    "key": "vary",
+                                    "value": "Origin"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":2,\"employee_id\":\"123admin1\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admin1@gmail.com\",\"role_request\":\"admin\",\"approved_at\":null,\"disapproved_at\":null,\"company_name\":[],\"email_verified_at\":null,\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"}],\"message\":\"Accounts for approval retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -735,7 +1588,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "51"
+                                    "value": "56"
                                 },
                                 {
                                     "key": "vary",
@@ -743,7 +1596,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"success\":true,\"data\":[{\"id\":3,\"employee_id\":\"123admi3\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admin3@gmail.com\",\"role_request\":null,\"approved_at\":\"2022-09-06 07:11:07\",\"disapproved_at\":null,\"deactivated_at\":\"2022-09-06 07:21:52\",\"email_verified_at\":null,\"created_at\":\"2022-09-06T05:47:57.000000Z\",\"updated_at\":\"2022-09-06T07:21:52.000000Z\"},{\"id\":6,\"employee_id\":\"123admin5\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admin5@gmail.com\",\"role_request\":null,\"approved_at\":\"2022-09-06 07:27:09\",\"disapproved_at\":null,\"deactivated_at\":\"2022-09-06 07:23:24\",\"email_verified_at\":null,\"created_at\":\"2022-09-06T07:14:54.000000Z\",\"updated_at\":\"2022-09-06T07:27:09.000000Z\"}],\"message\":\"Deactivated user accounts were retrieved successfully.\"}",
+                            "body": "{\"success\":true,\"data\":[],\"message\":\"Deactivated user accounts were retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -863,15 +1716,15 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "50"
+                                    "value": "55"
                                 },
                                 {
                                     "key": "vary",
                                     "value": "Origin"
                                 }
                             ],
-                            "code": 200,
-                            "body": "{\"success\":true,\"data\":[{\"id\":11,\"employee_id\":\"123admin10\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admi10@gmail.com\",\"role_request\":null,\"approved_at\":null,\"disapproved_at\":\"2022-09-06 08:13:21\",\"company_name\":[\"Fligno PH\"],\"email_verified_at\":null,\"created_at\":\"06\\\/09\\\/2022\",\"updated_at\":\"06\\\/09\\\/2022\"}],\"message\":\"Disapproved accounts retrieved successfully.\"}",
+                            "code": 404,
+                            "body": "{\"success\":false,\"message\":\"No Record.\"}",
                             "name": ""
                         }
                     ]
@@ -906,7 +1759,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"role_id\":\"eos\"}"
+                            "raw": "{\"role_id\":\"ex\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1033,531 +1886,20 @@
                                     "value": "application\/json"
                                 },
                                 {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/unit",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/unit"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
                                 },
                                 {
-                                    "key": "content-type",
-                                    "value": "application\/json"
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "47"
                                 },
                                 {
                                     "key": "vary",
                                     "value": "Origin"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/unit",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/unit"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"brand\":\"nihil\",\"model\":\"omnis\",\"serial\":\"repellendus\",\"details\":\"sit\",\"remarks\":\"sunt\",\"company_id\":\"odit\",\"category_id\":\"nulla\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/unit\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/unit\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the unit."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/unit\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/unit\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the unit."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"brand\":\"soluta\",\"model\":\"repudiandae\",\"serial\":\"nam\",\"company_id\":\"praesentium\",\"category_id\":\"consequatur\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/unit\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/unit\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the unit."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/status",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/status"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/status",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/status"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"dicta\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/status\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/status\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the status."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/status\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/status\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the status."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"quasi\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/remark",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/remark"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/remark",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/remark"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"quos\",\"date\":\"dicta\",\"unit\":\"nam\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/remark\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/remark\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the remark."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":{\"id\":1,\"employee_id\":\"123admin\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admin@gmail.com\",\"role_request\":null,\"approved_at\":\"2022-09-14 01:06:16\",\"disapproved_at\":null,\"deactivated_at\":null,\"email_verified_at\":null,\"created_at\":\"2022-09-14T01:06:16.000000Z\",\"updated_at\":\"2022-09-14T01:06:16.000000Z\"},\"message\":\"Admin details retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -1600,12 +1942,20 @@
                                     "value": "application\/json"
                                 },
                                 {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "46"
+                                },
+                                {
                                     "key": "vary",
                                     "value": "Origin"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 200,
+                            "body": "{\"success\":true,\"data\":[{\"id\":2,\"employee_id\":\"123admin1\",\"last_name\":\"wq\",\"first_name\":\"das\",\"middle_name\":\"wqfgvgfgfg\",\"suffix\":\"wgfgggfgf\",\"email\":\"admin1@gmail.com\",\"role_request\":\"admin\",\"approved_at\":null,\"email_verified_at\":null,\"created_at\":\"14\\\/09\\\/2022\",\"updated_at\":\"14\\\/09\\\/2022\"}],\"message\":\"Admin accounts retrieved successfully.\"}",
                             "name": ""
                         }
                     ]
@@ -1648,231 +1998,23 @@
                                     "value": "application\/json"
                                 },
                                 {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "api\/activity_logs",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/activity_logs",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/activity_logs"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
                                 },
                                 {
-                                    "key": "content-type",
-                                    "value": "application\/json"
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "45"
                                 },
                                 {
                                     "key": "vary",
                                     "value": "Origin"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 404,
+                            "body": "{\"success\":false,\"message\":\"No record.\"}",
                             "name": ""
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "name": "Specification Management",
-            "description": "",
-            "item": [
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/spec",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/spec"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/spec",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/spec"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"category_name\":\"tempore\",\"spec_name\":[\"voluptate\"]}"
-                        },
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/spec\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/spec\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the spec."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "vary",
-                                    "value": "Origin"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/spec\/:id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/spec\/:id",
-                            "variable": [
-                                {
-                                    "id": "id",
-                                    "key": "id",
-                                    "value": "1",
-                                    "description": "The ID of the spec."
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"debitis\"}"
-                        },
-                        "description": ""
-                    },
-                    "response": []
                 }
             ]
         }

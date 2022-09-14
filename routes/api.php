@@ -34,21 +34,24 @@ Route::post('user/{requestor}/approve', [UserController::class, 'approveAccount'
 Route::post('user/{requestor}/disapprove', [UserController::class, 'disapproveAccount']);
 Route::get('user/disapproved_account', [UserController::class, 'disapprovedList']);
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('activity_logs', [ActivityLog::class, 'getActivityLogs']);
-    Route::apiResource('company', CompanyController::class);
-    Route::apiResource('category', CategoryController::class);
-    Route::post('logout', [RegisterController::class, 'logout']);
-    Route::put('user/{user}/change_role', [UserController::class, 'changeRole']);
-    Route::put('user/{user}/activate', [UserController::class, 'activate']);
-    Route::put('user/{user}/deactivate', [UserController::class, 'deactivate']);
-    Route::get('user/{user}/admin_details', [UserController::class, 'getUserById']);
-    Route::get('user/admin_list', [UserController::class, 'adminList']);
-    Route::get('user/employee_list', [UserController::class, 'employeeList']);
+Route::post('user/company/{company}/add-categories', [CompanyController::class, 'addCategory']);
+Route::apiResource('spec', SpecificationController::class);
+Route::apiResource('unit', UnitController::class);
+
+Route::get('activity_logs', [ActivityLog::class, 'getActivityLogs']);
+Route::apiResource('company', CompanyController::class);
+Route::put('user/{user}/change_role', [UserController::class, 'changeRole']);
+Route::put('user/{user}/activate', [UserController::class, 'activate']);
+Route::put('user/{user}/deactivate', [UserController::class, 'deactivate']);
+Route::get('user/{user}/admin_details', [UserController::class, 'getUserById']);
+Route::get('user/admin_list', [UserController::class, 'adminList']);
+Route::get('user/employee_list', [UserController::class, 'employeeList']);
 //    Route::put('admin_updateProfile', [UserController::class, 'updateProfile']);
 //    Route::put('employee_updateProfile', [EmployeeController::class, 'update']);
-    Route::apiResource('unit', UnitController::class);
-    Route::apiResource('status', StatusController::class);
-    Route::apiResource('spec', SpecificationController::class);
-    Route::apiResource('remark', RemarkController::class);
+Route::apiResource('status', StatusController::class);
+Route::apiResource('remark', RemarkController::class);
+Route::apiResource('category', CategoryController::class);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('logout', [RegisterController::class, 'logout']);
 });

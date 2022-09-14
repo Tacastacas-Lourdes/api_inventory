@@ -15,9 +15,11 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles, LogsActivity;
-
-    protected static $logName = 'custom_log_name_for_this_model';
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
+    use HasRoles;
+    use LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -201,7 +203,6 @@ class User extends Authenticatable
 
     public function tapActivity(Activity $activity, string $eventName)
     {
-//        dd('activity',$activity->toArray());
         $collect = collect($activity->properties)->get('attributes');
         if (count($collect) == 1) {
             if (isset($collect['approved_at'])) {
@@ -219,8 +220,18 @@ class User extends Authenticatable
     {
         return LogOptions::defaults()
             ->useLogName('user')
-//            ->setDescriptionForEvent(fn(string $eventName) => "This model has been {$eventName}")
-            ->logOnly(['brand', 'model', 'serial', 'approved_at', 'deactivated_at'])
+            ->logOnly([
+                'employee_id',
+                'last_name',
+                'first_name',
+                'middle_name',
+                'suffix',
+                'company_id',
+                'category_id',
+                'approved_at',
+                'disapproved_at',
+                'deactivated_at',
+            ])
             ->logOnlyDirty();
     }
 }

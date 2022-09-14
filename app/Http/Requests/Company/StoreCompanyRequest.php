@@ -28,4 +28,18 @@ class StoreCompanyRequest extends FormRequest
             'acronym' => 'required',
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'Name of the Company',
+                'example' => 'Fligno AU',
+            ],
+            'acronym' => [
+                'description' => 'Acronym of the Company',
+                'example' => 'FAU',
+            ],
+        ];
+    }
 }

@@ -29,7 +29,7 @@ class StoreUnitRequest extends FormRequest
             'serial' => 'required',
             'details' => 'required',
             'remarks' => 'required',
-            'company_id' => 'required|exists:companies,id',
+            'company_id' => 'int|required|exists:companies,id',
             'category_id' => 'required|exists:categories,id',
             'status_id' => 'exists:statuses,id',
         ];

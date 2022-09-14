@@ -24,9 +24,9 @@ class StoreRemarkRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'unit' => 'required',
             'name' => 'required',
             'date' => 'required',
-            'unit' => 'required',
         ];
     }
 }

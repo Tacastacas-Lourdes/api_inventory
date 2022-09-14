@@ -12,12 +12,21 @@ class Unit extends Model
 {
     use HasFactory;
 
-    protected $appends = [
-        'uniqueId',
-    ];
+//    protected $appends = [
+//        'uniqueId',
+//    ];
 
-    protected $fillable = ['unit_id', 'brand', 'model', 'serial', 'count', 'company_id', 'category_id', 'status_id',
-        'user_id', ];
+    protected $fillable = [
+        'unit_id',
+        'brand',
+        'model',
+        'serial',
+        'count',
+        'company_id',
+        'category_id',
+        'status_id',
+        'user_id',
+    ];
 
     public function company(): BelongsTo
     {
@@ -61,12 +70,13 @@ class Unit extends Model
 //    {
 //        return implode('-', [$this->company->acronym, $this->category->name, str_pad($this->count, 6, 0, STR_PAD_LEFT)]);
 //    }
+
     public static function boot()
     {
         parent::boot();
 
-        static::creating(function (Model $unit) {
-            $count = $unit->category->unit()->count();
+        static::saving(function (Model $unit) {
+            $count = $unit->category->units()->count();
             $unit->unit_id = $unit->company->acronym.'-'.$unit->category->name.'-'.str_pad($count + 1, 6, 0, STR_PAD_LEFT);
         });
     }

@@ -1,17 +1,16 @@
-name: 'Specification Management'
+name: 'Remark Management'
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/spec
+    uri: api/remark
     metadata:
       title: 'Display a listing of the resource.'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -19,64 +18,70 @@ endpoints:
     bodyParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
+        status: 200
+        content: '{"success":true,"data":[{"id":1,"name":"speaker defectedwad","date":"2022-08-24","unit":{"id":1,"unit_id":"FAU-Laptop-000001","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"},"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},{"id":2,"name":"defecteddw","date":"2022-09-07","unit":{"id":1,"unit_id":"FAU-Laptop-000001","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"},"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},{"id":3,"name":"speaker defectedwad","date":"2022-08-24","unit":{"id":2,"unit_id":"FAU-Laptop-000002","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"},"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},{"id":4,"name":"defecteddw","date":"2022-09-07","unit":{"id":2,"unit_id":"FAU-Laptop-000002","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"},"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"}],"message":"Remark retrieved successfully."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '42'
           vary: Origin
         description: null
     responseFields: []
   -
     httpMethods:
       - POST
-    uri: api/spec
+    uri: api/remark
     metadata:
       title: 'Store a newly created resource in storage.'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
     queryParameters: []
     bodyParameters:
-      category_name:
-        name: category_name
+      unit:
+        name: unit
         description: ''
         required: true
-        example: tempore
+        example: sapiente
         type: string
         custom: []
-      spec_name:
-        name: spec_name
+      name:
+        name: name
         description: ''
-        required: false
-        example:
-          - voluptate
-        type: 'string[]'
+        required: true
+        example: vel
+        type: string
+        custom: []
+      date:
+        name: date
+        description: ''
+        required: true
+        example: consequatur
+        type: string
         custom: []
     responses: []
     responseFields: []
   -
     httpMethods:
       - GET
-    uri: 'api/spec/{id}'
+    uri: 'api/remark/{id}'
     metadata:
       title: 'Display the specified resource.'
       description: ''
-      authenticated: true
+      authenticated: false
       custom: []
     headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
       id:
         name: id
-        description: 'The ID of the spec.'
+        description: 'The ID of the remark.'
         required: true
         example: 1
         type: integer
@@ -85,44 +90,13 @@ endpoints:
     bodyParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
+        status: 200
+        content: '{"success":true,"data":{"id":1,"name":"speaker defectedwad","date":"2022-08-24","unit":{"id":1,"unit_id":"FAU-Laptop-000001","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"},"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},"message":"Remarks retrieved successfully."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '41'
           vary: Origin
         description: null
-    responseFields: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/spec/{id}'
-    metadata:
-      title: 'Update the specified resource in storage.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the spec.'
-        required: true
-        example: 1
-        type: integer
-        custom: []
-    queryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: true
-        example: debitis
-        type: string
-        custom: []
-    responses: []
     responseFields: []

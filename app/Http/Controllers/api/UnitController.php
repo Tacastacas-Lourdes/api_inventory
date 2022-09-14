@@ -5,15 +5,18 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Http\Requests\Unit\StoreUnitRequest;
 use App\Http\Requests\Unit\UpdateUnitRequest;
-use App\Http\Resources\CompanyResource;
 use App\Http\Resources\UnitResource;
-use App\Models\Category;
 use App\Models\Specification;
 use App\Models\Unit;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Arr;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
+/**
+ * @group Unit Management
+ */
 class UnitController extends BaseController
 {
     public function __construct()
@@ -29,9 +32,18 @@ class UnitController extends BaseController
      */
     public function index(): JsonResponse
     {
-        $unit = Unit::all();
+        $unit = QueryBuilder::for(Unit::class)
+            ->allowedFilters(
+                'brand',
+                'model',
+                'serial',
+                'employee_id',
+                AllowedFilter::exact('id')
+            )
+            ->with('category', 'company', 'status', 'remarks', 'user', 'specs')
+            ->get();
 
-        return $this->sendResponse(CompanyResource::collection($unit), 'Unit retrieved successfully.');
+        return $this->sendResponse($unit, 'Unit retrieved successfully.');
     }
 
     /**
@@ -44,30 +56,23 @@ class UnitController extends BaseController
     {
         $input = $request->validated();
         $unit = Unit::query()->make($input);
-
-        if ($unit instanceof Unit) {
-            $unit->company()->associate($input['company_id']);
-            $unit->category()->associate($input['category_id']);
-            $unit->status()->associate($input['status_id']);
-            $unit->remarks()->createMany($input['remarks']);
-            $unit->save();
-        }
-
-//        $unit->count = Unit::query()->where('category_id', $unit->category->id)->max('count') + 1;
-//        $unit->unit_id = $unit->company->acronym.'-'.$unit->category->name.'-'.str_pad($unit->count, 6, 0, STR_PAD_LEFT);
-//        $unit->save();
-
+        $unit->company()->associate($input['company_id']);
+        $unit->category()->associate($input['category_id']);
+        $unit->save();
+        $unit->remarks()->createMany($input['remarks']);
         $details = $input['details'];
         $sync = [];
+//        dd($details);
         Specification::query()
             ->where('category_id', $input['category_id'])
             ->each(function (Specification $spec) use ($details, &$sync) {
+//                dd(Arr::get($details, $spec->name));
                 $sync[$spec->id] = ['details' => Arr::get($details, $spec->name)];
             });
         $unit->specs()->sync($sync);
-        $unit->load('specs', 'company', 'status', 'category', 'remarks', 'user');
+        $unit->load('specs', 'company', 'category', 'remarks', 'user');
 
-        return $this->sendResponse(new UnitResource($unit), 'Unit created successfully.');
+        return $this->sendResponse($unit, 'Unit created successfully.');
     }
 
     /**
@@ -95,7 +100,6 @@ class UnitController extends BaseController
         $unit->model = $input['model'];
         $unit->serial = $input['serial'];
         $unit->save();
-
         $details = $input['details'];
         $sync = [];
         Specification::query()
@@ -106,19 +110,6 @@ class UnitController extends BaseController
         $unit->specs()->sync($sync);
 
         return $this->sendResponse(new UnitResource($unit), 'Unit updated successfully.');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  Unit  $unit
-     * @return JsonResponse
-     */
-    public function destroy(Unit $unit): JsonResponse
-    {
-        $unit->delete();
-
-        return $this->sendResponse($unit, 'Unit delete.');
     }
 
     //another function for assign user to the unit

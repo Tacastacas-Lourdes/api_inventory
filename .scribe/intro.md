@@ -10,5 +10,5 @@ You can switch the language used with the tabs at the top right (or from the nav
 > Base URL
 
 ```yaml
-https://d6df-49-146-46-12.ngrok.io
+http://localhost:8000
 ```

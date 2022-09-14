@@ -11,6 +11,9 @@ use App\Http\Resources\EmployeeResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 
+/**
+ * @group User Management
+ */
 class UserController extends BaseController
 {
     public function __construct()
@@ -53,10 +56,9 @@ class UserController extends BaseController
     {
         $input = $request->validated();
         $user->roles()->sync($input['role_id']);
-        $success['attributes'] = $user;
         $user->load('roles');
 
-        return $this->sendResponse($success, 'Admin change user role successfully.');
+        return $this->sendResponse($user, 'Admin change user role successfully.');
     }
 
     /**

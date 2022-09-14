@@ -17,10 +17,10 @@ class CategoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'category' => $this->name,
+            'name' => $this->name,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
-            'specification' => $this->spec,
+            'spec' => $this->specs,
         ];
     }
 }

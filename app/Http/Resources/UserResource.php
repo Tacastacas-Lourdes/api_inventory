@@ -24,10 +24,11 @@ class UserResource extends JsonResource
             'middle_name' => $this->middle_name,
             'suffix' => $this->suffix,
             'role_request' => $this->role_request,
-            'status' => $this->status,
             'company' => $this->company,
             'email' => $this->email,
             'password' => $this->password,
+            'approved_at' => $this->approved_at,
+            'disapproved_at' => $this->disapproved_at,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

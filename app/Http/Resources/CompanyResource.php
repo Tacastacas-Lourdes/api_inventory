@@ -20,7 +20,9 @@ class CompanyResource extends JsonResource
             'name' => $this->name,
             'acronym' => $this->acronym,
             'status' => $this->status,
+            'categories' => $this->categories,
             'created_at' => $this->created_at->format('d/m/Y'),
-            'updated_at' => $this->updated_at->format('d/m/Y'), ];
+            'updated_at' => $this->updated_at->format('d/m/Y'),
+        ];
     }
 }

@@ -45,11 +45,12 @@ class SpecificationController extends BaseController
     public function store(StoreSpecRequest $request): JsonResponse
     {
         $input = $request->validated();
-        $category = Category::query()->find($input['category_name']);
+        $category = Category::query()->find($input['category_id']);
+//        dd($category == );
         if ($category) {
             foreach ($input['spec_name'] as $name) {
                 $spec = Specification::query()->create([
-                    'name' => $name,
+                    'name' => $name['spec_name'],
                 ]);
                 $spec->category()->associate($category)->save();
             }

@@ -4,6 +4,9 @@ namespace App\Http\Requests\Category;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Body parameter
+ */
 class UpdateCategoryRequest extends FormRequest
 {
     /**
@@ -25,6 +28,15 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required',
+        ];
+    }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'Name of the Category',
+            ],
         ];
     }
 }

@@ -4,6 +4,9 @@ namespace App\Http\Requests\Category;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Body parameters
+ */
 class StoreCategoryRequest extends FormRequest
 {
     /**
@@ -11,7 +14,7 @@ class StoreCategoryRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -21,11 +24,27 @@ class StoreCategoryRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'name' => 'required',
-            'spec' => 'array',
+            'spec' => 'array|required',
+        ];
+    }
+
+    /**
+     * @return string[][]
+     */
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'Name of the Category',
+            ],
+            'spec' => [
+                'description' => 'The specification details',
+                'example' => 'CPU',
+            ],
         ];
     }
 }

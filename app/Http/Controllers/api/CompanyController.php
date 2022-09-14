@@ -3,14 +3,19 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\API\BaseController as BaseController;
+use App\Http\Requests\Company\AddCategoryInCompanyRequest;
 use App\Http\Requests\Company\StoreCompanyRequest;
 use App\Http\Requests\Company\UpdateCompanyRequest;
 use App\Http\Resources\CompanyResource;
 use App\Models\Company;
 use Illuminate\Http\JsonResponse;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 /**
  * @group Company Management
+ *
+ *  APIs to manage the category resource
  */
 class CompanyController extends BaseController
 {
@@ -29,9 +34,17 @@ class CompanyController extends BaseController
      */
     public function index(): JsonResponse
     {
-        $company = Company::all();
+        $company = QueryBuilder::for(Company::class)
+            ->allowedFilters(
+                'name',
+                'acronym',
+                AllowedFilter::exact('id')
+            )
+            ->with('categories.specs', 'categories.units', 'categories.units.specs', 'users')
+            ->get();
+//        $company = Company::all();
         if ($company->isNotEmpty()) {
-            return $this->sendResponse(CompanyResource::collection($company), 'Company retrieved successfully.');
+            return $this->sendResponse($company, 'Company retrieved successfully.');
         }
 
         return $this->sendError('No Record.');
@@ -73,10 +86,28 @@ class CompanyController extends BaseController
     public function update(UpdateCompanyRequest $request, Company $company): JsonResponse
     {
         $input = $request->validated();
-        $company->company = $input['name'];
+        $company->name = $input['name'];
         $company->acronym = $input['acronym'];
-        $company->status = $input['status'];
+//        $company->status = $input['status'];
+        $company->save();
 
         return $this->sendResponse(new CompanyResource($company), 'Company updated successfully.');
+    }
+
+    /**
+     * Add Categories on specific company
+     *
+     * @param  AddCategoryInCompanyRequest  $request
+     * @param  Company  $company
+     * @return JsonResponse
+     */
+    public function addCategory(AddCategoryInCompanyRequest $request, Company $company): JsonResponse
+    {
+        $input = $request->validated();
+        $company->categories()->sync($input['categories']);
+        $company->save();
+        $company->load('categories');
+
+        return $this->sendResponse($company, 'Admin successfully added category');
     }
 }

@@ -1,0 +1,204 @@
+name: 'Unit Management'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/unit
+    metadata:
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"data":[{"id":1,"unit_id":"FAU-Laptop-000001","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},"company":{"id":1,"name":"Fligno AU","acronym":"FAU","status":null,"created_at":"2022-09-14T01:07:50.000000Z","updated_at":"2022-09-14T01:07:50.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-14T01:01:30.000000Z","updated_at":"2022-09-14T01:01:30.000000Z"},"remarks":[{"id":1,"name":"speaker defectedwad","date":"2022-08-24","unit_id":1,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"},{"id":2,"name":"defecteddw","date":"2022-09-07","unit_id":1,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"}],"user":null,"specs":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":1,"specification_id":1,"details":"Intel","created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"}},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":1,"specification_id":2,"details":"8G","created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"}},{"id":3,"name":"GPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":1,"specification_id":3,"details":null,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"}}]},{"id":2,"unit_id":"FAU-Laptop-000002","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},"company":{"id":1,"name":"Fligno AU","acronym":"FAU","status":null,"created_at":"2022-09-14T01:07:50.000000Z","updated_at":"2022-09-14T01:07:50.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-14T01:01:30.000000Z","updated_at":"2022-09-14T01:01:30.000000Z"},"remarks":[{"id":3,"name":"speaker defectedwad","date":"2022-08-24","unit_id":2,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"},{"id":4,"name":"defecteddw","date":"2022-09-07","unit_id":2,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}],"user":null,"specs":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":2,"specification_id":1,"details":"Intel","created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":2,"specification_id":2,"details":"8G","created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}},{"id":3,"name":"GPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":2,"specification_id":3,"details":"Rawr","created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}}]}],"message":"Unit retrieved successfully."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '52'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/unit
+    metadata:
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      brand:
+        name: brand
+        description: ''
+        required: true
+        example: ut
+        type: string
+        custom: []
+      model:
+        name: model
+        description: ''
+        required: true
+        example: similique
+        type: string
+        custom: []
+      serial:
+        name: serial
+        description: ''
+        required: true
+        example: at
+        type: string
+        custom: []
+      details:
+        name: details
+        description: ''
+        required: true
+        example: labore
+        type: string
+        custom: []
+      remarks:
+        name: remarks
+        description: ''
+        required: true
+        example: fuga
+        type: string
+        custom: []
+      company_id:
+        name: company_id
+        description: ''
+        required: true
+        example: 12
+        type: integer
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: officia
+        type: string
+        custom: []
+      status_id:
+        name: status_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/unit/{id}'
+    metadata:
+      title: 'Display the specified resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the unit.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"data":{"id":1,"unit_id":"FAU-Laptop-000001","brand":"efwfef","model":"s","serial":"aaafwef","created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},"message":"Unit retrieved successfully."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '51'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/unit/{id}'
+    metadata:
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the unit.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters:
+      brand:
+        name: brand
+        description: ''
+        required: true
+        example: rerum
+        type: string
+        custom: []
+      model:
+        name: model
+        description: ''
+        required: true
+        example: vitae
+        type: string
+        custom: []
+      serial:
+        name: serial
+        description: ''
+        required: true
+        example: et
+        type: string
+        custom: []
+      company_id:
+        name: company_id
+        description: ''
+        required: true
+        example: non
+        type: string
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: perferendis
+        type: string
+        custom: []
+      status_id:
+        name: status_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+    responses: []
+    responseFields: []

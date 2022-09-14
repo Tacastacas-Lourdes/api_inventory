@@ -7,8 +7,9 @@ use App\Http\Requests\Category\StoreCategoryRequest;
 use App\Http\Requests\Category\UpdateCategoryRequest;
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;
-use App\Models\Specification;
 use Illuminate\Http\JsonResponse;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 /**
  * @group Category Management
@@ -19,7 +20,7 @@ class CategoryController extends BaseController
 {
     public function __construct()
     {
-//        $this->middleware('permission:category_create', ['only' => ['store']]);
+//        $this->middleware('permission:category_create', ['only' => ['index']]);
 //        $this->middleware('permission:product-create', ['only' => ['create','store']]);
 //        $this->middleware('permission:product-edit', ['only' => ['edit','update']]);
 //        $this->middleware('permission:product-delete', ['only' => ['destroy']]);
@@ -38,17 +39,26 @@ class CategoryController extends BaseController
      */
     public function index(): JsonResponse
     {
-        $category = Category::all();
+        $category = QueryBuilder::for(Category::class)
+            ->allowedFilters('name', AllowedFilter::exact('id'))
+             ->with(['company', 'units', 'specs'])->get();
         if ($category->isNotEmpty()) {
-            return $this->sendResponse(CategoryResource::collection($category), 'Category retrieved successfully.');
+            return $this->sendResponse($category, 'Category retrieved successfully.');
         }
 
         return $this->sendError('No Record.');
     }
+//
 
     /**
      * Store a newly created resource in storage.
      *
+     * @bodyParam name string required Name of the category. Example: Laptop
+     * @bodyParam spec object[] required Example: [
+     * {
+     * "name": "CPU"
+     * }]
+     * @bodyParam spec[].name string required Name of the specification. Example: CPU
      *
      * @param  StoreCategoryRequest  $request
      * @return JsonResponse
@@ -58,11 +68,7 @@ class CategoryController extends BaseController
         $input = $request->validated();
         $category = Category::query()->create($input);
         if ($specs = $request->get('spec')) {
-            foreach ($specs as $spec) {
-                Specification::query()->create([
-                    'name' => $spec,
-                ])->category()->associate($category)->save();
-            }
+            $category->specs()->createMany($specs);
 
             return $this->sendResponse(new CategoryResource($category), 'Category & Specification created successfully.');
         } else {
@@ -73,7 +79,7 @@ class CategoryController extends BaseController
     /**
      * Display the specified resource.
      *
-     * @urlParam id int required Category ID
+     * @urlParam id int required The ID of the category.
      * @apiResource  App\Http\Resources\CategoryResource
      * @apiResourceModel App\Models\Category
      *
@@ -96,6 +102,7 @@ class CategoryController extends BaseController
     {
         $input = $request->validated();
         $category->name = $input['name'];
+        $category->save();
 
         return $this->sendResponse(new CategoryResource($category), 'Category updated successfully.');
     }

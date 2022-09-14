@@ -9,6 +9,9 @@ use App\Http\Resources\StatusResource;
 use App\Models\Status;
 use Illuminate\Http\JsonResponse;
 
+/**
+ * @group Status Management
+ */
 class StatusController extends BaseController
 {
     public function __construct()

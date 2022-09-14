@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Specification extends Model
@@ -23,7 +24,7 @@ class Specification extends Model
         return $this->hasMany(SpecDetails::class);
     }
 
-    public function units()
+    public function units(): BelongsToMany
     {
         return $this->belongsToMany(Unit::class, 'spec_details')->using(SpecDetails::class)->withTimestamps();
     }

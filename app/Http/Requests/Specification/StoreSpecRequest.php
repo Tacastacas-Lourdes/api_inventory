@@ -24,7 +24,7 @@ class StoreSpecRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'category_name' => 'required',
+            'category_id' => 'required',
             'spec_name' => 'array',
         ];
     }

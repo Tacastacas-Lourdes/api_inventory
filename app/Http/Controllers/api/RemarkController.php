@@ -10,6 +10,9 @@ use App\Models\Remark;
 use App\Models\Unit;
 use Illuminate\Http\JsonResponse;
 
+/**
+ * @group Remark Management
+ */
 class RemarkController extends BaseController
 {
     /**
@@ -37,16 +40,18 @@ class RemarkController extends BaseController
     {
         $input = $request->validated();
         $unit = Unit::query()->findOrFail($input['unit']);
-        $name = $input['name'];
-        $date = $input['date'];
-        for ($i = 0; $i < count($input['name']); $i++) {
-            $remark = Remark::query()->create([
-                'name' => $name[$i],
-                'date' => $date[$i],
-            ])->unit()->associate($unit)->save();
-        }
+//        dd($unit);
+        $unit->remarks()->createMany($input['remarks']);
+//        $name = $input['name'];
+//        $date = $input['date'];
+//        for ($i = 0; $i < count($input['name']); $i++) {
+//            $remark = Remark::query()->create([
+//                'name' => $name[$i],
+//                'date' => $date[$i],
+//            ])->units()->associate($unit)->save();
+//        }
 
-        return $this->sendResponse(new RemarkResource($remark), 'Remarks created successfully.');
+        return $this->sendResponse(new RemarkResource($unit), 'Remarks created successfully.');
     }
 
     /**
