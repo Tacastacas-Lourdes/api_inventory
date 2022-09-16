@@ -24,7 +24,7 @@ class UpdateUnitRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'unit_id' =>'string',
+            'unit_id' => 'string',
             'brand' => 'string',
             'model' => 'string',
             'serial' => 'string',

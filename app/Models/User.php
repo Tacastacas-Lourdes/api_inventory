@@ -52,7 +52,6 @@ class User extends Authenticatable
 
     /**
      * @return BelongsToMany
-     *
      */
     public function companies(): BelongsToMany
     {
@@ -158,6 +157,7 @@ class User extends Authenticatable
     {
         if ($this->isApproved(false)) {
             $this->disapproved_at = now();
+
             return $this->save();
         }
 

@@ -42,14 +42,16 @@ class UnitController extends BaseController
             )
             ->with('category', 'company', 'status', 'remarks', 'user', 'specs')
             ->get();
-        if ($unit->isNotEmpty()){
+        if ($unit->isNotEmpty()) {
             return $this->sendResponse($unit, 'Unit retrieved successfully.');
         }
-        return $this->sendError("No Record.", ['error'=> "No Record"]);
+
+        return $this->sendError('No Record.', ['error' => 'No Record']);
     }
 
     /**
      *  Display a listing of resource with the given company and category ID
+     *
      * @param $com_id
      * @param $cat_id
      * @return JsonResponse
@@ -58,11 +60,11 @@ class UnitController extends BaseController
     {
         $unit = Unit::query()->where([['company_id', $com_id], ['category_id', $cat_id]])->get();
         $unit->load('status');
-        if ($unit->isNotEmpty()){
-            return $this->sendResponse($unit, "Good Job");
+        if ($unit->isNotEmpty()) {
+            return $this->sendResponse($unit, 'Good Job');
         }
-       return  $this->sendError("No Record.", ['error'=> "No Record"]);
 
+        return  $this->sendError('No Record.', ['error' => 'No Record']);
     }
 
     /**
@@ -91,7 +93,7 @@ class UnitController extends BaseController
         $unit->category()->associate($input['category_id']);
         $unit->save();
 //        foreach ($input['remarks'] as $name){
-////            dd($name);
+        ////            dd($name);
 //            $remark = Remark::query()->create([$name, ['date'=> now()]]);
 //        }
         $unit->remarks()->createMany($input['remarks']);

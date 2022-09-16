@@ -66,7 +66,6 @@ class Unit extends Model
             ->withTimestamps();
     }
 
-
 //    public function getUniqueIdAttribute()
 //    {
 //        return implode('-', [$this->company->acronym, $this->category->name, str_pad($this->count, 6, 0, STR_PAD_LEFT)]);

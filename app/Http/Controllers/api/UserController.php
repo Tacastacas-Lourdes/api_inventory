@@ -26,10 +26,11 @@ class UserController extends BaseController
     public function checkUsersRecord(): JsonResponse
     {
         $user = User::all();
-        if ($user->isNotEmpty()){
+        if ($user->isNotEmpty()) {
             return $this->sendResponse(['empty' => 'false'], 'The user records are not empty.');
         }
-        return $this->sendError('No record found.',['empty'=>'true']);
+
+        return $this->sendError('No record found.', ['empty' => 'true']);
     }
 
     /**
@@ -41,6 +42,7 @@ class UserController extends BaseController
     public function approveAccount(User $requestor): JsonResponse
     {
         $requestor->approve();
+
         return $this->sendResponse($requestor, 'Approved account register successfully.');
     }
 
@@ -53,6 +55,7 @@ class UserController extends BaseController
     public function disapproveAccount(User $requestor): JsonResponse
     {
         $requestor->disapprove();
+
         return $this->sendResponse($requestor, 'Admin disapproved user account.');
     }
 
@@ -68,6 +71,7 @@ class UserController extends BaseController
         $input = $request->validated();
         $user->roles()->sync($input['role_id']);
         $user->load('roles');
+
         return $this->sendResponse($user, 'Admin change user role successfully.');
     }
 
@@ -82,8 +86,8 @@ class UserController extends BaseController
         if ($users_approval->isNotEmpty()) {
             return $this->sendResponse(ApprovalResource::collection($users_approval), 'Accounts for approval retrieved successfully.');
         }
-        return $this->sendError('No Record.');
 
+        return $this->sendError('No Record.');
     }
 
     /**
@@ -98,11 +102,11 @@ class UserController extends BaseController
         if ($user_disapproved->isNotEmpty()) {
             return $this->sendResponse(ApprovalResource::collection($user_disapproved), 'Disapproved accounts retrieved successfully.');
         }
+
         return $this->sendError('No Record.');
     }
 
     /**
-     *
      * Activate user account
      *
      * @param  User  $user
@@ -111,6 +115,7 @@ class UserController extends BaseController
     public function activate(User $user): JsonResponse
     {
         $user->activate();
+
         return $this->sendResponse($user, 'User account has been activated.');
     }
 
@@ -123,6 +128,7 @@ class UserController extends BaseController
     public function deactivate(User $user): JsonResponse
     {
         $user->deactivate();
+
         return $this->sendResponse($user, 'Deactivated user account.');
     }
 
@@ -134,9 +140,10 @@ class UserController extends BaseController
     public function deactivatedAccount(): JsonResponse
     {
         $user = User::deactivated()->get();
-        if ($user->isNotEmpty()){
+        if ($user->isNotEmpty()) {
             return $this->sendResponse($user, 'Deactivated user accounts were retrieved successfully.');
         }
+
         return $this->sendError('No Record.');
     }
 
@@ -150,9 +157,10 @@ class UserController extends BaseController
         $admins = User::query()->where('role_request', '!=', null)->get();
 //        $admins = User::query()->whereHas('roles', function($q){
 //            $q->where('name', 'like', '%admin%');})->get();
-        if ($admins->isNotEmpty()){
+        if ($admins->isNotEmpty()) {
             return $this->sendResponse(AdminResource::collection($admins), 'Admin accounts retrieved successfully.');
         }
+
         return $this->sendError('No Record.');
     }
 

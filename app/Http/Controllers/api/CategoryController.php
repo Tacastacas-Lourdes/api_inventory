@@ -45,6 +45,7 @@ class CategoryController extends BaseController
         if ($category->isNotEmpty()) {
             return $this->sendResponse($category, 'Category retrieved successfully.');
         }
+
         return $this->sendError('No Record.');
     }
 
