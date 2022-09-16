@@ -45,7 +45,7 @@ class RegisterController extends BaseController
             if (is_null($input['company_id'])) {
                 return $this->sendResponse(new UserResource($user), 'User Account successfully queue for admin Approval.');
             }
-            $user->company()->sync($input['company_id']);
+            $user->companies()->sync($input['company_id']);
 
             return $this->sendResponse(new UserResource($user), 'User Account successfully queue for admin Approval.');
         } else {

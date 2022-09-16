@@ -30,7 +30,7 @@ class Company extends Model
 
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class)->using(CompanyCategory::class);
+        return $this->belongsToMany(Category::class)->using(CompanyCategory::class)->withTimestamps();
     }
 
     /***** OTHER FUNCTIONS *****/

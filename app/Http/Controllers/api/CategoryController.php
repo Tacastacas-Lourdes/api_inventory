@@ -41,14 +41,12 @@ class CategoryController extends BaseController
     {
         $category = QueryBuilder::for(Category::class)
             ->allowedFilters('name', AllowedFilter::exact('id'))
-             ->with(['company', 'units', 'specs'])->get();
+            ->with(['companies', 'units', 'specs'])->get();
         if ($category->isNotEmpty()) {
             return $this->sendResponse($category, 'Category retrieved successfully.');
         }
-
         return $this->sendError('No Record.');
     }
-//
 
     /**
      * Store a newly created resource in storage.

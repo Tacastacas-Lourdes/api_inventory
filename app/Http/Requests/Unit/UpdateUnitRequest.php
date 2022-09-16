@@ -24,11 +24,13 @@ class UpdateUnitRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'brand' => 'required',
-            'model' => 'required',
-            'serial' => 'required',
-            'company_id' => 'required|exists:companies,id',
-            'category_id' => 'required|exists:categories,id',
+            'unit_id' =>'string',
+            'brand' => 'string',
+            'model' => 'string',
+            'serial' => 'string',
+            'details' => 'array',
+            'company_id' => 'int|exists:companies,id',
+            'category_id' => 'int|exists:categories,id',
             'status_id' => 'exists:statuses,id',
         ];
     }

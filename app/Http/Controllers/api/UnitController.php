@@ -37,17 +37,48 @@ class UnitController extends BaseController
                 'brand',
                 'model',
                 'serial',
-                'employee_id',
+                'unit_id',
                 AllowedFilter::exact('id')
             )
             ->with('category', 'company', 'status', 'remarks', 'user', 'specs')
             ->get();
+        if ($unit->isNotEmpty()){
+            return $this->sendResponse($unit, 'Unit retrieved successfully.');
+        }
+        return $this->sendError("No Record.", ['error'=> "No Record"]);
+    }
 
-        return $this->sendResponse($unit, 'Unit retrieved successfully.');
+    /**
+     *  Display a listing of resource with the given company and category ID
+     * @param $com_id
+     * @param $cat_id
+     * @return JsonResponse
+     */
+    public function getCategoryCompany($com_id, $cat_id): JsonResponse
+    {
+        $unit = Unit::query()->where([['company_id', $com_id], ['category_id', $cat_id]])->get();
+        $unit->load('status');
+        if ($unit->isNotEmpty()){
+            return $this->sendResponse($unit, "Good Job");
+        }
+       return  $this->sendError("No Record.", ['error'=> "No Record"]);
+
     }
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @bodyParam brand string required Brand name of the unit. Example: Intel
+     * @bodyParam model string required Model name of the unit. Example: PTSE3U-06N006
+     * @bodyParam serial string required Serial of the unit. Example: 7H137673A
+     * @bodyParam company_id int required Company ID of the unit. Example: 1
+     * @bodyParam category_id int required Category ID of the unit. Example: 1
+     * @bodyParam details object[] required Specification details. Example: ["CPU" : "Intel", "Memory" : "8G"]
+     * @bodyParam details[].CPU string required Details name for CPU. Example: Intel
+     * @bodyParam details[].Memory string required Details name for Memory. Example: 8G
+     * @bodyParam remarks object[] string required Remarks of the unit. Example: admin
+     * @bodyParam remarks[].name string required Remarks name of the unit. Example: Defected Speaker
+     * @bodyParam remarks[].date required Remarks date of the unit. Example: 2022-09-09
      *
      * @param  StoreUnitRequest  $request
      * @return JsonResponse
@@ -59,7 +90,12 @@ class UnitController extends BaseController
         $unit->company()->associate($input['company_id']);
         $unit->category()->associate($input['category_id']);
         $unit->save();
+//        foreach ($input['remarks'] as $name){
+////            dd($name);
+//            $remark = Remark::query()->create([$name, ['date'=> now()]]);
+//        }
         $unit->remarks()->createMany($input['remarks']);
+
         $details = $input['details'];
         $sync = [];
 //        dd($details);
@@ -89,17 +125,35 @@ class UnitController extends BaseController
     /**
      * Update the specified resource in storage.
      *
+     * @bodyParam unit_id string required Brand name of the unit. Example: FAu-Laptop-00006
+     * @bodyParam brand string required Brand name of the unit. Example: Intel
+     * @bodyParam model string required Model name of the unit. Example: PTSE3U-06N006
+     * @bodyParam serial string required Serial of the unit. Example: 7H137673A
+     * @bodyParam company_id int required Company ID of the unit. Example: 1
+     * @bodyParam category_id int required Category ID of the unit. Example: 1
+     * @bodyParam details object[] required Specification details. Example: ["CPU" : "Intel", "Memory" : "8G"]
+     * @bodyParam details[].CPU string required Details name for CPU. Example: Intel
+     * @bodyParam details[].Memory string required Details name for Memory. Example: 8G
+     * @bodyParam remarks object[] string required Remarks of the unit. Example: admin
+     * @bodyParam remarks[].name string required Remarks name of the unit. Example: Defected Speaker
+     * @bodyParam remarks[].date required Remarks date of the unit. Example: 2022-09-09
+     *
      * @param  UpdateUnitRequest  $request
      * @param  Unit  $unit
      * @return JsonResponse
      */
     public function update(UpdateUnitRequest $request, Unit $unit): JsonResponse //not done yet
     {
-        $input = $request->all();
+//        dd($unit);
+        $input = $request->validated();
+        $unit->unit_id = $input['unit_id'];
         $unit->brand = $input['brand'];
         $unit->model = $input['model'];
         $unit->serial = $input['serial'];
+        $unit->company()->associate($input['company_id']);
+//        $unit->category()->associate($input['category_id']);
         $unit->save();
+//        $unit->remarks()->createMany($input['remarks']);
         $details = $input['details'];
         $sync = [];
         Specification::query()

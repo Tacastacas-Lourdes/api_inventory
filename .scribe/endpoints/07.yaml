@@ -19,12 +19,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"data":[{"id":1,"status":"Available","created_at":"14\/09\/2022","updated_at":"14\/09\/2022"}],"message":"Status retrieved successfully."}'
+        content: '{"success":true,"data":[{"id":1,"status":"Available","created_at":"15\/09\/2022","updated_at":"15\/09\/2022"}],"message":"Status retrieved successfully."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '44'
+          x-ratelimit-remaining: '41'
           vary: Origin
         description: null
     responseFields: []
@@ -47,7 +47,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: nesciunt
+        example: explicabo
         type: string
         custom: []
     responses: []
@@ -77,12 +77,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"data":{"id":1,"status":"Available","created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},"message":"Status retrieved successfully."}'
+        content: '{"success":true,"data":{"id":1,"status":"Available","created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},"message":"Status retrieved successfully."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '43'
+          x-ratelimit-remaining: '40'
           vary: Origin
         description: null
     responseFields: []
@@ -113,7 +113,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: et
+        example: cum
         type: string
         custom: []
     responses: []

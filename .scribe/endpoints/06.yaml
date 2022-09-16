@@ -20,12 +20,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"data":[{"id":1,"name":"CPU","category":{"id":1,"name":"Laptop","created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},"details":[{"id":1,"details":"Intel","specification_id":1,"unit_id":1,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"},{"id":4,"details":"Intel","specification_id":1,"unit_id":2,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}],"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},{"id":2,"name":"Memory","category":{"id":1,"name":"Laptop","created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},"details":[{"id":2,"details":"8G","specification_id":2,"unit_id":1,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"},{"id":5,"details":"8G","specification_id":2,"unit_id":2,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}],"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},{"id":3,"name":"GPU","category":{"id":1,"name":"Laptop","created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},"details":[{"id":3,"details":null,"specification_id":3,"unit_id":1,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"},{"id":6,"details":"Rawr","specification_id":3,"unit_id":2,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}],"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},{"id":4,"name":"Color","category":{"id":2,"name":"Keyboard","created_at":"2022-09-14T01:07:33.000000Z","updated_at":"2022-09-14T01:07:33.000000Z"},"details":[],"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},{"id":5,"name":"Type","category":{"id":2,"name":"Keyboard","created_at":"2022-09-14T01:07:33.000000Z","updated_at":"2022-09-14T01:07:33.000000Z"},"details":[],"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},{"id":6,"name":"Date","category":{"id":2,"name":"Keyboard","created_at":"2022-09-14T01:07:33.000000Z","updated_at":"2022-09-14T01:07:33.000000Z"},"details":[],"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"}],"message":"Specification retrieved successfully."}'
+        content: '{"success":true,"data":[{"id":1,"name":"CPU","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"details":[{"id":1,"details":"Corei5 4th Gen","specification_id":1,"unit_id":1,"created_at":"2022-09-15T02:50:41.000000Z","updated_at":"2022-09-15T02:50:41.000000Z"},{"id":5,"details":null,"specification_id":1,"unit_id":30,"created_at":"2022-09-15T20:49:41.000000Z","updated_at":"2022-09-15T20:49:41.000000Z"},{"id":8,"details":null,"specification_id":1,"unit_id":31,"created_at":"2022-09-15T20:51:43.000000Z","updated_at":"2022-09-15T20:51:43.000000Z"},{"id":11,"details":"Intel","specification_id":1,"unit_id":32,"created_at":"2022-09-16T00:25:35.000000Z","updated_at":"2022-09-16T00:25:35.000000Z"},{"id":14,"details":"bvdfb","specification_id":1,"unit_id":33,"created_at":"2022-09-16T01:16:52.000000Z","updated_at":"2022-09-16T01:16:52.000000Z"}],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":2,"name":"Memory","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"details":[{"id":2,"details":"8Gb","specification_id":2,"unit_id":1,"created_at":"2022-09-15T02:50:41.000000Z","updated_at":"2022-09-15T02:50:41.000000Z"},{"id":6,"details":null,"specification_id":2,"unit_id":30,"created_at":"2022-09-15T20:49:41.000000Z","updated_at":"2022-09-15T20:49:41.000000Z"},{"id":9,"details":null,"specification_id":2,"unit_id":31,"created_at":"2022-09-15T20:51:43.000000Z","updated_at":"2022-09-15T20:51:43.000000Z"},{"id":12,"details":"8GB","specification_id":2,"unit_id":32,"created_at":"2022-09-16T00:25:35.000000Z","updated_at":"2022-09-16T00:25:35.000000Z"},{"id":15,"details":"gbvb","specification_id":2,"unit_id":33,"created_at":"2022-09-16T01:16:52.000000Z","updated_at":"2022-09-16T01:16:52.000000Z"}],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":3,"name":"Storage","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"details":[{"id":3,"details":"120GB","specification_id":3,"unit_id":1,"created_at":"2022-09-15T02:50:41.000000Z","updated_at":"2022-09-15T02:50:41.000000Z"},{"id":7,"details":null,"specification_id":3,"unit_id":30,"created_at":"2022-09-15T20:49:41.000000Z","updated_at":"2022-09-15T20:49:41.000000Z"},{"id":10,"details":null,"specification_id":3,"unit_id":31,"created_at":"2022-09-15T20:51:43.000000Z","updated_at":"2022-09-15T20:51:43.000000Z"},{"id":13,"details":"4RAM","specification_id":3,"unit_id":32,"created_at":"2022-09-16T00:25:35.000000Z","updated_at":"2022-09-16T00:25:35.000000Z"},{"id":16,"details":"cbnc","specification_id":3,"unit_id":33,"created_at":"2022-09-16T01:16:52.000000Z","updated_at":"2022-09-16T01:16:52.000000Z"}],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":4,"name":"Mac Address","category":{"id":2,"name":"Mobile","created_at":"2022-09-15T02:39:58.000000Z","updated_at":"2022-09-15T02:39:58.000000Z"},"details":[{"id":4,"details":"C0:12:DF:EE:12:00","specification_id":4,"unit_id":2,"created_at":"2022-09-15T02:54:21.000000Z","updated_at":"2022-09-15T02:54:21.000000Z"}],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":5,"name":"Color","category":{"id":3,"name":"Keyboard","created_at":"2022-09-15T06:30:09.000000Z","updated_at":"2022-09-15T06:30:09.000000Z"},"details":[],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":6,"name":"Type","category":{"id":3,"name":"Keyboard","created_at":"2022-09-15T06:30:09.000000Z","updated_at":"2022-09-15T06:30:09.000000Z"},"details":[],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":7,"name":"Color","category":{"id":4,"name":"Mouse","created_at":"2022-09-15T23:54:51.000000Z","updated_at":"2022-09-15T23:54:51.000000Z"},"details":[],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":8,"name":"Type","category":{"id":5,"name":"Wire","created_at":"2022-09-15T23:55:02.000000Z","updated_at":"2022-09-15T23:55:02.000000Z"},"details":[],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":9,"name":"Type","category":{"id":6,"name":"Charger","created_at":"2022-09-15T23:55:14.000000Z","updated_at":"2022-09-15T23:55:14.000000Z"},"details":[],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":10,"name":"Type","category":{"id":7,"name":"Mouse Pad","created_at":"2022-09-15T23:55:25.000000Z","updated_at":"2022-09-15T23:55:25.000000Z"},"details":[],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":11,"name":"Type","category":{"id":8,"name":"Cable","created_at":"2022-09-15T23:55:37.000000Z","updated_at":"2022-09-15T23:55:37.000000Z"},"details":[],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":12,"name":"Color","category":{"id":9,"name":"Extension Wire","created_at":"2022-09-15T23:56:13.000000Z","updated_at":"2022-09-15T23:56:13.000000Z"},"details":[],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":13,"name":"Color","category":{"id":10,"name":"Cabinet","created_at":"2022-09-15T23:56:35.000000Z","updated_at":"2022-09-15T23:56:35.000000Z"},"details":[],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},{"id":14,"name":"Storage","category":{"id":11,"name":"Monitor","created_at":"2022-09-15T23:57:02.000000Z","updated_at":"2022-09-15T23:57:02.000000Z"},"details":[],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"}],"message":"Specification retrieved successfully."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
+          x-ratelimit-remaining: '51'
           vary: Origin
         description: null
     responseFields: []
@@ -49,7 +49,7 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: et
+        example: fugit
         type: string
         custom: []
       spec_name:
@@ -57,7 +57,7 @@ endpoints:
         description: ''
         required: false
         example:
-          - expedita
+          - recusandae
         type: 'string[]'
         custom: []
     responses: []
@@ -88,12 +88,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"data":{"id":1,"name":"CPU","category":{"id":1,"name":"Laptop","created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},"details":[{"id":1,"details":"Intel","specification_id":1,"unit_id":1,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"},{"id":4,"details":"Intel","specification_id":1,"unit_id":2,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}],"created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},"message":"Specification retrieved successfully."}'
+        content: '{"success":true,"data":{"id":1,"name":"CPU","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"details":[{"id":1,"details":"Corei5 4th Gen","specification_id":1,"unit_id":1,"created_at":"2022-09-15T02:50:41.000000Z","updated_at":"2022-09-15T02:50:41.000000Z"},{"id":5,"details":null,"specification_id":1,"unit_id":30,"created_at":"2022-09-15T20:49:41.000000Z","updated_at":"2022-09-15T20:49:41.000000Z"},{"id":8,"details":null,"specification_id":1,"unit_id":31,"created_at":"2022-09-15T20:51:43.000000Z","updated_at":"2022-09-15T20:51:43.000000Z"},{"id":11,"details":"Intel","specification_id":1,"unit_id":32,"created_at":"2022-09-16T00:25:35.000000Z","updated_at":"2022-09-16T00:25:35.000000Z"},{"id":14,"details":"bvdfb","specification_id":1,"unit_id":33,"created_at":"2022-09-16T01:16:52.000000Z","updated_at":"2022-09-16T01:16:52.000000Z"}],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},"message":"Specification retrieved successfully."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
+          x-ratelimit-remaining: '50'
           vary: Origin
         description: null
     responseFields: []
@@ -125,7 +125,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: facere
+        example: natus
         type: string
         custom: []
     responses: []

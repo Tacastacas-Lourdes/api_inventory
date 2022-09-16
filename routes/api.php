@@ -28,6 +28,7 @@ Route::controller(RegisterController::class)->group(function () {
     Route::post('login', 'login');
 });
 Route::apiResource('role', RoleController::class);
+Route::get('user/check-records',[UserController::class, 'checkUsersRecord']);
 Route::get('user/approval_request', [UserController::class, 'approvalList']);
 Route::get('user/deactivated_account', [UserController::class, 'deactivatedAccount']);
 Route::post('user/{requestor}/approve', [UserController::class, 'approveAccount']);
@@ -35,6 +36,9 @@ Route::post('user/{requestor}/disapprove', [UserController::class, 'disapproveAc
 Route::get('user/disapproved_account', [UserController::class, 'disapprovedList']);
 
 Route::post('user/company/{company}/add-categories', [CompanyController::class, 'addCategory']);
+Route::get('user/company/{company}/unrelated-categories', [CompanyController::class, 'getUnrelatedCategories']);
+Route::get('user/company/{company}/related-categories', [CompanyController::class, 'getRelatedCategories']);
+
 Route::apiResource('spec', SpecificationController::class);
 Route::apiResource('unit', UnitController::class);
 
@@ -51,6 +55,7 @@ Route::get('user/employee_list', [UserController::class, 'employeeList']);
 Route::apiResource('status', StatusController::class);
 Route::apiResource('remark', RemarkController::class);
 Route::apiResource('category', CategoryController::class);
+Route::get('units/{company_id}/{category_id}', [UnitController::class, 'getCategoryCompany']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('logout', [RegisterController::class, 'logout']);

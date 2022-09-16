@@ -52,8 +52,9 @@ class User extends Authenticatable
 
     /**
      * @return BelongsToMany
+     *
      */
-    public function company(): BelongsToMany
+    public function companies(): BelongsToMany
     {
         return $this->belongsToMany(Company::class)->using(CompanyUser::class);
     }
@@ -157,7 +158,6 @@ class User extends Authenticatable
     {
         if ($this->isApproved(false)) {
             $this->disapproved_at = now();
-
             return $this->save();
         }
 

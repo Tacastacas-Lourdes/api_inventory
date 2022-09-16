@@ -31,7 +31,6 @@ class StoreUnitRequest extends FormRequest
             'remarks' => 'required',
             'company_id' => 'int|required|exists:companies,id',
             'category_id' => 'required|exists:categories,id',
-            'status_id' => 'exists:statuses,id',
         ];
     }
 }

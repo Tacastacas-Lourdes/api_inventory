@@ -20,11 +20,11 @@ class Category extends Model
 
     public function units(): HasMany
     {
-        return $this->hasMany(Unit::class);
+        return $this->hasMany(Unit::class, 'category_id', 'id');
     }
 
-    public function company(): BelongsToMany
+    public function companies(): BelongsToMany
     {
-        return $this->belongsToMany(Company::class)->using(CompanyCategory::class);
+        return $this->belongsToMany(Company::class)->using(CompanyCategory::class)->withTimestamps();
     }
 }

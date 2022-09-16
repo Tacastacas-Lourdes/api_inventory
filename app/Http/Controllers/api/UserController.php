@@ -23,6 +23,15 @@ class UserController extends BaseController
 //        $this->middleware('permission:user_disapprove', ['only' => ['disapprove']]);
     }
 
+    public function checkUsersRecord(): JsonResponse
+    {
+        $user = User::all();
+        if ($user->isNotEmpty()){
+            return $this->sendResponse(['empty' => 'false'], 'The user records are not empty.');
+        }
+        return $this->sendError('No record found.',['empty'=>'true']);
+    }
+
     /**
      * Register approved accounts api
      *
@@ -32,22 +41,24 @@ class UserController extends BaseController
     public function approveAccount(User $requestor): JsonResponse
     {
         $requestor->approve();
-
         return $this->sendResponse($requestor, 'Approved account register successfully.');
     }
 
     /**
+     * Register disapproved accounts api
+     *
      * @param  User  $requestor
      * @return JsonResponse
      */
     public function disapproveAccount(User $requestor): JsonResponse
     {
         $requestor->disapprove();
-
         return $this->sendResponse($requestor, 'Admin disapproved user account.');
     }
 
     /**
+     * User Change Role
+     *
      * @param  UpdateRoleAdminRequest  $request
      * @param  User  $user
      * @return JsonResponse
@@ -57,11 +68,12 @@ class UserController extends BaseController
         $input = $request->validated();
         $user->roles()->sync($input['role_id']);
         $user->load('roles');
-
         return $this->sendResponse($user, 'Admin change user role successfully.');
     }
 
     /**
+     * Unapproved accounts List
+     *
      * @return JsonResponse
      */
     public function approvalList(): JsonResponse
@@ -69,57 +81,68 @@ class UserController extends BaseController
         $users_approval = User::unapproved()->get();
         if ($users_approval->isNotEmpty()) {
             return $this->sendResponse(ApprovalResource::collection($users_approval), 'Accounts for approval retrieved successfully.');
-        } else {
-            return $this->sendError('No Record.');
         }
+        return $this->sendError('No Record.');
+
     }
 
     /**
+     * Disapproved accounts List
+     *
      * @return JsonResponse
      */
     public function disapprovedList(): JsonResponse
     {
         $user_disapproved = User::disapproved()->get();
+//        dd($user_disapproved);
         if ($user_disapproved->isNotEmpty()) {
             return $this->sendResponse(ApprovalResource::collection($user_disapproved), 'Disapproved accounts retrieved successfully.');
-        } else {
-            return $this->sendError('No Record.');
         }
+        return $this->sendError('No Record.');
     }
 
     /**
+     *
+     * Activate user account
+     *
      * @param  User  $user
      * @return JsonResponse
      */
     public function activate(User $user): JsonResponse
     {
         $user->activate();
-
         return $this->sendResponse($user, 'User account has been activated.');
     }
 
     /**
+     * Deactivate user accounts
+     *
      * @param  User  $user
      * @return JsonResponse
      */
     public function deactivate(User $user): JsonResponse
     {
         $user->deactivate();
-
         return $this->sendResponse($user, 'Deactivated user account.');
     }
 
     /**
+     * Deactivated Accounts List
+     *
      * @return JsonResponse
      */
     public function deactivatedAccount(): JsonResponse
     {
         $user = User::deactivated()->get();
-
-        return $this->sendResponse($user, 'Deactivated user accounts were retrieved successfully.');
+        if ($user->isNotEmpty()){
+            return $this->sendResponse($user, 'Deactivated user accounts were retrieved successfully.');
+        }
+        return $this->sendError('No Record.');
     }
 
     /**
+     * Admin Account List
+     *
      * @return JsonResponse
      */
     public function adminList(): JsonResponse
@@ -127,10 +150,15 @@ class UserController extends BaseController
         $admins = User::query()->where('role_request', '!=', null)->get();
 //        $admins = User::query()->whereHas('roles', function($q){
 //            $q->where('name', 'like', '%admin%');})->get();
-        return $this->sendResponse(AdminResource::collection($admins), 'Admin accounts retrieved successfully.');
+        if ($admins->isNotEmpty()){
+            return $this->sendResponse(AdminResource::collection($admins), 'Admin accounts retrieved successfully.');
+        }
+        return $this->sendError('No Record.');
     }
 
     /**
+     * Employee Account List
+     *
      * @return JsonResponse
      */
     public function employeeList(): JsonResponse

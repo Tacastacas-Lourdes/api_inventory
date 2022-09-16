@@ -7,7 +7,9 @@ use App\Http\Requests\Company\AddCategoryInCompanyRequest;
 use App\Http\Requests\Company\StoreCompanyRequest;
 use App\Http\Requests\Company\UpdateCompanyRequest;
 use App\Http\Resources\CompanyResource;
+use App\Models\Category;
 use App\Models\Company;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -40,10 +42,17 @@ class CompanyController extends BaseController
                 'acronym',
                 AllowedFilter::exact('id')
             )
-            ->with('categories.specs', 'categories.units', 'categories.units.specs', 'users')
+            ->with(['categories.specs',
+//                'categories.units' => function (MorphTo $morph) {
+//                $morph->morphWith([
+//                    Category::class => ['*'],
+//                    Unit::class => ['*'],
+//                ]);
+//            },
+                'categories.units.specs', 'users'])
             ->get();
-//        $company = Company::all();
-        if ($company->isNotEmpty()) {
+    //        $company = Company::all();
+            if ($company->isNotEmpty()) {
             return $this->sendResponse($company, 'Company retrieved successfully.');
         }
 
@@ -104,10 +113,48 @@ class CompanyController extends BaseController
     public function addCategory(AddCategoryInCompanyRequest $request, Company $company): JsonResponse
     {
         $input = $request->validated();
-        $company->categories()->sync($input['categories']);
+//        foreach ($input['categories'] as $id){
+//            $category = Category::findOrFail($id, 'id');
+////            dd($category->company()->, $company->id);
+//            $category->companies()->sync($company->id);
+//            $category->save();
+//        }
+        $company->categories()->attach($input['categories']);
         $company->save();
         $company->load('categories');
 
         return $this->sendResponse($company, 'Admin successfully added category');
+    }
+
+    /**
+     * @param Company $company
+     * @return JsonResponse
+     */
+    public function getUnrelatedCategories(Company $company): JsonResponse
+    {
+        $categories = Category::query()->whereDoesntHave('companies', function (Builder $query) use($company) {
+            $query->where('companies.id', '=', $company->id);
+        })->get();
+        if ($categories->isNotEmpty()){
+            return $this->sendResponse($categories,"Unrelated categories were successfully retrieved.");
+        }
+        return $this->sendError('All categories have been added.');
+//        $categories = Category::query()->whereHas('companies', function (Builder $q) use ($company){
+//            $q->where('companies.id', '=', $company->id);
+
+    }
+
+    public function getRelatedCategories(Company $company): JsonResponse
+    {
+        $categories = Category::query()->whereHas('companies', function (Builder $query) use($company) {
+            $query->where('companies.id', '=', $company->id);
+        })->with(['specs'])->get();
+        if ($categories->isNotEmpty()){
+            return $this->sendResponse($categories,"Related categories were successfully retrieved.");
+        }
+        return $this->sendError('No record found.');
+//        $categories = Category::query()->whereHas('companies', function (Builder $q) use ($company){
+//            $q->where('companies.id', '=', $company->id);
+
     }
 }

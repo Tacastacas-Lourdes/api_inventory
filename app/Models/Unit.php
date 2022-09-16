@@ -66,6 +66,7 @@ class Unit extends Model
             ->withTimestamps();
     }
 
+
 //    public function getUniqueIdAttribute()
 //    {
 //        return implode('-', [$this->company->acronym, $this->category->name, str_pad($this->count, 6, 0, STR_PAD_LEFT)]);
@@ -78,6 +79,7 @@ class Unit extends Model
         static::saving(function (Model $unit) {
             $count = $unit->category->units()->count();
             $unit->unit_id = $unit->company->acronym.'-'.$unit->category->name.'-'.str_pad($count + 1, 6, 0, STR_PAD_LEFT);
+//            $unit->unit_id = 'haaays';
         });
     }
 }

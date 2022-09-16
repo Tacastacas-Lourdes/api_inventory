@@ -21,12 +21,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"data":[{"id":1,"unit_id":"FAU-Laptop-000001","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},"company":{"id":1,"name":"Fligno AU","acronym":"FAU","status":null,"created_at":"2022-09-14T01:07:50.000000Z","updated_at":"2022-09-14T01:07:50.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-14T01:01:30.000000Z","updated_at":"2022-09-14T01:01:30.000000Z"},"remarks":[{"id":1,"name":"speaker defectedwad","date":"2022-08-24","unit_id":1,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"},{"id":2,"name":"defecteddw","date":"2022-09-07","unit_id":1,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"}],"user":null,"specs":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":1,"specification_id":1,"details":"Intel","created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"}},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":1,"specification_id":2,"details":"8G","created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"}},{"id":3,"name":"GPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":1,"specification_id":3,"details":null,"created_at":"2022-09-14T01:09:07.000000Z","updated_at":"2022-09-14T01:09:07.000000Z"}}]},{"id":2,"unit_id":"FAU-Laptop-000002","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},"company":{"id":1,"name":"Fligno AU","acronym":"FAU","status":null,"created_at":"2022-09-14T01:07:50.000000Z","updated_at":"2022-09-14T01:07:50.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-14T01:01:30.000000Z","updated_at":"2022-09-14T01:01:30.000000Z"},"remarks":[{"id":3,"name":"speaker defectedwad","date":"2022-08-24","unit_id":2,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"},{"id":4,"name":"defecteddw","date":"2022-09-07","unit_id":2,"created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}],"user":null,"specs":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":2,"specification_id":1,"details":"Intel","created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":2,"specification_id":2,"details":"8G","created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}},{"id":3,"name":"GPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z","pivot":{"unit_id":2,"specification_id":3,"details":"Rawr","created_at":"2022-09-14T01:09:47.000000Z","updated_at":"2022-09-14T01:09:47.000000Z"}}]}],"message":"Unit retrieved successfully."}'
+        content: '{"success":true,"data":[{"id":1,"unit_id":"FLPH-Laptop-000001","brand":"Toshiba","model":"Portege Z-30A","serial":"ABCD1234","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T02:50:41.000000Z","updated_at":"2022-09-15T02:50:41.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":1,"name":"Brand New","date":"2022-09-15","unit_id":1,"created_at":"2022-09-15T02:50:41.000000Z","updated_at":"2022-09-15T02:50:41.000000Z"}],"user":null,"specs":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":1,"specification_id":1,"details":"Corei5 4th Gen","created_at":"2022-09-15T02:50:41.000000Z","updated_at":"2022-09-15T02:50:41.000000Z"}},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":1,"specification_id":2,"details":"8Gb","created_at":"2022-09-15T02:50:41.000000Z","updated_at":"2022-09-15T02:50:41.000000Z"}},{"id":3,"name":"Storage","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":1,"specification_id":3,"details":"120GB","created_at":"2022-09-15T02:50:41.000000Z","updated_at":"2022-09-15T02:50:41.000000Z"}}]},{"id":2,"unit_id":"FLPH-Mobile-000001","brand":"Samsung","model":"A72","serial":"SA721234ABC","category_id":2,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T02:54:21.000000Z","updated_at":"2022-09-15T02:54:21.000000Z","category":{"id":2,"name":"Mobile","created_at":"2022-09-15T02:39:58.000000Z","updated_at":"2022-09-15T02:39:58.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":2,"name":"Repaired","date":"2022-09-06","unit_id":2,"created_at":"2022-09-15T02:54:21.000000Z","updated_at":"2022-09-15T02:54:21.000000Z"}],"user":null,"specs":[{"id":4,"name":"Mac Address","category_id":2,"created_at":"2022-09-15T02:39:58.000000Z","updated_at":"2022-09-15T02:39:58.000000Z","pivot":{"unit_id":2,"specification_id":4,"details":"C0:12:DF:EE:12:00","created_at":"2022-09-15T02:54:21.000000Z","updated_at":"2022-09-15T02:54:21.000000Z"}}]},{"id":3,"unit_id":"FLPH-Laptop-000002","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T02:59:19.000000Z","updated_at":"2022-09-15T02:59:19.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":4,"unit_id":"FLPH-Laptop-000003","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:06:53.000000Z","updated_at":"2022-09-15T03:06:53.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":5,"unit_id":"FLPH-Laptop-000004","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:08:39.000000Z","updated_at":"2022-09-15T03:08:39.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":6,"unit_id":"FLPH-Laptop-000005","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:11:20.000000Z","updated_at":"2022-09-15T03:11:20.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":7,"unit_id":"FLPH-Laptop-000006","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:15:24.000000Z","updated_at":"2022-09-15T03:15:24.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":8,"unit_id":"FLPH-Laptop-000007","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:15:40.000000Z","updated_at":"2022-09-15T03:15:40.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":9,"unit_id":"FLPH-Laptop-000008","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:18:25.000000Z","updated_at":"2022-09-15T03:18:25.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":10,"unit_id":"FLPH-Laptop-000009","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:18:48.000000Z","updated_at":"2022-09-15T03:18:48.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":11,"unit_id":"FLPH-Laptop-000010","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:19:59.000000Z","updated_at":"2022-09-15T03:19:59.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":12,"unit_id":"FLPH-Laptop-000011","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:20:33.000000Z","updated_at":"2022-09-15T03:20:33.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":13,"unit_id":"FLPH-Laptop-000012","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:20:36.000000Z","updated_at":"2022-09-15T03:20:36.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":14,"unit_id":"FLPH-Laptop-000013","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:21:49.000000Z","updated_at":"2022-09-15T03:21:49.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":3,"name":"speaker defectedwad","date":"2022-08-24","unit_id":14,"created_at":"2022-09-15T03:21:49.000000Z","updated_at":"2022-09-15T03:21:49.000000Z"},{"id":4,"name":"defecteddw","date":"2022-09-07","unit_id":14,"created_at":"2022-09-15T03:21:49.000000Z","updated_at":"2022-09-15T03:21:49.000000Z"}],"user":null,"specs":[]},{"id":15,"unit_id":"FLPH-Laptop-000014","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:22:01.000000Z","updated_at":"2022-09-15T03:22:01.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":5,"name":"speaker defectedwad","date":"2022-08-24","unit_id":15,"created_at":"2022-09-15T03:22:01.000000Z","updated_at":"2022-09-15T03:22:01.000000Z"},{"id":6,"name":"defecteddw","date":"2022-09-07","unit_id":15,"created_at":"2022-09-15T03:22:01.000000Z","updated_at":"2022-09-15T03:22:01.000000Z"}],"user":null,"specs":[]},{"id":16,"unit_id":"FLPH-Laptop-000015","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:22:18.000000Z","updated_at":"2022-09-15T03:22:18.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":7,"name":"speaker defectedwad","date":"2022-08-24","unit_id":16,"created_at":"2022-09-15T03:22:18.000000Z","updated_at":"2022-09-15T03:22:18.000000Z"},{"id":8,"name":"defecteddw","date":"2022-09-07","unit_id":16,"created_at":"2022-09-15T03:22:18.000000Z","updated_at":"2022-09-15T03:22:18.000000Z"}],"user":null,"specs":[]},{"id":17,"unit_id":"FLPH-Laptop-000016","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:22:31.000000Z","updated_at":"2022-09-15T03:22:31.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":9,"name":"speaker defectedwad","date":"2022-08-24","unit_id":17,"created_at":"2022-09-15T03:22:31.000000Z","updated_at":"2022-09-15T03:22:31.000000Z"},{"id":10,"name":"defecteddw","date":"2022-09-07","unit_id":17,"created_at":"2022-09-15T03:22:31.000000Z","updated_at":"2022-09-15T03:22:31.000000Z"}],"user":null,"specs":[]},{"id":18,"unit_id":"FLPH-Laptop-000017","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:23:10.000000Z","updated_at":"2022-09-15T03:23:10.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":11,"name":"speaker defectedwad","date":"2022-08-24","unit_id":18,"created_at":"2022-09-15T03:23:10.000000Z","updated_at":"2022-09-15T03:23:10.000000Z"},{"id":12,"name":"defecteddw","date":"2022-09-07","unit_id":18,"created_at":"2022-09-15T03:23:10.000000Z","updated_at":"2022-09-15T03:23:10.000000Z"}],"user":null,"specs":[]},{"id":19,"unit_id":"FLPH-Laptop-000018","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:23:18.000000Z","updated_at":"2022-09-15T03:23:18.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":13,"name":"speaker defectedwad","date":"2022-08-24","unit_id":19,"created_at":"2022-09-15T03:23:18.000000Z","updated_at":"2022-09-15T03:23:18.000000Z"},{"id":14,"name":"defecteddw","date":"2022-09-07","unit_id":19,"created_at":"2022-09-15T03:23:18.000000Z","updated_at":"2022-09-15T03:23:18.000000Z"}],"user":null,"specs":[]},{"id":20,"unit_id":"FLPH-Laptop-000019","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:24:06.000000Z","updated_at":"2022-09-15T03:24:06.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":15,"name":"speaker defectedwad","date":"2022-08-24","unit_id":20,"created_at":"2022-09-15T03:24:06.000000Z","updated_at":"2022-09-15T03:24:06.000000Z"},{"id":16,"name":"defecteddw","date":"2022-09-07","unit_id":20,"created_at":"2022-09-15T03:24:06.000000Z","updated_at":"2022-09-15T03:24:06.000000Z"}],"user":null,"specs":[]},{"id":21,"unit_id":"FLPH-Laptop-000020","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:24:19.000000Z","updated_at":"2022-09-15T03:24:19.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":17,"name":"speaker defectedwad","date":"2022-08-24","unit_id":21,"created_at":"2022-09-15T03:24:19.000000Z","updated_at":"2022-09-15T03:24:19.000000Z"},{"id":18,"name":"defecteddw","date":"2022-09-07","unit_id":21,"created_at":"2022-09-15T03:24:19.000000Z","updated_at":"2022-09-15T03:24:19.000000Z"}],"user":null,"specs":[]},{"id":22,"unit_id":"FLPH-Laptop-000021","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:25:38.000000Z","updated_at":"2022-09-15T03:25:38.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":23,"unit_id":"FLPH-Laptop-000022","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:29:07.000000Z","updated_at":"2022-09-15T03:29:07.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":24,"unit_id":"FLPH-Laptop-000023","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:29:28.000000Z","updated_at":"2022-09-15T03:29:28.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":25,"unit_id":"FLPH-Laptop-000024","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:29:37.000000Z","updated_at":"2022-09-15T03:29:37.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":26,"unit_id":"FLPH-Laptop-000025","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:30:00.000000Z","updated_at":"2022-09-15T03:30:00.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":27,"unit_id":"FLPH-Laptop-000026","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:30:18.000000Z","updated_at":"2022-09-15T03:30:18.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":28,"unit_id":"FLPH-Laptop-000027","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:30:45.000000Z","updated_at":"2022-09-15T03:30:45.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":29,"unit_id":"FLPH-Laptop-000028","brand":"efwfef","model":"s","serial":"aaafwef","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-15T03:30:57.000000Z","updated_at":"2022-09-15T03:30:57.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[],"user":null,"specs":[]},{"id":30,"unit_id":"Joey-Laptop-000029","brand":"Intel","model":"PTSE3U-06N006","serial":"7H137673A","category_id":1,"company_id":3,"status_id":1,"user_id":null,"created_at":"2022-09-15T20:49:41.000000Z","updated_at":"2022-09-15T20:49:41.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":3,"name":"AFRIL","acronym":"Joey","status":null,"created_at":"2022-09-15T04:40:01.000000Z","updated_at":"2022-09-15T04:40:01.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":19,"name":"Defected Speaker","date":"2022-09-09","unit_id":30,"created_at":"2022-09-15T20:49:41.000000Z","updated_at":"2022-09-15T20:49:41.000000Z"}],"user":null,"specs":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":30,"specification_id":1,"details":null,"created_at":"2022-09-15T20:49:41.000000Z","updated_at":"2022-09-15T20:49:41.000000Z"}},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":30,"specification_id":2,"details":null,"created_at":"2022-09-15T20:49:41.000000Z","updated_at":"2022-09-15T20:49:41.000000Z"}},{"id":3,"name":"Storage","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":30,"specification_id":3,"details":null,"created_at":"2022-09-15T20:49:41.000000Z","updated_at":"2022-09-15T20:49:41.000000Z"}}]},{"id":31,"unit_id":"Joey-Laptop-000002","brand":"Intel","model":"PTSE3U-06N006","serial":"7H137673A","category_id":1,"company_id":3,"status_id":1,"user_id":null,"created_at":"2022-09-15T20:51:43.000000Z","updated_at":"2022-09-15T20:51:43.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":3,"name":"AFRIL","acronym":"Joey","status":null,"created_at":"2022-09-15T04:40:01.000000Z","updated_at":"2022-09-15T04:40:01.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":20,"name":"Defected Speaker","date":"2022-09-09","unit_id":31,"created_at":"2022-09-15T20:51:43.000000Z","updated_at":"2022-09-15T20:51:43.000000Z"}],"user":null,"specs":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":31,"specification_id":1,"details":null,"created_at":"2022-09-15T20:51:43.000000Z","updated_at":"2022-09-15T20:51:43.000000Z"}},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":31,"specification_id":2,"details":null,"created_at":"2022-09-15T20:51:43.000000Z","updated_at":"2022-09-15T20:51:43.000000Z"}},{"id":3,"name":"Storage","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":31,"specification_id":3,"details":null,"created_at":"2022-09-15T20:51:43.000000Z","updated_at":"2022-09-15T20:51:43.000000Z"}}]},{"id":32,"unit_id":"FLPH-Laptop-000031","brand":"Lonovo","model":"4b","serial":"59045-55","category_id":1,"company_id":1,"status_id":1,"user_id":null,"created_at":"2022-09-16T00:25:35.000000Z","updated_at":"2022-09-16T00:25:35.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":21,"name":"GOOD","date":"2022-09-22","unit_id":32,"created_at":"2022-09-16T00:25:35.000000Z","updated_at":"2022-09-16T00:25:35.000000Z"}],"user":null,"specs":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":32,"specification_id":1,"details":"Intel","created_at":"2022-09-16T00:25:35.000000Z","updated_at":"2022-09-16T00:25:35.000000Z"}},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":32,"specification_id":2,"details":"8GB","created_at":"2022-09-16T00:25:35.000000Z","updated_at":"2022-09-16T00:25:35.000000Z"}},{"id":3,"name":"Storage","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":32,"specification_id":3,"details":"4RAM","created_at":"2022-09-16T00:25:35.000000Z","updated_at":"2022-09-16T00:25:35.000000Z"}}]},{"id":33,"unit_id":"Patrick-Laptop-000032","brand":"Leno","model":"SDC","serial":"dvdfv","category_id":1,"company_id":4,"status_id":1,"user_id":null,"created_at":"2022-09-16T01:16:52.000000Z","updated_at":"2022-09-16T01:16:52.000000Z","category":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"company":{"id":4,"name":"James","acronym":"Patrick","status":null,"created_at":"2022-09-15T04:53:19.000000Z","updated_at":"2022-09-15T04:53:19.000000Z"},"status":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":22,"name":"c nc","date":"2022-09-27","unit_id":33,"created_at":"2022-09-16T01:16:52.000000Z","updated_at":"2022-09-16T01:16:52.000000Z"}],"user":null,"specs":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":33,"specification_id":1,"details":"bvdfb","created_at":"2022-09-16T01:16:52.000000Z","updated_at":"2022-09-16T01:16:52.000000Z"}},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":33,"specification_id":2,"details":"gbvb","created_at":"2022-09-16T01:16:52.000000Z","updated_at":"2022-09-16T01:16:52.000000Z"}},{"id":3,"name":"Storage","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z","pivot":{"unit_id":33,"specification_id":3,"details":"cbnc","created_at":"2022-09-16T01:16:52.000000Z","updated_at":"2022-09-16T01:16:52.000000Z"}}]}],"message":"Unit retrieved successfully."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
+          x-ratelimit-remaining: '49'
           vary: Origin
         description: null
     responseFields: []
@@ -47,59 +47,82 @@ endpoints:
     bodyParameters:
       brand:
         name: brand
-        description: ''
+        description: 'Brand name of the unit.'
         required: true
-        example: ut
+        example: Intel
         type: string
         custom: []
       model:
         name: model
-        description: ''
+        description: 'Model name of the unit.'
         required: true
-        example: similique
+        example: PTSE3U-06N006
         type: string
         custom: []
       serial:
         name: serial
-        description: ''
+        description: 'Serial of the unit.'
         required: true
-        example: at
+        example: 7H137673A
         type: string
         custom: []
       details:
         name: details
-        description: ''
+        description: 'Specification details.'
         required: true
-        example: labore
-        type: string
+        example:
+          - []
+        type: 'object[]'
         custom: []
       remarks:
         name: remarks
-        description: ''
-        required: true
-        example: fuga
-        type: string
+        description: 'string required Remarks of the unit.'
+        required: false
+        example:
+          - []
+        type: 'object[]'
         custom: []
       company_id:
         name: company_id
-        description: ''
+        description: 'Company ID of the unit.'
         required: true
-        example: 12
+        example: 1
         type: integer
         custom: []
       category_id:
         name: category_id
-        description: ''
+        description: 'Category ID of the unit.'
         required: true
-        example: officia
+        example: 1
+        type: integer
+        custom: []
+      'details[].CPU':
+        name: 'details[].CPU'
+        description: 'Details name for CPU.'
+        required: true
+        example: Intel
         type: string
         custom: []
-      status_id:
-        name: status_id
-        description: ''
-        required: false
-        example: null
+      'details[].Memory':
+        name: 'details[].Memory'
+        description: 'Details name for Memory.'
+        required: true
+        example: 8G
         type: string
+        custom: []
+      'remarks[].name':
+        name: 'remarks[].name'
+        description: 'Remarks name of the unit.'
+        required: true
+        example: 'Defected Speaker'
+        type: string
+        custom: []
+      'remarks[].date':
+        name: 'remarks[].date'
+        description: 'Remarks date of the unit.'
+        required: false
+        example: '2022-09-09'
+        type: required
         custom: []
     responses: []
     responseFields: []
@@ -128,12 +151,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"data":{"id":1,"unit_id":"FAU-Laptop-000001","brand":"efwfef","model":"s","serial":"aaafwef","created_at":"14\/09\/2022","updated_at":"14\/09\/2022"},"message":"Unit retrieved successfully."}'
+        content: '{"success":true,"data":{"id":1,"unit_id":"FLPH-Laptop-000001","brand":"Toshiba","model":"Portege Z-30A","serial":"ABCD1234","company_id":{"id":1,"name":"Fligno PH","acronym":"FLPH","status":null,"created_at":"2022-09-15T02:36:49.000000Z","updated_at":"2022-09-15T02:36:49.000000Z"},"category_id":{"id":1,"name":"Laptop","created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},"status_id":{"id":1,"name":"Available","created_at":"2022-09-15T02:34:10.000000Z","updated_at":"2022-09-15T02:34:10.000000Z"},"remarks":[{"id":1,"name":"Brand New","date":"2022-09-15","unit_id":1,"created_at":"2022-09-15T02:50:41.000000Z","updated_at":"2022-09-15T02:50:41.000000Z"}],"created_at":"15\/09\/2022","updated_at":"15\/09\/2022"},"message":"Unit retrieved successfully."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '51'
+          x-ratelimit-remaining: '48'
           vary: Origin
         description: null
     responseFields: []
@@ -160,40 +183,55 @@ endpoints:
         custom: []
     queryParameters: []
     bodyParameters:
+      unit_id:
+        name: unit_id
+        description: 'Brand name of the unit.'
+        required: true
+        example: FAu-Laptop-00006
+        type: string
+        custom: []
       brand:
         name: brand
-        description: ''
+        description: 'Brand name of the unit.'
         required: true
-        example: rerum
+        example: Intel
         type: string
         custom: []
       model:
         name: model
-        description: ''
+        description: 'Model name of the unit.'
         required: true
-        example: vitae
+        example: PTSE3U-06N006
         type: string
         custom: []
       serial:
         name: serial
-        description: ''
+        description: 'Serial of the unit.'
         required: true
-        example: et
+        example: 7H137673A
         type: string
+        custom: []
+      details:
+        name: details
+        description: 'Specification details.'
+        required: true
+        example:
+          - []
+        type: 'object[]'
         custom: []
       company_id:
         name: company_id
-        description: ''
+        description: 'Company ID of the unit.'
         required: true
-        example: non
-        type: string
+        example: 1
+        type: integer
         custom: []
       category_id:
         name: category_id
-        description: ''
+        description: 'Category ID of the unit.'
         required: true
-        example: perferendis
-        type: string
+        example: 1
+        type: integer
         custom: []
       status_id:
         name: status_id
@@ -202,5 +240,82 @@ endpoints:
         example: null
         type: string
         custom: []
+      'details[].CPU':
+        name: 'details[].CPU'
+        description: 'Details name for CPU.'
+        required: true
+        example: Intel
+        type: string
+        custom: []
+      'details[].Memory':
+        name: 'details[].Memory'
+        description: 'Details name for Memory.'
+        required: true
+        example: 8G
+        type: string
+        custom: []
+      remarks:
+        name: remarks
+        description: 'string required Remarks of the unit.'
+        required: false
+        example:
+          - []
+        type: 'object[]'
+        custom: []
+      'remarks[].name':
+        name: 'remarks[].name'
+        description: 'Remarks name of the unit.'
+        required: true
+        example: 'Defected Speaker'
+        type: string
+        custom: []
+      'remarks[].date':
+        name: 'remarks[].date'
+        description: 'Remarks date of the unit.'
+        required: false
+        example: '2022-09-09'
+        type: required
+        custom: []
     responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/units/{company_id}/{category_id}'
+    metadata:
+      title: 'Display a listing of resource with the given company and category ID'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      company_id:
+        name: company_id
+        description: 'The ID of the company.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+      category_id:
+        name: category_id
+        description: 'The ID of the category.'
+        required: true
+        example: odio
+        type: string
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 404
+        content: '{"success":false,"message":"No Record.","data":{"error":"No Record"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '37'
+          vary: Origin
+        description: null
     responseFields: []

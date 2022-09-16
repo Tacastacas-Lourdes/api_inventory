@@ -24,7 +24,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"Laptop","created_at":"14\/09\/2022","updated_at":"14\/09\/2022","spec":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},{"id":3,"name":"GPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"}]},{"id":1,"name":"Laptop","created_at":"14\/09\/2022","updated_at":"14\/09\/2022","spec":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},{"id":3,"name":"GPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"}]}]}'
+        content: '{"data":[{"id":1,"name":"Laptop","created_at":"15\/09\/2022","updated_at":"15\/09\/2022","spec":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},{"id":3,"name":"Storage","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"}]},{"id":1,"name":"Laptop","created_at":"15\/09\/2022","updated_at":"15\/09\/2022","spec":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},{"id":3,"name":"Storage","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"}]}]}'
         headers: []
         description: '0'
     responseFields: []
@@ -85,7 +85,7 @@ endpoints:
         name: id
         description: 'The ID of the category.'
         required: true
-        example: 20
+        example: 4
         type: integer
         custom: []
     queryParameters: []
@@ -93,7 +93,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"Laptop","created_at":"14\/09\/2022","updated_at":"14\/09\/2022","spec":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"},{"id":3,"name":"GPU","category_id":1,"created_at":"2022-09-14T01:07:02.000000Z","updated_at":"2022-09-14T01:07:02.000000Z"}]}}'
+        content: '{"data":{"id":1,"name":"Laptop","created_at":"15\/09\/2022","updated_at":"15\/09\/2022","spec":[{"id":1,"name":"CPU","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},{"id":2,"name":"Memory","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"},{"id":3,"name":"Storage","category_id":1,"created_at":"2022-09-15T02:38:43.000000Z","updated_at":"2022-09-15T02:38:43.000000Z"}]}}'
         headers: []
         description: '0'
     responseFields: []
@@ -124,7 +124,7 @@ endpoints:
         name: name
         description: 'Name of the Category.'
         required: true
-        example: repellat
+        example: quis
         type: string
         custom: []
     responses: []
