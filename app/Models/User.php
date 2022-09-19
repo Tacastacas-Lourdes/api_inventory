@@ -142,7 +142,7 @@ class User extends Authenticatable
         if ($this->isApproved(false) || $this->isDisapproved()) {
             $this->approved_at = now();
             $this->disapproved_at = null;
-            $this->roles()->sync($this->company->isNotEmpty() == true ? [3] : [2]);
+            $this->roles()->sync($this->companies->isNotEmpty() == true ? [3] : [2]);
 
             return $this->save();
         }
@@ -204,6 +204,7 @@ class User extends Authenticatable
     public function tapActivity(Activity $activity, string $eventName)
     {
         $collect = collect($activity->properties)->get('attributes');
+//            dd($collect);
         if (count($collect) == 1) {
             if (isset($collect['approved_at'])) {
                 $activity->description = 'User has been approved.';
@@ -212,6 +213,8 @@ class User extends Authenticatable
                 $activity->description = 'User has been disapproved.';
             } elseif (isset($collect['deactivated_at'])) {
                 $activity->description = 'User has been '.($collect['deactivated_at'] ? 'deactivated' : 'activated').'.';
+            } elseif (isset($collect['company_id'])) {
+                $activity->description = 'User has been transfer to another company.';
             }
         }
     }

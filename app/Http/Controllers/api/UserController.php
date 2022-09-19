@@ -192,9 +192,10 @@ class UserController extends BaseController
      * @param  UpdateProfileRequest  $request
      * @return JsonResponse
      */
-    public function updateProfile(UpdateProfileRequest $request): JsonResponse
+    public function updateProfile(UpdateProfileRequest $request, User $user): JsonResponse
     {
-        $user = $request->user();
+//        $user = $request->user();
+//        dd($user);
         $input = $request->validated();
         $user->employee_id = $input['employee_id'];
         $user->last_name = $input['last_name'];
@@ -202,6 +203,7 @@ class UserController extends BaseController
         $user->middle_name = $input['middle_name'];
         $user->suffix = $input['suffix'];
         $user->email = $input['email'];
+        $user->companies()->sync($input['company_id']);
         $user->save();
 
         return $this->sendResponse(new AdminResource($user), 'Admin Account updated successfully.');

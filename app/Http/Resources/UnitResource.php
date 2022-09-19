@@ -28,7 +28,7 @@ class UnitResource extends JsonResource
             'category_id' => $this->category,
             'status_id' => $this->status,
             //            'user_id' => $this->user_id,
-            //            'specification' => $this->specs,
+            'specification' => $this->specs,
             'remarks' => $this->remarks,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),

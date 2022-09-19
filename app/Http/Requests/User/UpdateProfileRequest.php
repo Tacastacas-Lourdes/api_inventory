@@ -29,7 +29,7 @@ class UpdateProfileRequest extends FormRequest
             'last_name' => 'required',
             'middle_name' => '',
             'suffix' => '',
-            'company' => 'exists:roles,company',
+            'company_id' => 'exists:companies,id',
             'email' => 'required|email',
             //            'password' => 'required|same:confirmPassword',
         ];

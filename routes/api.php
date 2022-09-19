@@ -36,8 +36,9 @@ Route::post('user/{requestor}/disapprove', [UserController::class, 'disapproveAc
 Route::get('user/disapproved_account', [UserController::class, 'disapprovedList']);
 
 Route::post('user/company/{company}/add-categories', [CompanyController::class, 'addCategory']);
-Route::get('user/company/{company}/unrelated-categories', [CompanyController::class, 'getUnrelatedCategories']);
-Route::get('user/company/{company}/related-categories', [CompanyController::class, 'getRelatedCategories']);
+Route::get('user/company/{id}/unrelated-categories', [CompanyController::class, 'getUnrelatedCategories']);
+Route::get('user/company/{id}/related-categories', [CompanyController::class, 'getRelatedCategories']);
+Route::get('user/category/{id}/related-specs', [CategoryController::class, 'getSpecs']);
 
 Route::apiResource('spec', SpecificationController::class);
 Route::apiResource('unit', UnitController::class);
@@ -50,7 +51,7 @@ Route::put('user/{user}/deactivate', [UserController::class, 'deactivate']);
 Route::get('user/{user}/admin_details', [UserController::class, 'getUserById']);
 Route::get('user/admin_list', [UserController::class, 'adminList']);
 Route::get('user/employee_list', [UserController::class, 'employeeList']);
-//    Route::put('admin_updateProfile', [UserController::class, 'updateProfile']);
+    Route::put('admin_updateProfile/{user}', [UserController::class, 'updateProfile']);
 //    Route::put('employee_updateProfile', [EmployeeController::class, 'update']);
 Route::apiResource('status', StatusController::class);
 Route::apiResource('remark', RemarkController::class);

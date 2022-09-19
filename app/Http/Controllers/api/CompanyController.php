@@ -34,7 +34,7 @@ class CompanyController extends BaseController
      *
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function search(): JsonResponse
     {
         $company = QueryBuilder::for(Company::class)
             ->allowedFilters(
@@ -42,20 +42,19 @@ class CompanyController extends BaseController
                 'acronym',
                 AllowedFilter::exact('id')
             )
-            ->with(['categories.specs',
+//            ->with(['categories.specs',
                 //                'categories.units' => function (MorphTo $morph) {
                 //                $morph->morphWith([
                 //                    Category::class => ['*'],
                 //                    Unit::class => ['*'],
                 //                ]);
                 //            },
-                'categories.units.specs', 'users', ])
+//                'categories.units.specs', 'users', ])
             ->get();
         //        $company = Company::all();
         if ($company->isNotEmpty()) {
             return $this->sendResponse($company, 'Company retrieved successfully.');
         }
-
         return $this->sendError('No Record.');
     }
 
@@ -127,34 +126,33 @@ class CompanyController extends BaseController
     }
 
     /**
-     * @param  Company  $company
+     * @param $id
      * @return JsonResponse
      */
-    public function getUnrelatedCategories(Company $company): JsonResponse
+    public function getUnrelatedCategories($id): JsonResponse
     {
-        $categories = Category::query()->whereDoesntHave('companies', function (Builder $query) use ($company) {
-            $query->where('companies.id', '=', $company->id);
+        $categories = Category::query()->whereDoesntHave('companies', function (Builder $query) use ($id) {
+            $query->where('companies.id', '=', $id);
         })->get();
         if ($categories->isNotEmpty()) {
             return $this->sendResponse($categories, 'Unrelated categories were successfully retrieved.');
         }
 
         return $this->sendError('All categories have been added.');
-//        $categories = Category::query()->whereHas('companies', function (Builder $q) use ($company){
+//        $categories = Category::query()->whereHas('companies', function (Builder $q) use ($id){
 //            $q->where('companies.id', '=', $company->id);
     }
 
-    public function getRelatedCategories(Company $company): JsonResponse
+//    public
+
+    public function getRelatedCategories($id): JsonResponse
     {
-        $categories = Category::query()->whereHas('companies', function (Builder $query) use ($company) {
-            $query->where('companies.id', '=', $company->id);
+        $categories = Category::query()->whereHas('companies', function (Builder $query) use ($id) {
+            $query->where('companies.id', '=', $id);
         })->with(['specs'])->get();
         if ($categories->isNotEmpty()) {
             return $this->sendResponse($categories, 'Related categories were successfully retrieved.');
         }
-
         return $this->sendError('No record found.');
-//        $categories = Category::query()->whereHas('companies', function (Builder $q) use ($company){
-//            $q->where('companies.id', '=', $company->id);
     }
 }

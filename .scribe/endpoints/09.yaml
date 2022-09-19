@@ -18,255 +18,165 @@ endpoints:
     bodyParameters: []
     responses:
       -
-        status: 404
-        content: '{"success":false,"message":"No Record."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
-          vary: Origin
-        description: null
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: api/user/deactivated_account
-    metadata:
-      title: 'Deactivated Accounts List'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 404
-        content: '{"success":false,"message":"No Record."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
-          vary: Origin
-        description: null
-    responseFields: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/user/{requestor_id}/approve'
-    metadata:
-      title: 'Register approved accounts api'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      requestor_id:
-        name: requestor_id
-        description: 'The ID of the requestor.'
-        required: true
-        example: 15
-        type: integer
-        custom: []
-    queryParameters: []
-    bodyParameters: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - POST
-    uri: 'api/user/{requestor_id}/disapprove'
-    metadata:
-      title: 'Register disapproved accounts api'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      requestor_id:
-        name: requestor_id
-        description: 'The ID of the requestor.'
-        required: true
-        example: 5
-        type: integer
-        custom: []
-    queryParameters: []
-    bodyParameters: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: api/user/disapproved_account
-    metadata:
-      title: 'Disapproved accounts List'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 404
-        content: '{"success":false,"message":"No Record."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
-          vary: Origin
-        description: null
-    responseFields: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/user/{user_id}/change_role'
-    metadata:
-      title: 'User Change Role'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      user_id:
-        name: user_id
-        description: 'The ID of the user.'
-        required: true
-        example: 5
-        type: integer
-        custom: []
-    queryParameters: []
-    bodyParameters:
-      role_id:
-        name: role_id
-        description: ''
-        required: true
-        example: dolores
-        type: string
-        custom: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/user/{user_id}/activate'
-    metadata:
-      title: 'Activate user account'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      user_id:
-        name: user_id
-        description: 'The ID of the user.'
-        required: true
-        example: 16
-        type: integer
-        custom: []
-    queryParameters: []
-    bodyParameters: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - PUT
-    uri: 'api/user/{user_id}/deactivate'
-    metadata:
-      title: 'Deactivate user accounts'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      user_id:
-        name: user_id
-        description: 'The ID of the user.'
-        required: true
-        example: 10
-        type: integer
-        custom: []
-    queryParameters: []
-    bodyParameters: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/user/{user_id}/admin_details'
-    metadata:
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      user_id:
-        name: user_id
-        description: 'The ID of the user.'
-        required: true
-        example: 20
-        type: integer
-        custom: []
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 404
+        status: 500
         content: |-
           {
-              "message": "No query results for model [App\\Models\\User] 1",
-              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-              "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php",
-              "line": 380,
+              "message": "Call to a member function pluck() on null",
+              "exception": "Error",
+              "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\app\\Http\\Resources\\ApprovalResource.php",
+              "line": 29,
               "trace": [
                   {
-                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php",
-                      "line": 356,
-                      "function": "prepareException",
-                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\HigherOrderCollectionProxy.php",
+                      "line": 60,
+                      "function": "toArray",
+                      "class": "App\\Http\\Resources\\ApprovalResource",
                       "type": "->"
                   },
                   {
-                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\nunomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php",
-                      "line": 54,
-                      "function": "render",
-                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
+                      "function": "Illuminate\\Support\\{closure}",
+                      "class": "Illuminate\\Support\\HigherOrderCollectionProxy",
                       "type": "->"
                   },
                   {
-                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php",
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Arr.php",
+                      "line": 560,
+                      "function": "array_map"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php",
+                      "line": 719,
+                      "function": "map",
+                      "class": "Illuminate\\Support\\Arr",
+                      "type": "::"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\HigherOrderCollectionProxy.php",
+                      "line": 61,
+                      "function": "map",
+                      "class": "Illuminate\\Support\\Collection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\Json\\ResourceCollection.php",
+                      "line": 101,
+                      "function": "__call",
+                      "class": "Illuminate\\Support\\HigherOrderCollectionProxy",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\Json\\JsonResource.php",
+                      "line": 95,
+                      "function": "toArray",
+                      "class": "Illuminate\\Http\\Resources\\Json\\ResourceCollection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\Json\\JsonResource.php",
+                      "line": 241,
+                      "function": "resolve",
+                      "class": "Illuminate\\Http\\Resources\\Json\\JsonResource",
+                      "type": "->"
+                  },
+                  {
+                      "function": "jsonSerialize",
+                      "class": "Illuminate\\Http\\Resources\\Json\\JsonResource",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\JsonResponse.php",
+                      "line": 87,
+                      "function": "json_encode"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\symfony\\http-foundation\\JsonResponse.php",
                       "line": 51,
-                      "function": "render",
-                      "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
+                      "function": "setData",
+                      "class": "Illuminate\\Http\\JsonResponse",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\JsonResponse.php",
+                      "line": 32,
+                      "function": "__construct",
+                      "class": "Symfony\\Component\\HttpFoundation\\JsonResponse",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php",
+                      "line": 101,
+                      "function": "__construct",
+                      "class": "Illuminate\\Http\\JsonResponse",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\app\\Http\\Controllers\\api\\BaseController.php",
+                      "line": 25,
+                      "function": "json",
+                      "class": "Illuminate\\Routing\\ResponseFactory",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\app\\Http\\Controllers\\api\\UserController.php",
+                      "line": 87,
+                      "function": "sendResponse",
+                      "class": "App\\Http\\Controllers\\api\\BaseController",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+                      "line": 54,
+                      "function": "approvalList",
+                      "class": "App\\Http\\Controllers\\api\\UserController",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+                      "line": 45,
+                      "function": "callAction",
+                      "class": "Illuminate\\Routing\\Controller",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                      "line": 261,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\ControllerDispatcher",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                      "line": 204,
+                      "function": "runController",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+                      "line": 725,
+                      "function": "run",
+                      "class": "Illuminate\\Routing\\Route",
                       "type": "->"
                   },
                   {
                       "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 185,
-                      "function": "handleException",
-                      "class": "Illuminate\\Routing\\Pipeline",
+                      "line": 141,
+                      "function": "Illuminate\\Routing\\{closure}",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
+                      "line": 50,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\Users\\Laptop-072\\Documents\\laravel new version\\inventory-system\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
                       "type": "->"
                   },
                   {
@@ -688,7 +598,222 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '44'
+          x-ratelimit-remaining: '56'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/user/deactivated_account
+    metadata:
+      title: 'Deactivated Accounts List'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 404
+        content: '{"success":false,"message":"No Record."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '55'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/user/{requestor_id}/approve'
+    metadata:
+      title: 'Register approved accounts api'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      requestor_id:
+        name: requestor_id
+        description: 'The ID of the requestor.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/user/{requestor_id}/disapprove'
+    metadata:
+      title: 'Register disapproved accounts api'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      requestor_id:
+        name: requestor_id
+        description: 'The ID of the requestor.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/user/disapproved_account
+    metadata:
+      title: 'Disapproved accounts List'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 404
+        content: '{"success":false,"message":"No Record."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '54'
+          vary: Origin
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/user/{user_id}/change_role'
+    metadata:
+      title: 'User Change Role'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters:
+      role_id:
+        name: role_id
+        description: ''
+        required: true
+        example: nesciunt
+        type: string
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/user/{user_id}/activate'
+    metadata:
+      title: 'Activate user account'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/user/{user_id}/deactivate'
+    metadata:
+      title: 'Deactivate user accounts'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/user/{user_id}/admin_details'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"success":true,"data":{"id":1,"employee_id":"2018-922","last_name":"Cumayas","first_name":"Afril","middle_name":null,"suffix":null,"email":"admin@gmail.com","role_request":null,"approved_at":"2022-09-16 02:17:48","disapproved_at":null,"deactivated_at":null,"email_verified_at":null,"created_at":"2022-09-16T02:17:48.000000Z","updated_at":"2022-09-16T02:17:48.000000Z"},"message":"Admin details retrieved successfully."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '43'
           vary: Origin
         description: null
     responseFields: []
@@ -710,12 +835,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"data":[],"message":"Admin accounts retrieved successfully."}'
+        content: '{"success":true,"data":[{"id":2,"employee_id":"2021fvf","last_name":"dsfvf","first_name":"sdfv","middle_name":"asvefv","suffix":"dsdwvfvr","email":"pierfvfce@gmail.com","role_request":"admin","approved_at":null,"email_verified_at":null,"created_at":"16\/09\/2022","updated_at":"16\/09\/2022"},{"id":3,"employee_id":"123admin2","last_name":"wq","first_name":"das","middle_name":"wqfgvgfgfg","suffix":"wgfgggfgf","email":"admin2@gmail.com","role_request":"admin","approved_at":"2022-09-16 07:25:07","email_verified_at":null,"created_at":"16\/09\/2022","updated_at":"16\/09\/2022"}],"message":"Admin accounts retrieved successfully."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '43'
+          x-ratelimit-remaining: '42'
           vary: Origin
         description: null
     responseFields: []
@@ -742,7 +867,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '42'
+          x-ratelimit-remaining: '41'
           vary: Origin
         description: null
     responseFields: []
@@ -763,8 +888,8 @@ endpoints:
     bodyParameters: []
     responses:
       -
-        status: 404
-        content: '{"success":false,"message":"No record found.","data":{"empty":"true"}}'
+        status: 200
+        content: '{"success":true,"data":{"empty":"false"},"message":"The user records are not empty."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -772,4 +897,77 @@ endpoints:
           x-ratelimit-remaining: '57'
           vary: Origin
         description: null
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/admin_updateProfile/{user_id}'
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user_id:
+        name: user_id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    queryParameters: []
+    bodyParameters:
+      employee_id:
+        name: employee_id
+        description: ''
+        required: true
+        example: placeat
+        type: string
+        custom: []
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: ut
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: voluptatibus
+        type: string
+        custom: []
+      middle_name:
+        name: middle_name
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      suffix:
+        name: suffix
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      company_id:
+        name: company_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: emiliano.williamson@example.net
+        type: string
+        custom: []
+    responses: []
     responseFields: []

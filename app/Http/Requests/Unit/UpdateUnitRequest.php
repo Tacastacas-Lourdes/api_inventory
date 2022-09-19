@@ -29,6 +29,7 @@ class UpdateUnitRequest extends FormRequest
             'model' => 'string',
             'serial' => 'string',
             'details' => 'array',
+            'remarks' => 'array',
             'company_id' => 'int|exists:companies,id',
             'category_id' => 'int|exists:categories,id',
             'status_id' => 'exists:statuses,id',

@@ -52,6 +52,9 @@ class UnitController extends BaseController
     /**
      *  Display a listing of resource with the given company and category ID
      *
+     * @urlParam company_id int required Company ID of the unit. Example: 1
+     * @urlParam category_id int required Category ID of the unit. Example: 1
+     *
      * @param $com_id
      * @param $cat_id
      * @return JsonResponse
@@ -92,19 +95,13 @@ class UnitController extends BaseController
         $unit->company()->associate($input['company_id']);
         $unit->category()->associate($input['category_id']);
         $unit->save();
-//        foreach ($input['remarks'] as $name){
-        ////            dd($name);
-//            $remark = Remark::query()->create([$name, ['date'=> now()]]);
-//        }
         $unit->remarks()->createMany($input['remarks']);
 
         $details = $input['details'];
         $sync = [];
-//        dd($details);
         Specification::query()
             ->where('category_id', $input['category_id'])
             ->each(function (Specification $spec) use ($details, &$sync) {
-//                dd(Arr::get($details, $spec->name));
                 $sync[$spec->id] = ['details' => Arr::get($details, $spec->name)];
             });
         $unit->specs()->sync($sync);
@@ -153,15 +150,16 @@ class UnitController extends BaseController
         $unit->model = $input['model'];
         $unit->serial = $input['serial'];
         $unit->company()->associate($input['company_id']);
-//        $unit->category()->associate($input['category_id']);
+        $unit->category()->associate($input['category_id']);
         $unit->save();
-//        $unit->remarks()->createMany($input['remarks']);
+        $unit->remarks()->createMany($input['remarks']);
         $details = $input['details'];
         $sync = [];
         Specification::query()
             ->where('category_id', $input['category_id'])
             ->each(function (Specification $spec) use ($details, &$sync) {
                 $sync[$spec->id] = ['details' => Arr::get($details, $spec->name)];
+//                dd($spec);
             });
         $unit->specs()->sync($sync);
 

@@ -7,6 +7,8 @@ use App\Http\Requests\Category\StoreCategoryRequest;
 use App\Http\Requests\Category\UpdateCategoryRequest;
 use App\Http\Resources\CategoryResource;
 use App\Models\Category;
+use App\Models\Specification;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -41,12 +43,23 @@ class CategoryController extends BaseController
     {
         $category = QueryBuilder::for(Category::class)
             ->allowedFilters('name', AllowedFilter::exact('id'))
-            ->with(['companies', 'units', 'specs'])->get();
+            ->with(['units', 'specs'])->get();
         if ($category->isNotEmpty()) {
             return $this->sendResponse($category, 'Category retrieved successfully.');
         }
 
         return $this->sendError('No Record.');
+    }
+
+    public function getSpecs($id): JsonResponse
+    {
+        $categories = Specification::query()->whereHas('category', function (Builder $query) use ($id) {
+            $query->where('id', '=', $id);
+        })->get();
+        if ($categories->isNotEmpty()) {
+            return $this->sendResponse($categories, 'Related categories were successfully retrieved.');
+        }
+        return $this->sendError('No record found.');
     }
 
     /**
